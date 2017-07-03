@@ -4,7 +4,7 @@ from __future__ import unicode_literals
 
 AUTHOR = u'Opensource Game Studio'
 SITENAME = u'Opensource Game Studio'
-SITEURL = 'https://kornerr.github.io/pelican'
+SITEURL = ''
 
 PATH = 'content'
 
@@ -36,5 +36,4 @@ DEFAULT_PAGINATION = 10
 
 DISPLAY_PAGES_ON_MENU = True
 
-OUTPUT_PATH = 'docs/'
 ARTICLE_PATHS = ['articles']
