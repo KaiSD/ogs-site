@@ -4,7 +4,7 @@ from __future__ import unicode_literals
 
 AUTHOR = u'Opensource Game Studio'
 SITENAME = u'Opensource Game Studio'
-SITEURL = 'https://kornerr.github.io'
+SITEURL = 'https://kornerr.github.io/pelican'
 
 PATH = 'content'
 
