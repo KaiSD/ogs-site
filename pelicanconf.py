@@ -37,3 +37,10 @@ DEFAULT_PAGINATION = 10
 DISPLAY_PAGES_ON_MENU = True
 
 ARTICLE_PATHS = ['articles']
+
+THEME="minimalX"
+SHARE_BUTTONS = ['twitter']
+TAG_CLOUD = False
+PLUGIN_PATHS = ["/home/kornerr/p/plugins"]
+PLUGINS = ["tag_cloud"]
+tag_cloud = ['abc']
