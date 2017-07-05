@@ -4,7 +4,7 @@ from __future__ import unicode_literals
 
 AUTHOR = u'Opensource Game Studio'
 SITENAME = u'Opensource Game Studio'
-SITEURL = ''
+SITEURL = 'http://localhost:8000'
 
 PATH = 'content'
 
@@ -90,7 +90,7 @@ ARTICLE_PATHS = ['articles']
 #THEME="/home/kornerr/p/pelican-themes/zurb-F5-basic"
 
 # Fully functional.
-THEME="/home/kornerr/p/pelican-themes/tuxlite_zf"
+THEME="/home/kornerr/p/ogstudio-pelican-theme"
 
 
 SHARE_BUTTONS = ['twitter']
