@@ -19,81 +19,40 @@ TRANSLATION_FEED_ATOM = None
 AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 
+# Menu
+MENUITEMS = (
+    ('Projects', '/pages/projects.html'),
+    ('About', '/pages/about.html'),
+)
+DISPLAY_PAGES_ON_MENU = False
+
 # Blogroll
-LINKS = (('Pelican', 'http://getpelican.com/'),
-         ('Python.org', 'http://python.org/'),
-         ('Jinja2', 'http://jinja.pocoo.org/'),
-         ('You can modify those links in your config file', '#'),)
+#LINKS = (
+#    ('OGS Mahjong', '/pages/ogs-mahjong.html'),
+#)
+PROJECTS = (
+    ('OGS Mahjong', '/pages/ogs-mahjong.html'),
+    ('OGS Editor', '/pages/ogs-editor.html'),
+    ('OpenSceneGraph guide', '/pages/openscenegraph-guide.html'),
+)
 
 # Social widget
-SOCIAL = (('You can add links in your config file', '#'),
-          ('Another social link', '#'),)
+#SOCIAL = (('You can add links in your config file', '#'),
+#          ('Another social link', '#'),)
 
 DEFAULT_PAGINATION = 10
 
 # Uncomment following line if you want document-relative URLs when developing
 #RELATIVE_URLS = True
 
-DISPLAY_PAGES_ON_MENU = True
-
 ARTICLE_PATHS = ['articles']
 
-# Somewhat working.
-#THEME="/home/kornerr/p/pelican-themes/basic"
-# translations: pages only
-# pagination: ok
-# index: ok
-#THEME="/home/kornerr/p/pelican-themes/bootstrap"
-# translations: no
-# pagination: ok
-# index: ok
-#THEME="/home/kornerr/p/pelican-themes/bootlex"
-# translations: no
-# pagination: ok
-# index: no
-#THEME="/home/kornerr/p/pelican-themes/bricks"
-# translations: only pages, not posts
-# pagination: ok
-# index: ok
-#THEME="/home/kornerr/p/pelican-themes/cebong"
-# translations: only posts, not pages
-# pagination: ok
-# index: no
-#THEME="/home/kornerr/p/pelican-themes/dev-random"
-# translations: only posts, not pages
-# pagination: ok
-# index: ok
-#THEME="/home/kornerr/p/pelican-themes/dev-random2"
-# translations: only posts, not pages
-# pagination: ok
-# index: ok
-#THEME="/home/kornerr/p/pelican-themes/gum"
-# translations: ok
-# pagination: ok
-# index: ok
-#THEME="/home/kornerr/p/pelican-themes/plumage"
-# translations: ok
-# pagination: ok
-# index: no
-#THEME="/home/kornerr/p/pelican-themes/simple-bootstrap"
-# translations: ok
-# pagination: ok
-# index: no
-#THEME="/home/kornerr/p/pelican-themes/tuxlite_tbs"
-# translations: ok
-# pagination: ok
-# index: no
-#THEME="/home/kornerr/p/pelican-themes/tuxlite_zf"
-# translations: ok
-# pagination: ok
-# index: no
-#THEME="/home/kornerr/p/pelican-themes/zurb-F5-basic"
-
-# Fully functional.
+# Custom TuxLite ZF based theme.
 THEME="/home/kornerr/p/ogstudio-pelican-theme"
 
 
 SHARE_BUTTONS = ['twitter']
+
 
 #TAG_CLOUD = False
 #PLUGIN_PATHS = ["/home/kornerr/p/plugins"]
