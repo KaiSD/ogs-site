@@ -48,7 +48,7 @@ DEFAULT_PAGINATION = 10
 ARTICLE_PATHS = ['articles']
 
 # Custom TuxLite ZF based theme.
-THEME="/home/kornerr/p/ogstudio-pelican-theme"
+THEME="theme"
 
 
 SHARE_BUTTONS = ['twitter']

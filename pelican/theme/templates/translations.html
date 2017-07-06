@@ -1,0 +1,7 @@
+{% macro translations_for(article) %}
+{% if article.translations %}
+    {% for translation in article.translations %}
+        <a class="button secondary small translation-button" href="{{ SITEURL }}/{{ translation.url }}">{{ translation.lang }}</a>
+    {% endfor %}
+{% endif %}
+{% endmacro %}
