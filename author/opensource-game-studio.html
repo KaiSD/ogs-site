@@ -48,30 +48,40 @@
         
 
             <article>
-                <a href="https://ogstudio.github.io/openscenegraph-cross-platform-guide.html"><h3 class="article-title">OpenSceneGraph cross-platform guide</h3></a>
-<h6 class="subheader" title="2017-07-01T00:00:00+07:00">Sat 01 July 2017
-            <a class="button secondary small translation-button" href="https://ogstudio.github.io/openscenegraph-cross-platform-guide-ru.html">ru</a>
+                <a href="https://ogstudio.github.io/scripting-research.html"><h3 class="article-title">Scripting research</h3></a>
+<h6 class="subheader" title="2017-08-16T00:00:00+07:00">Ср 16 Август 2017
+            <a class="button secondary small translation-button" href="https://ogstudio.github.io/scripting-research-ru.html">ru</a>
 
-</h6><p><img alt="OpenSceneGraph guide" src="https://ogstudio.github.io/2017-07-openscenegraph-guide.png"></p>
-<p>This article summarizes the work we did to produce OpenSceneGraph cross-platform guide.</p>
-<p>June marked the finish of <a href="https://github.com/OGStudio/openscenegraph-cross-platform-guide">OpenSceneGraph cross-platform guide</a> with the publishing of the last (initially planned) tutorial. The tutorial describes <a href="https://github.com/OGStudio/openscenegraph-cross-platform-guide/tree/master/1.10.SampleWeb">how to build and run sample OpenSceneGraph application in Web</a> using Emscripten.
-In case you missed it, here's a <a href="https://ogstudio.github.io/openscenegraph-cross-platform-guide/">link to the final application</a>. Open it in your web browser.</p>
-<p>We started to compose the guide in February when we successfully managed to render a simple model on mobile and web.
-We spent 120 hours in five months to produce ten tutorials of the guide.</p>
-<p>We have been doing OpenSceneGraph cross-platform guide for two main reasons:</p>
-<ol>
-<li>Keep OpenSceneGraph cross-platform knowledge in easily accessible and reproducible form</li>
-<li>Share the knowledge with OpenSceneGraph community to make it stronger</li>
-</ol>
-<p>We believe we succeeded in both. Here's why:</p>
-<ol>
-<li>The guide repository has more <a href="https://github.com/OGStudio/openscenegraph-cross-platform-guide/stargazers">stars</a> (aka "likes") than any other repository of ours</li>
-<li>OpenSceneGraph project leader Robert Osfield said <a href="http://www.mail-archive.com/osg-users@lists.openscenegraph.org/msg74815.html">"Great work"</a>, which means a lot</li>
-<li>The guide already has <a href="https://github.com/OGStudio/openscenegraph-cross-platform-guide/issues">two issues</a></li>
-</ol>
-<p>Reaching our goal of researching OpenSceneGraph cross-platform development and providing the knowledge back to the community just made us happier.</p>
-<p>However, our journey does not stop here. Using the knowledge of the guide, we now continue to work on bringing our tools to support mobile and web, just as we <a href="http://opengamestudio.org/lang/en/news/2456">promised in January</a>.</p>
-<p>That's it for summarizing the work we did to produce OpenSceneGraph cross-platform guide.</p><p class="subheader">Category: <a href="https://ogstudio.github.io/category/news.html">News</a>
+</h6><p><img alt="Scripting research" src="https://ogstudio.github.io/2017-08-scripting-research.png" /></p>
+<p>This article describes scripting research in July 2017.</p>
+<p><strong>Our first goal of using a scripting language was to have a platform-independent code that runs unchanged on every supported platform.</strong></p>
+<p>OGS Editor 0.10 supports Python for such a code thanks to <a href="http://swig.org/">SWIG</a>. SWIG provides a way to wrap almost any C/C++ code and use it in dozens of languages like Python, Ruby, Lua, Java, C#, etc.. SWIG really helped us taste the beauty of platform-independent code. However, SWIG only works one way: from C/C++ to a target language. This means the main application must be in the target language, and C/C++ code can only be used as a library.</p>
+<p>Having the main application in Python works fine for the desktop, but not so great for mobile and web, where C and C++ are the only natively supported cross-platform languages. There are projects like <a href="https://kivy.org">Kivy</a>, which allow you to develop cross-platform applications in Python, but they are not supported natively. This means it's a lot of headaches when Android and iOS APIs change.</p>
+<p>Having the main application in C/C++ and the need to support scripting means that a scripting language should be interpreted by the application. This is what SWIG, Kivy, and similar projects are not meant to fulfill.</p>
+<p><strong>Our secondary goal for using a scripting language was to allow to extend C++ code.</strong></p>
+<p>OGS Editor 0.10 has some modules written in C++, and some in Python. The modules are equal from the perspective of the main application; it doesn't care what language the module is written in.</p>
+<p>To achieve such flexibility, we introduced a so-called Environment. Each module would register the keys it responds to, and Environment would deliver corresponding messages. 
+Technically such behaviour is achieved by inheriting a base class and overriding its methods in both C++ and a scripting language.</p>
+<p><strong>First, we evaluated Python for the role of cross-platform scripting language.</strong></p>
+<p>Since we already used Python, we started to research the possibility to run Python code on every supported platform. The result was disappointing because CPython (the default Python implementation used on the desktop) does not mention mobile and web platforms. We only found some years old forks of CPython that were claimed to work either on Android or iOS. Such a disarray was not suitable for us.
+We also had a look at <a href="http://pypy.org">PyPy</a>, another Python implementation. It also did not mention support for mobile and web platforms.</p>
+<p>This was a clear indication that Python community doesn't care for mobile and web platforms. Or that nobody had time to provide the information about building Python on such platforms. Either way, it was not acceptable for us.</p>
+<p><strong>Second, we evaluated <a href="http://wren.io">Wren</a> for the role of cross-platform scripting language.</strong></p>
+<p>Wren was the first scripting language we stumbled upon in the long list of non-mainstream scripting languages.</p>
+<p>Wren claimed to be small and easy to learn. Wren also claimed to be intended for embedding in applications. Ironically, the author <a href="http://wren.io/embedding-api.html">had no time to document how to do the embedding in the first place</a>. When <a href="https://github.com/munificent/wren/issues/465">we asked for the time estimates of publishing</a> the critical part of the documentation, <a href="https://github.com/munificent/wren/issues/402">we just got a reference to another issue</a> where the other guy was asking the same question half a year ago!</p>
+<p>That's when we ended our relationship with Wren.</p>
+<p><strong>Third, we evaluated <a href="http://chaiscript.com">Chai</a> for the role of cross-platform scripting language.</strong></p>
+<p>Chai was in the long list of non-mainstream scripting languages, too. Chai was promising because it claimed to be specifically tailored for embedding in a C++ application.
+We successfully managed to call a C++ function from inside Chai but failed to call a member function. <a href="http://discourse.chaiscript.com/t/cannot-call-a-function-that-accepts-a-string-and-a-vector/334">We asked for help</a>, but nobody replied.</p>
+<p>We had to end our relationship with Chai.</p>
+<p><strong>Fourth, we evaluated Lua for the role of cross-platform scripting language.</strong></p>
+<p>Lua is the mainstream language for embedding. So we decided to try the obvious choice. Documentation looked promising, too. However, by the end of reading the <a href="https://www.lua.org/pil/24.html">C API</a> chapter we had no clue how to inherit a class inside Lua.</p>
+<p>This led us to search for libraries that wrap Lua C API syntax into something more meaningful for C++. That's how we found <a href="http://sol2.rtfd.io">Sol2</a>. Just as before, the first attempt to call a C++ member function from Lua failed. But unlike before, we asked for help and <a href="https://github.com/ThePhD/sol2/issues/465">got the help</a>! This was a refreshing surprise for us.
+Next, we tried to inherit a class in Lua and override the class methods. We failed, but <a href="https://github.com/ThePhD/sol2/issues/468">the author helped us out again</a>. In the end, we succeeded in inheriting a class and overriding its behaviour.</p>
+<p>That's when we understood it's a start for a long and mutual relationship with Sol2/Lua.</p>
+<p><strong>This search for a scripting language taught us one important lesson: people matter, not technologies.</strong></p>
+<p>There are lots of scripting languages that look shiny on the outside but are dead. Why? Because some authors don't have time for users. In return, users don't have time for the authors' projects.</p>
+<p>That's it for describing scripting research in July 2017.</p><p class="subheader">Category: <a href="https://ogstudio.github.io/category/news.html">News</a>
 
 </p>
 
@@ -86,13 +96,33 @@ We spent 120 hours in five months to produce ten tutorials of the guide.</p>
 
 
             <article>
+                <a href="https://ogstudio.github.io/openscenegraph-cross-platform-guide.html"><h3 class="article-title">OpenSceneGraph cross-platform guide</h3></a>
+<h6 class="subheader" title="2017-07-17T00:00:00+07:00">Пн 17 Июль 2017
+            <a class="button secondary small translation-button" href="https://ogstudio.github.io/openscenegraph-cross-platform-guide-ru.html">ru</a>
+
+</h6><p><img alt="OpenSceneGraph guide" src="https://ogstudio.github.io/2017-07-openscenegraph-guide.png" /></p>
+<p>This article summarizes the work we did to produce OpenSceneGraph cross-platform guide.</p>
+<p>June marked the finish of <a href="https://github.com/OGStudio/openscenegraph-cross-platform-guide">OpenSceneGraph cross-platform guide</a> with the publishing of the last (initially planned) tutorial. The tutorial describes <a href="https://github.com/OGStudio/openscenegraph-cross-platform-guide/tree/master/1.10.SampleWeb">how to build and run sample OpenSceneGraph application in Web</a> using Emscripten.
+In case you missed it, here ...</p><p class="subheader">Category: <a href="https://ogstudio.github.io/category/news.html">News</a>
+
+</p>
+
+
+                <a class="button radius secondary small right" href="https://ogstudio.github.io/openscenegraph-cross-platform-guide.html">Read More</a>
+                <hr  class="gradient"/>
+            </article>
+
+        
+
+
+            <article>
                 <a href="https://ogstudio.github.io/ios-tutorial.html"><h3 class="article-title">iOS tutorial</h3></a>
-<h6 class="subheader" title="2017-06-08T10:00:00+07:00">Thu 08 June 2017
+<h6 class="subheader" title="2017-06-08T10:00:00+07:00">Чт 08 Июнь 2017
             <a class="button secondary small translation-button" href="https://ogstudio.github.io/ios-tutorial-ru.html">ru</a>
 
-</h6><p><img alt="iOS tutorial" src="https://ogstudio.github.io/2017-06-08-ios-refactoring.png"></p>
+</h6><p><img alt="iOS tutorial" src="https://ogstudio.github.io/2017-06-08-ios-refactoring.png" /></p>
 <p>This article describes problems we faced during the creation of iOS tutorial in May 2017.</p>
-<p><a href="https://twitter.com/OpenGameStudio/status/826816343433498627">This February</a> we managed to get simple model rendered under iOS in just a few days. We expected to finish iOS tutorial in no time. However, the reality reminded us: it's easy to come up …</p><p class="subheader">Category: <a href="https://ogstudio.github.io/category/news.html">News</a>
+<p><a href="https://twitter.com/OpenGameStudio/status/826816343433498627">This February</a> we managed to get simple model rendered under iOS in just a few days. We expected to finish iOS tutorial in no time. However, the reality reminded us: it's easy to come ...</p><p class="subheader">Category: <a href="https://ogstudio.github.io/category/news.html">News</a>
 
 </p>
 
@@ -106,7 +136,7 @@ We spent 120 hours in five months to produce ten tutorials of the guide.</p>
 
             <article>
                 <a href="https://ogstudio.github.io/pelican-review.html"><h3 class="article-title">Pelican review</h3></a>
-<h6 class="subheader" title="2017-06-03T22:00:00+07:00">Sat 03 June 2017
+<h6 class="subheader" title="2017-06-03T22:00:00+07:00">Сб 03 Июнь 2017
             <a class="button secondary small translation-button" href="https://ogstudio.github.io/pelican-review-ru.html">ru</a>
 
 </h6><p>So far so nice. Pelican is really cool, and provides a quick starting guided
@@ -126,7 +156,7 @@ to get up and running real fast.</p>
 
             <article>
                 <a href="https://ogstudio.github.io/keyboard-review.html"><h3 class="article-title">My first review</h3></a>
-<h6 class="subheader" title="2017-06-01T10:20:00+07:00">Thu 01 June 2017
+<h6 class="subheader" title="2017-06-01T10:20:00+07:00">Чт 01 Июнь 2017
             <a class="button secondary small translation-button" href="https://ogstudio.github.io/keyboard-review-ru.html">ru</a>
 
 </h6><p>Here is a full review, guys.</p><p class="subheader">Category: <a href="https://ogstudio.github.io/category/review.html">Review</a>
@@ -138,121 +168,12 @@ to get up and running real fast.</p>
                 <hr  class="gradient"/>
             </article>
 
-        
-
-
-            <article>
-                <a href="https://ogstudio.github.io/kr10.html"><h3 class="article-title">kr10</h3></a>
-<h6 class="subheader" title="2017-01-01T10:04:00+07:00">Sun 01 January 2017
-            <a class="button secondary small translation-button" href="https://ogstudio.github.io/kr10-ru.html">ru</a>
-
-</h6><p>kr10</p>
-<p>LANG: en</p><p class="subheader">Category: <a href="https://ogstudio.github.io/category/review.html">Review</a>
-
-</p>
-
-
-                <a class="button radius secondary small right" href="https://ogstudio.github.io/kr10.html">Read More</a>
-                <hr  class="gradient"/>
-            </article>
-
-        
-
-
-            <article>
-                <a href="https://ogstudio.github.io/kr9.html"><h3 class="article-title">kr9</h3></a>
-<h6 class="subheader" title="2017-01-01T09:04:00+07:00">Sun 01 January 2017
-            <a class="button secondary small translation-button" href="https://ogstudio.github.io/kr9-ru.html">ru</a>
-
-</h6><p>kr9</p>
-<p>LANG: en</p><p class="subheader">Category: <a href="https://ogstudio.github.io/category/review.html">Review</a>
-
-</p>
-
-
-                <a class="button radius secondary small right" href="https://ogstudio.github.io/kr9.html">Read More</a>
-                <hr  class="gradient"/>
-            </article>
-
-        
-
-
-            <article>
-                <a href="https://ogstudio.github.io/kr8.html"><h3 class="article-title">kr8</h3></a>
-<h6 class="subheader" title="2017-01-01T08:04:00+07:00">Sun 01 January 2017
-            <a class="button secondary small translation-button" href="https://ogstudio.github.io/kr8-ru.html">ru</a>
-
-</h6><p>kr8</p>
-<p>LANG: en</p><p class="subheader">Category: <a href="https://ogstudio.github.io/category/review.html">Review</a>
-
-</p>
-
-
-                <a class="button radius secondary small right" href="https://ogstudio.github.io/kr8.html">Read More</a>
-                <hr  class="gradient"/>
-            </article>
-
-        
-
-
-            <article>
-                <a href="https://ogstudio.github.io/kr7.html"><h3 class="article-title">kr7</h3></a>
-<h6 class="subheader" title="2017-01-01T07:04:00+07:00">Sun 01 January 2017
-            <a class="button secondary small translation-button" href="https://ogstudio.github.io/kr7-ru.html">ru</a>
-
-</h6><p>kr7</p>
-<p>LANG: en</p><p class="subheader">Category: <a href="https://ogstudio.github.io/category/review.html">Review</a>
-
-</p>
-
-
-                <a class="button radius secondary small right" href="https://ogstudio.github.io/kr7.html">Read More</a>
-                <hr  class="gradient"/>
-            </article>
-
-        
-
-
-            <article>
-                <a href="https://ogstudio.github.io/kr6.html"><h3 class="article-title">kr6</h3></a>
-<h6 class="subheader" title="2017-01-01T06:04:00+07:00">Sun 01 January 2017
-            <a class="button secondary small translation-button" href="https://ogstudio.github.io/kr6-ru.html">ru</a>
-
-</h6><p>kr6</p>
-<p>LANG: en</p><p class="subheader">Category: <a href="https://ogstudio.github.io/category/review.html">Review</a>
-
-</p>
-
-
-                <a class="button radius secondary small right" href="https://ogstudio.github.io/kr6.html">Read More</a>
-                <hr  class="gradient"/>
-            </article>
-
-        
-
-
-            <article>
-                <a href="https://ogstudio.github.io/kr5.html"><h3 class="article-title">kr5</h3></a>
-<h6 class="subheader" title="2017-01-01T05:04:00+07:00">Sun 01 January 2017
-            <a class="button secondary small translation-button" href="https://ogstudio.github.io/kr5-ru.html">ru</a>
-
-</h6><p>kr5</p>
-<p>LANG: en</p><p class="subheader">Category: <a href="https://ogstudio.github.io/category/review.html">Review</a>
-
-</p>
-
-
-                <a class="button radius secondary small right" href="https://ogstudio.github.io/kr5.html">Read More</a>
-                <hr  class="gradient"/>
-            </article>
-
             <!-- /#posts-list -->
 <div class="pagination-centered">
-<h6 class="subheader">Page 1 of 2</h6>
+<h6 class="subheader">Page 1 of 1</h6>
 
 <p>
 
-        <a href="https://ogstudio.github.io/author/opensource-game-studio2.html">Next &raquo;</a>
 </p>
 </div>
 

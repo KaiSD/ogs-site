@@ -19,3 +19,9 @@ Opensource Game Studio home website.
 
 The site is served at [http://localhost:8000](http://localhost:8000).
 
+### Generate public copy
+
+`cd pelican`
+
+`pelican -s publishconf.py`
+
