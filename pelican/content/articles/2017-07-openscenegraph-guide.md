@@ -1,5 +1,5 @@
 Title: OpenSceneGraph cross-platform guide
-Date: 2017-07-01 00:00
+Date: 2017-07-17 00:00
 Category: News
 Slug: openscenegraph-cross-platform-guide
 Lang: en
