@@ -10,7 +10,7 @@ You need a working Python's `pip`.
 
 Install Pelican with the following command:
 
-` `
+`sudo apt install pelican`
 
 # Preview
 
