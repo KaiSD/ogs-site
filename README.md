@@ -1,27 +1,46 @@
 # Overview
 
-This is a work in progress. This example is used to evaluate
-[Pelican static site generator](http://getpelican.com) to power
-Opensource Game Studio home website.
+We consider changing [Opensource Game Studio website](http://opengamestudio.org)'s
+engine from Wordpress to [Pelican](http://getpelican.com). This is Pelican
+evaluation.
 
-# Usage (internally)
-### Generate local copy
+# Installation
+
+You need a working Python's `pip`.
+
+Install Pelican with the following command:
+
+` `
+
+# Preview
+
+* Generate local copy with the following commands:
 
 `cd pelican`
 
 `pelican -s pelicanconf.py`
 
-### Serve local copy
+* Serve the local copy with the following commands:
 
 `cd output`
 
 `python -m SimpleHTTPServer`
 
-The site is served at [http://localhost:8000](http://localhost:8000).
+The preview should now be available at
+[http://localhost:8000](http://localhost:8000).
 
-### Generate public copy
+# Publishing
+
+* Generate public site with the following commands:
 
 `cd pelican`
 
 `pelican -s publishconf.py`
+
+* Upload it to GitHub with the following commands:
+
+`git push`
+
+The publich site should now be available at
+[http://ogstudio.github.io](http://ogstudio.github.io).
 
