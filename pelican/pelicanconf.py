@@ -21,8 +21,8 @@ AUTHOR_FEED_RSS = None
 
 # Menu
 MENUITEMS = (
-    ('Projects', 'pages/projects.html'),
-    ('About', 'pages/about.html'),
+    ('Projects', '/pages/projects.html'),
+    ('About', '/pages/about.html'),
 )
 DISPLAY_PAGES_ON_MENU = False
 
@@ -31,9 +31,9 @@ DISPLAY_PAGES_ON_MENU = False
 #    ('OGS Mahjong', '/pages/ogs-mahjong.html'),
 #)
 PROJECTS = (
-    ('OGS Mahjong', 'pages/ogs-mahjong.html'),
-    ('OGS Editor', 'pages/ogs-editor.html'),
-    ('OpenSceneGraph guide', 'pages/openscenegraph-guide.html'),
+    ('OGS Mahjong', '/pages/ogs-mahjong.html'),
+    ('OGS Editor', '/pages/ogs-editor.html'),
+    ('OpenSceneGraph guide', '/pages/openscenegraph-guide.html'),
 )
 
 # Social widget
