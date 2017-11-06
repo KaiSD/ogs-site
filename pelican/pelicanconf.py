@@ -30,11 +30,11 @@ DISPLAY_PAGES_ON_MENU = False
 #LINKS = (
 #    ('OGS Mahjong', '/pages/ogs-mahjong.html'),
 #)
-PROJECTS = (
-    ('OGS Mahjong', '/pages/ogs-mahjong.html'),
-    ('OGS Editor', '/pages/ogs-editor.html'),
-    ('OpenSceneGraph guide', '/pages/openscenegraph-guide.html'),
-)
+#PROJECTS = (
+#    ('OGS Mahjong', '/pages/ogs-mahjong.html'),
+#    ('OGS Editor', '/pages/ogs-editor.html'),
+#    ('OpenSceneGraph guide', '/pages/openscenegraph-guide.html'),
+#)
 
 # Social widget
 #SOCIAL = (('You can add links in your config file', '#'),
