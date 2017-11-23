@@ -163,4 +163,22 @@ We spent 120 hours in five months to produce ten tutorials of the guide.&lt;/p&g
 &lt;li&gt;You have to manually copy/reference built OpenSceneGraph libraries into Android Studio project&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;Our approach includes building OpenSceneGraph for those target architectures that Android Studio project is built for. Also, OpenSceneGraph is already referenced, so no extra work is required: you just need to rebuild the project, and you're done.&lt;/p&gt;
-&lt;p&gt;That's it for describing the creation of the tutorials for building sample OpenSceneGraph application under Linux, macOS, Windows, and Android in April 2017.&lt;/p&gt;</summary></entry></feed>
+&lt;p&gt;That's it for describing the creation of the tutorials for building sample OpenSceneGraph application under Linux, macOS, Windows, and Android in April 2017.&lt;/p&gt;</summary></entry><entry><title>It's all fine</title><link href="http://opengamestudio.org/its-all-fine.html" rel="alternate"></link><updated>2017-04-07T00:00:00+03:00</updated><author><name>Opensource Game Studio</name></author><id>tag:opengamestudio.org,2017-04-07:its-all-fine.html</id><summary type="html">&lt;p&gt;&lt;img alt="ItsAllFine" src="http://opengamestudio.org/2017-04_its-all-fine.png" /&gt;&lt;/p&gt;
+&lt;p&gt;This article describes creation of the first four OpenSceneGraph tutorials in March 2017.&lt;/p&gt;
+&lt;p&gt;The &lt;a href="https://github.com/OGStudio/openscenegraph-cross-platform-guide/"&gt;first four OpenSceneGraph tutorials&lt;/a&gt; explain how to create a cube model with Blender and display the model under Linux, macOS, or Windows using OpenSceneGraph tool called osgviewer.&lt;/p&gt;
+&lt;p&gt;The whole process of creating a single tutorial turned out to be pretty daunting because it includes several tasks:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Record original video depicting one or more steps&lt;/li&gt;
+&lt;li&gt;Name the steps as clear as possible&lt;/li&gt;
+&lt;li&gt;Select the parts of the video that display the step&lt;/li&gt;
+&lt;li&gt;Remove the parts of the video that bare no value, e.g., waiting in the middle of compilation&lt;/li&gt;
+&lt;li&gt;Select a single frame to best represent current step, e.g., typing a specific command&lt;/li&gt;
+&lt;li&gt;Add a detailed description to article, why current step should have been taken&lt;/li&gt;
+&lt;li&gt;Proof-read the article&lt;/li&gt;
+&lt;li&gt;Correct typos and video timing&lt;/li&gt;
+&lt;li&gt;Review the whole video&lt;/li&gt;
+&lt;li&gt;Upload the video to YouTube with timestamps of steps for easier navigation&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Some of those tasks had to be repeated multiple times until the combination of video, text, and article was clear and logical.&lt;/p&gt;
+&lt;p&gt;Overall, it took us 30 hours to create the tutorials. The whole process gave us a lot of experience, which will help us in shaping learning materials for our technologies in the future. We don't know how they will look like exactly, but they will definitely be better.&lt;/p&gt;
+&lt;p&gt;That's it for describing creation of the first four OpenSceneGraph tutorials in March 2017.&lt;/p&gt;</summary></entry></feed>
