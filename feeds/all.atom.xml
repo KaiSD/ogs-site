@@ -412,4 +412,24 @@ text 5 Congratulations! We just finished installing Blender
 
 
 &lt;p&gt;Это реальный скрипт. Конечный результат можно увидеть &lt;a href="https://github.com/OGStudio/openscenegraph-cross-platform-guide/tree/master/tutorial-tool"&gt;здесь&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;На этом мы заканчиваем рассказ о результатах нашей работы в январе и феврале 2017: отображении куба на iOS/Веб и нашем инструменте для создания самоучителей.&lt;/p&gt;</summary></entry></feed>
+&lt;p&gt;На этом мы заканчиваем рассказ о результатах нашей работы в январе и феврале 2017: отображении куба на iOS/Веб и нашем инструменте для создания самоучителей.&lt;/p&gt;</summary></entry><entry><title>The year of challenges</title><link href="http://opengamestudio.org/the-year-of-challenges.html" rel="alternate"></link><updated>2017-01-25T00:00:00+03:00</updated><author><name>Opensource Game Studio</name></author><id>tag:opengamestudio.org,2017-01-25:the-year-of-challenges.html</id><summary type="html">&lt;p&gt;&lt;img alt="The year of challenges" src="http://opengamestudio.org/2017-01_the-year-of-challenges.png" /&gt;&lt;/p&gt;
+&lt;p&gt;This article describes our plans for 2017.&lt;/p&gt;
+&lt;p&gt;Our past plans suggested we would have Android platform support by this time. However, we have a long way to go, before we can declare Android support. See for yourself:&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Android rendering" src="http://opengamestudio.org/2017-01_mjin-android-gles.png" /&gt;&lt;/p&gt;
+&lt;p&gt;Some people would consider this a failure. We don't. We see a chance to start low and jump high!&lt;/p&gt;
+&lt;p&gt;Having only worked with liberal and forgiving desktop environments, Android was a complete surprise for us. Android punished us for everything: memory, resources, graphics. The usual Android response was either a crash, or an empty screen.
+At the same time, such a harsh environment highlighted weak spots in our technologies and helped us see where to go next.&lt;/p&gt;
+&lt;p&gt;This month we start working on iOS platform support, even though we have only scratched Android. Why? Because it's a lot easier to get those red cubes rendered on iOS without polishing Android first. We don't want to spend months polishing Android only to find out later we had to implement certain feature differently so that it works on all supported platforms.&lt;/p&gt;
+&lt;p&gt;And right after we get those cubes rendered on iOS, we start to work on bringing them to Web.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;You got it right: we challenge ourselves with support for Android, iOS, and Web this year.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;That's it for describing our plans for 2017.&lt;/p&gt;</summary></entry><entry><title>Год испытаний</title><link href="http://opengamestudio.org/the-year-of-challenges-ru.html" rel="alternate"></link><updated>2017-01-25T00:00:00+03:00</updated><author><name>Opensource Game Studio</name></author><id>tag:opengamestudio.org,2017-01-25:the-year-of-challenges-ru.html</id><summary type="html">&lt;p&gt;&lt;img alt="The year of challenges" src="http://opengamestudio.org/2017-01_the-year-of-challenges.png" /&gt;&lt;/p&gt;
+&lt;p&gt;Эта статья содержит наши планы на 2017 год.&lt;/p&gt;
+&lt;p&gt;Наши предыдущие планы предполагали, что сейчас у нас уже будет поддержка платформы Android. Тем не менее, у нас впереди ещё очень много работы, прежде чем мы сможем объявить о поддержке Android. Судите сами:&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Android rendering" src="http://opengamestudio.org/2017-01_mjin-android-gles.png" /&gt;&lt;/p&gt;
+&lt;p&gt;Кто-нибудь может посчитать это неудачей. Но не мы. Мы видим шанс начать с низкого старта и прыгнуть высоко!&lt;/p&gt;
+&lt;p&gt;Т.к. ранее мы имели опыт работы лишь с либеральным и всё прощающим настольным ПК, Android стал для нас полной неожиданностью. На каждом шагу нас ожидало наказание за фривольное использование памяти, ресурсов, графики. Чаще всего в ответ на наши действия мы получали либо падение приложения, либо пустой экран.
+С другой стороны, такие суровые условия высветили слабые места в наших технологиях и помогли увидеть, куда нам двигаться дальше.&lt;/p&gt;
+&lt;p&gt;В этом месяце мы начинаем работу над поддержкой платформы iOS, хотя мы лишь слегка коснулись платформы Android. Почему? Потому что намного проще отобразить эти красные кубы на iOS без предварительной полировки Android. Мы не хотим потратить месяцы на полировку Android лишь для того, чтобы позже узнать о том, что какой-либо функционал следовало делать иначе для его работы на всех поддерживаемых платформах.&lt;/p&gt;
+&lt;p&gt;Сразу после отображения этих кубов на iOS мы начнём работу над их отображением в Вебе.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Всё верно: нашей целью в этом году является поддержка платформ Android, iOS и Веб.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;На этом мы заканчиваем описание наших планов на 2017 год.&lt;/p&gt;</summary></entry></feed>
