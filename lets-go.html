@@ -4,7 +4,7 @@
     <!-- Set the viewport width to device width for mobile -->
     <meta name="viewport" content="width=device-width" />
 
-    <title>Opensource Game Studio</title>
+    <title>Let's go</title>
 
     <link rel="stylesheet" href="http://opengamestudio.org/theme/css/normalize.css" />
     <link rel="stylesheet" href="http://opengamestudio.org/theme/css/foundation.min.css" />
@@ -44,50 +44,49 @@
 
     <!-- Main Blog Content -->
     <div class="large-9 columns">
+<article>
+    <header>
+        <h3 class="article-title"><a href="http://opengamestudio.org/lets-go.html" rel="bookmark"
+        title="Permalink to Let's go">Let's go</a></h3>
+    </header>
 
-<h3>Archives</h3>
+<h6 class="subheader" title="2017-03-16T00:00:00+03:00">Чт 16 Март 2017
+            <a class="button secondary small translation-button" href="http://opengamestudio.org/lets-go-ru.html">ru</a>
 
-<table class="table-archive">
-    <tbody>
-        <tr>
-        <td>Ср 22 Ноябрь 2017</td>
-        <td><a href='2017-summary.html'>2017 summary</a></td>
-        </tr>
-        <tr>
-        <td>Пн 16 Октябрь 2017</td>
-        <td><a href='back-to-the-static.html'>Back to the Static</a></td>
-        </tr>
-        <tr>
-        <td>Вс 10 Сентябрь 2017</td>
-        <td><a href='mjin-world-birth.html'>The birth of MJIN world</a></td>
-        </tr>
-        <tr>
-        <td>Ср 16 Август 2017</td>
-        <td><a href='scripting-research.html'>Scripting research</a></td>
-        </tr>
-        <tr>
-        <td>Пн 17 Июль 2017</td>
-        <td><a href='openscenegraph-cross-platform-guide.html'>OpenSceneGraph cross-platform guide</a></td>
-        </tr>
-        <tr>
-        <td>Чт 08 Июнь 2017</td>
-        <td><a href='ios-tutorial.html'>iOS tutorial</a></td>
-        </tr>
-        <tr>
-        <td>Пт 12 Май 2017</td>
-        <td><a href='osg-sample.html'>OpenSceneGraph sample</a></td>
-        </tr>
-        <tr>
-        <td>Пт 07 Апрель 2017</td>
-        <td><a href='its-all-fine.html'>It's all fine</a></td>
-        </tr>
-        <tr>
-        <td>Чт 16 Март 2017</td>
-        <td><a href='lets-go.html'>Let's go</a></td>
-        </tr>
-    </tbody>
-</table>
+</h6>    <p><img alt="Let's go" src="http://opengamestudio.org/2017-03_lets-go.png" /></p>
+<p>In this article we describe our progress in January and February of 2017: rendering under iOS/Web and a new tutorial tool.</p>
+<p><strong>Rendering under iOS/Web</strong></p>
+<p>To our surprise, we got a simple red cube rendered under <a href="https://twitter.com/OpenGameStudio/status/826816343433498627">iOS</a> and <a href="https://twitter.com/OpenGameStudio/status/829731986264698881">Web</a> pretty fast: in early February. However, this is only the beginning of this year's challenge to support Android, iOS, and Web platforms. There's a long and bumpy road ahead of us as we need a lot more on each platform before we can claim a success: visual effects, Python scripting, data archives.</p>
+<p>Since it took us about four months to get to mobile and web platforms, we decided to share our knowledge and help OpenSceneGraph community with a guide that shows how to use OpenSceneGraph on desktop, mobile, and web. We believe the more widespread OpenSceneGraph is, the stronger our technology becomes. As Isaac Newton said, "If I have seen further, it is by standing on the shoulders of giants." OpenSceneGraph is our giant.</p>
+<p><strong>Tutorial tool</strong></p>
+<p>Having conducted four live sessions before, it was clear the guide needs videos depicting every nuance. However, bare video alone is only good for showing what to do and not for explaining why do it in a certain way. That's why we decided to combine video with text in the forms of video subtitles and separate articles.</p>
+<p>To combine text and video, we first tried <a href="http://openshotvideo.com">OpenShot</a>. It worked well, but we quickly saw its limitations:</p>
+<ul>
+<li>Too much time is spent on adjusting time frames and animations</li>
+<li>Project file and original resources are hard to track with VCS</li>
+</ul>
+<p>Since OpenSceneGraph cross-platform guide would consist of several tutorials, we decided to automate the process. Brief research revealed a great multimedia framework called <a href="http://mltframework.org">MLT</a>, which powers OpenShot itself. With MLT we got our tutorial tool in no time.</p>
+<p>Currently, the tutorial tool allows anyone to combine text and video using a simple text file like this:</p>
+<div class="highlight"><pre>background bg.png
+text 5 Let&#39;s install Blender
+video 0:6 install_blender.mp4
+text 5 Installing it with apt
+video 6:26 install_blender.mp4
+text 5 We&#39;re still installing it
+video 26:56 install_blender.mp4
+text 5 Congratulations! We just finished installing Blender
+</pre></div>
 
+
+<p>This is the actual script. See the final result <a href="https://github.com/OGStudio/openscenegraph-cross-platform-guide/tree/master/tutorial-tool">here</a>.</p>
+<p>That's it for describing our progress in January and February of 2017: rendering under iOS/Web and the new tutorial tool.</p>
+<p class="subheader">Category: <a href="http://opengamestudio.org/category/news.html">News</a>
+
+</p>
+
+
+
+</article>
     </div>
     <!-- End Main Content -->
 

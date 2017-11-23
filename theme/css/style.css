@@ -101,7 +101,7 @@ padding: 1em;
 overflow: auto;
 }
 
-ol {
+ol, ul {
 margin-left: 2em;
 }
 

@@ -181,4 +181,30 @@ We spent 120 hours in five months to produce ten tutorials of the guide.&lt;/p&g
 &lt;/ol&gt;
 &lt;p&gt;Some of those tasks had to be repeated multiple times until the combination of video, text, and article was clear and logical.&lt;/p&gt;
 &lt;p&gt;Overall, it took us 30 hours to create the tutorials. The whole process gave us a lot of experience, which will help us in shaping learning materials for our technologies in the future. We don't know how they will look like exactly, but they will definitely be better.&lt;/p&gt;
-&lt;p&gt;That's it for describing creation of the first four OpenSceneGraph tutorials in March 2017.&lt;/p&gt;</summary></entry></feed>
+&lt;p&gt;That's it for describing creation of the first four OpenSceneGraph tutorials in March 2017.&lt;/p&gt;</summary></entry><entry><title>Let's go</title><link href="http://opengamestudio.org/lets-go.html" rel="alternate"></link><updated>2017-03-16T00:00:00+03:00</updated><author><name>Opensource Game Studio</name></author><id>tag:opengamestudio.org,2017-03-16:lets-go.html</id><summary type="html">&lt;p&gt;&lt;img alt="Let's go" src="http://opengamestudio.org/2017-03_lets-go.png" /&gt;&lt;/p&gt;
+&lt;p&gt;In this article we describe our progress in January and February of 2017: rendering under iOS/Web and a new tutorial tool.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Rendering under iOS/Web&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;To our surprise, we got a simple red cube rendered under &lt;a href="https://twitter.com/OpenGameStudio/status/826816343433498627"&gt;iOS&lt;/a&gt; and &lt;a href="https://twitter.com/OpenGameStudio/status/829731986264698881"&gt;Web&lt;/a&gt; pretty fast: in early February. However, this is only the beginning of this year's challenge to support Android, iOS, and Web platforms. There's a long and bumpy road ahead of us as we need a lot more on each platform before we can claim a success: visual effects, Python scripting, data archives.&lt;/p&gt;
+&lt;p&gt;Since it took us about four months to get to mobile and web platforms, we decided to share our knowledge and help OpenSceneGraph community with a guide that shows how to use OpenSceneGraph on desktop, mobile, and web. We believe the more widespread OpenSceneGraph is, the stronger our technology becomes. As Isaac Newton said, "If I have seen further, it is by standing on the shoulders of giants." OpenSceneGraph is our giant.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Tutorial tool&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Having conducted four live sessions before, it was clear the guide needs videos depicting every nuance. However, bare video alone is only good for showing what to do and not for explaining why do it in a certain way. That's why we decided to combine video with text in the forms of video subtitles and separate articles.&lt;/p&gt;
+&lt;p&gt;To combine text and video, we first tried &lt;a href="http://openshotvideo.com"&gt;OpenShot&lt;/a&gt;. It worked well, but we quickly saw its limitations:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Too much time is spent on adjusting time frames and animations&lt;/li&gt;
+&lt;li&gt;Project file and original resources are hard to track with VCS&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Since OpenSceneGraph cross-platform guide would consist of several tutorials, we decided to automate the process. Brief research revealed a great multimedia framework called &lt;a href="http://mltframework.org"&gt;MLT&lt;/a&gt;, which powers OpenShot itself. With MLT we got our tutorial tool in no time.&lt;/p&gt;
+&lt;p&gt;Currently, the tutorial tool allows anyone to combine text and video using a simple text file like this:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;background bg.png
+text 5 Let&amp;#39;s install Blender
+video 0:6 install_blender.mp4
+text 5 Installing it with apt
+video 6:26 install_blender.mp4
+text 5 We&amp;#39;re still installing it
+video 26:56 install_blender.mp4
+text 5 Congratulations! We just finished installing Blender
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;This is the actual script. See the final result &lt;a href="https://github.com/OGStudio/openscenegraph-cross-platform-guide/tree/master/tutorial-tool"&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;That's it for describing our progress in January and February of 2017: rendering under iOS/Web and the new tutorial tool.&lt;/p&gt;</summary></entry></feed>
