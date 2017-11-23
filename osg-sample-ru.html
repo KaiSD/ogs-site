@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8" />
+    <!-- Set the viewport width to device width for mobile -->
+    <meta name="viewport" content="width=device-width" />
+
+    <title>Приложение OpenSceneGraph</title>
+
+    <link rel="stylesheet" href="http://opengamestudio.org/theme/css/normalize.css" />
+    <link rel="stylesheet" href="http://opengamestudio.org/theme/css/foundation.min.css" />
+    <link rel="stylesheet" href="http://opengamestudio.org/theme/css/style.css" />
+    <link rel="stylesheet" href="http://opengamestudio.org/theme/css/pygments.css" />	
+    <script src="http://opengamestudio.org/theme/js/custom.modernizr.js"></script>
+
+    <!-- So Firefox can bookmark->"abo this site" -->
+        <link href="feeds/all.atom.xml" rel="alternate" title="Opensource Game Studio" type="application/atom+xml">
+
+</head>
+
+<body>
+
+<!-- Nav Bar -->
+<nav>
+
+<!-- Show menu items and pages -->
+<div class="row">
+    <div class="large-12 columns top-bar">
+	    <h1><a href="http://opengamestudio.org">Opensource Game Studio</a></h1>
+    </div>
+</div>
+<div class="row top-menu">
+<div class="large-12 columns">
+        <a href="/pages/projects.html" class="menu-button secondary">Projects</a>
+        <a href="/pages/about.html" class="menu-button secondary">About</a>
+
+</div>
+</div>
+</nav>
+<!-- End Nav -->
+
+
+<!-- Main Page Content and Sidebar -->
+<div class="row">
+
+    <!-- Main Blog Content -->
+    <div class="large-9 columns">
+<article>
+    <header>
+        <h3 class="article-title"><a href="http://opengamestudio.org/osg-sample-ru.html" rel="bookmark"
+        title="Permalink to Приложение OpenSceneGraph">Приложение OpenSceneGraph</a></h3>
+    </header>
+
+<h6 class="subheader" title="2017-05-12T00:00:00+03:00">Пт 12 Май 2017
+            <a class="button secondary small translation-button" href="http://opengamestudio.org/osg-sample.html">en</a>
+
+</h6>    <p><img alt="OSG sample" src="http://opengamestudio.org/2017-05_osg-sample.png" /></p>
+<p>Эта статья описывает создание самоучителей по сборке приложения OpenSceneGraph на Linux, macOS, Windows и Android в апреле 2017.</p>
+<p>Предыдущие самоучители описывали установку OpenSceneGraph на Linux, macOS, Windows и отображение модели с помощью стандартного инструмента <strong>osgviewer</strong>. На этот раз результатом нашей работы стало <a href="https://github.com/OGStudio/openscenegraph-cross-platform-guide-application">приложение OpenSceneGraph</a>, которое работает на Linux, macOS, Windows и Android.</p>
+<p>Приложение очень простое. Оно умеет следующее:</p>
+<ol>
+<li>Создание окна для отрисовки</li>
+<li>Загрузка модели</li>
+<li>Отрисовка модели с помощью простых шейдеров GLSL</li>
+<li>Перемещение модели с помощью мыши на Linux, macOS, Windows и пальца на Android</li>
+</ol>
+<p>Создать самоучители для Linux, macOS, Windows было настолько простой и понятной задачей, что мы справились с ней за пару недель. Оставшуюся половину месяца мы потратили на создание самоучителя для Android.</p>
+<p>Наша <a href="http://www.opengame.epizy.com/lang/ru/news/2414">первая успешная сборка под Android</a> в прошлом году требовала множество неочивидных телодвижений. В этот раз мы хотели получить более чистый, быстрый и дешёвый подход.</p>
+<p>Нам это удалось. В результате всё, что нужно для работы приложения OpenSceneGraph на Android, уместилось в набор из нескольких файлов и небольших изменений для стандартного проекта Android Studio (с поддержкой C++).</p>
+<p>Краткий перечень файлов:</p>
+<ol>
+<li>Поверхность GLES2</li>
+<li>Activity для отрисовки на этой поверхности</li>
+<li>Интерфейс Java для нативной библиотеки</li>
+<li>Реализация нативной библиотеки на C++</li>
+<li>Файл CMake для сборки нативной библиотеки</li>
+<li>Activity layout</li>
+<li>Модель для отрисовки</li>
+</ol>
+<p>Краткий перечень изменений проекта:</p>
+<ol>
+<li>Обновление Android manifest для использования GLES2 и Activity</li>
+<li>Использование файла CMake нативной библиотеки в проектном файле CMake</li>
+</ol>
+<p>Документация OpenSceneGraph предполагает сборку OpenSceneGraph вне Android Studio с помощью CMake. Такой подход имеет следующие ограничения:</p>
+<ol>
+<li>Ручная сборка OpenSceneGraph под каждую платформу</li>
+<li>Ручное копирование собранных библиотек OpenSceneGraph в проект Android Studio</li>
+</ol>
+<p>Наш подход включает в себя сборку OpenSceneGraph для тех платформ, для которых собирается проект Android Studio. К тому же, OpenSceneGraph используется как часть проекта, поэтому нет никакой дополнительной рутины: достаточно просто пересобрать проект, и всё готово.</p>
+<p>На этом мы заканчиваем описание создания самоучителей по сборке приложения OpenSceneGraph на Linux, macOS, Windows и Android в апреле 2017.</p>
+<p class="subheader">Category: <a href="http://opengamestudio.org/category/news.html">News</a>
+
+</p>
+
+
+
+</article>
+    </div>
+    <!-- End Main Content -->
+
+    <!-- Sidebar -->
+    <aside class="large-3 columns">
+        <!--k
+        <h5 class="sidebar-title">Site</h5>
+        <ul class="side-nav">
+            <li><a href="http://opengamestudio.org/archives.html">Archives</a>
+            <li><a href="http://opengamestudio.org/tags.html">Tags</a>
+
+
+                <li><a href="http://opengamestudio.org/feeds/all.atom.xml" rel="alternate">Atom feed</a></li>
+        </ul>
+
+		
+        <h5 class="sidebar-title">Categories</h5>
+        <ul class="side-nav">
+            <li><a href="http://opengamestudio.org/category/news.html">News</a></li>
+   
+        </ul>
+        -->
+
+
+		
+        
+        <h5 class="sidebar-title">Ads</h5>
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <!-- ogs2 -->
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-4473792248813084"
+             data-ad-slot="9024247127"
+             data-ad-format="auto"></ins>
+        <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+
+    </aside> <!-- End Sidebar -->
+
+</div> <!-- End Main Content and Sidebar -->
+
+
+<!-- Footer -->
+<footer class="row">
+    <div class="large-12 columns">
+        <hr />
+        <div class="row">
+            <div class="large-7 columns">
+                <p>Proudly powered by <a href="http://getpelican.com">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.</p>
+            </div>
+            </div>
+    </div>
+    <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-3773114-1']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+    </script>
+</footer>

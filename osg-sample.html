@@ -4,7 +4,7 @@
     <!-- Set the viewport width to device width for mobile -->
     <meta name="viewport" content="width=device-width" />
 
-    <title>Opensource Game Studio</title>
+    <title>OpenSceneGraph sample</title>
 
     <link rel="stylesheet" href="http://opengamestudio.org/theme/css/normalize.css" />
     <link rel="stylesheet" href="http://opengamestudio.org/theme/css/foundation.min.css" />
@@ -44,42 +44,57 @@
 
     <!-- Main Blog Content -->
     <div class="large-9 columns">
+<article>
+    <header>
+        <h3 class="article-title"><a href="http://opengamestudio.org/osg-sample.html" rel="bookmark"
+        title="Permalink to OpenSceneGraph sample">OpenSceneGraph sample</a></h3>
+    </header>
 
-<h3>Archives</h3>
+<h6 class="subheader" title="2017-05-12T00:00:00+03:00">Пт 12 Май 2017
+            <a class="button secondary small translation-button" href="http://opengamestudio.org/osg-sample-ru.html">ru</a>
 
-<table class="table-archive">
-    <tbody>
-        <tr>
-        <td>Ср 22 Ноябрь 2017</td>
-        <td><a href='2017-summary.html'>2017 summary</a></td>
-        </tr>
-        <tr>
-        <td>Пн 16 Октябрь 2017</td>
-        <td><a href='back-to-the-static.html'>Back to the Static</a></td>
-        </tr>
-        <tr>
-        <td>Вс 10 Сентябрь 2017</td>
-        <td><a href='mjin-world-birth.html'>The birth of MJIN world</a></td>
-        </tr>
-        <tr>
-        <td>Ср 16 Август 2017</td>
-        <td><a href='scripting-research.html'>Scripting research</a></td>
-        </tr>
-        <tr>
-        <td>Пн 17 Июль 2017</td>
-        <td><a href='openscenegraph-cross-platform-guide.html'>OpenSceneGraph cross-platform guide</a></td>
-        </tr>
-        <tr>
-        <td>Чт 08 Июнь 2017</td>
-        <td><a href='ios-tutorial.html'>iOS tutorial</a></td>
-        </tr>
-        <tr>
-        <td>Пт 12 Май 2017</td>
-        <td><a href='osg-sample.html'>OpenSceneGraph sample</a></td>
-        </tr>
-    </tbody>
-</table>
+</h6>    <p><img alt="OSG sample" src="http://opengamestudio.org/2017-05_osg-sample.png" /></p>
+<p>This article describes creation of the tutorials for building sample OpenSceneGraph application under Linux, macOS, Windows, and Android in April 2017.</p>
+<p>Previous tutorials described how to install OpenSceneGraph under Linux, macOS, Windows and render a model using the standard <strong>osgviewer</strong> tool. This time we worked on a <a href="https://github.com/OGStudio/openscenegraph-cross-platform-guide-application">sample OpenSceneGraph application</a> that would run under Linux, macOS, Windows, and Android.</p>
+<p>The application is very basic and has the following features:</p>
+<ol>
+<li>Render window creation</li>
+<li>Model loading</li>
+<li>Model rendering with simple GLSL shaders</li>
+<li>Model motion with a mouse under Linux, macOS, Windows and a finger under Android</li>
+</ol>
+<p>Creating the tutorials for Linux, macOS, Windows was so easy and straightforward, that it only took us half a month. We spent the second half of the month creating Android tutorial.</p>
+<p>Our <a href="http://www.opengame.epizy.com/lang/en/news/2414">first successful Android build</a> last year included hacks and non-obvious steps to make OpenSceneGraph run under Android. This time we wanted a cleaner, faster, and cheaper approach.</p>
+<p>The approach we ended up with requires just a few files and a few changes to the original Android Studio project (with C++ support) to make sample OpenSceneGraph application run under Android.</p>
+<p>Here's a quick rundown of the files:</p>
+<ol>
+<li>GLES2 surface</li>
+<li>Render activity to render to the surface</li>
+<li>Native library Java interface</li>
+<li>Native library C++ implementation</li>
+<li>CMake file to build native library</li>
+<li>Render activity layout</li>
+<li>Model to display</li>
+</ol>
+<p>Here's a quick rundown of the project changes:</p>
+<ol>
+<li>Update Android manifest to use GLES2 and render activity</li>
+<li>Reference native library's CMake file in the project's CMake file</li>
+</ol>
+<p>OpenSceneGraph documentation suggests building OpenSceneGraph outside Android Studio with CMake. However, this approach has the following limitations:</p>
+<ol>
+<li>You have to build OpenSceneGraph for each target architecture</li>
+<li>You have to manually copy/reference built OpenSceneGraph libraries into Android Studio project</li>
+</ol>
+<p>Our approach includes building OpenSceneGraph for those target architectures that Android Studio project is built for. Also, OpenSceneGraph is already referenced, so no extra work is required: you just need to rebuild the project, and you're done.</p>
+<p>That's it for describing the creation of the tutorials for building sample OpenSceneGraph application under Linux, macOS, Windows, and Android in April 2017.</p>
+<p class="subheader">Category: <a href="http://opengamestudio.org/category/news.html">News</a>
 
+</p>
+
+
+
+</article>
     </div>
     <!-- End Main Content -->
 
