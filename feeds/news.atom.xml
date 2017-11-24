@@ -226,4 +226,33 @@ At the same time, such a harsh environment highlighted weak spots in our technol
 So. You want our game to become a reality? Join us. Together we will rule the galaxy. Or just wait and see. We didn't stop several years ago. We won't stop now.
 After all, there is only one way to create a fine tool (and it's our initial goal if you remember) - we need to use it ourselves.
 We will. Stay tuned.&lt;/p&gt;
-&lt;p&gt;Happy 2017. Let it be simple.&lt;/p&gt;</summary></entry></feed>
+&lt;p&gt;Happy 2017. Let it be simple.&lt;/p&gt;</summary></entry><entry><title>November 2016 recap</title><link href="http://opengamestudio.org/2016-november-recap.html" rel="alternate"></link><updated>2016-12-15T00:00:00+03:00</updated><author><name>Opensource Game Studio</name></author><id>tag:opengamestudio.org,2016-12-15:2016-november-recap.html</id><summary type="html">&lt;p&gt;&lt;img alt="November recap" src="http://opengamestudio.org/2016-12-15_2016-november-recap.png" /&gt;&lt;/p&gt;
+&lt;p&gt;This article describes the start of MJIN library separation into modules.&lt;/p&gt;
+&lt;p&gt;Once we built OpenSceneGraph for Android, it became obvious that some MJIN functionality is not suitable for Android. For example, UIQt provides a basis for OGS Editor UI. Since OGS Editor is a desktop application, we don't need UIQt for Android.&lt;/p&gt;
+&lt;p&gt;We decided to have a look at two approaches to separate MJIN into modules: build-time separation and run-time one. 
+&lt;strong&gt;Build-time&lt;/strong&gt; separation means MJIN becomes highly configurable and each platform gets specifically tailored MJIN build.
+&lt;strong&gt;Run-time&lt;/strong&gt; separation means MJIN is divided into smaller libraries that are connected at run-time, which makes it easy to change functionality without rebuilding.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Run-time separation research.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Since run-time separation has more benefits, we started researching it first.
+The easiest way to achieve it was to use C API, because C ABI rules are much simpler than C++ one's.&lt;/p&gt;
+&lt;p&gt;We created a sample project consisting of the application, library, and plugin.
+&lt;strong&gt;The application&lt;/strong&gt; has been linked to the library and used it to load the plugin.
+&lt;strong&gt;The library&lt;/strong&gt; provided functions to register plugins and call their functions.
+&lt;strong&gt;The plugin&lt;/strong&gt; provided functions for the library and called library functions.&lt;/p&gt;
+&lt;p&gt;The research was successful: the sample project worked correctly under Linux and Windows. However, since MJIN is currently a single large entity, we postponed C API application until we finish build-time separation.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Build-time separation start.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;We extracted the following modules from MJIN:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Android: provides Java Native Interface (JNI) to MJIN&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Sound: provides access to OpenAL&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;UIQt: provides access to Qt UI&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Sound and UIQt modules are currently statically linked into MJIN library, while Android module is already a separate library due to JNI requirements.&lt;/p&gt;
+&lt;p&gt;In the coming year, we're going to significantly restructure MJIN so that it suits as many platforms as possible.&lt;/p&gt;
+&lt;p&gt;That's it for describing the start of MJIN library separation into modules.&lt;/p&gt;</summary></entry></feed>

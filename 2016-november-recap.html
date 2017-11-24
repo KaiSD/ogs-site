@@ -4,7 +4,7 @@
     <!-- Set the viewport width to device width for mobile -->
     <meta name="viewport" content="width=device-width" />
 
-    <title>Opensource Game Studio - News</title>
+    <title>November 2016 recap</title>
 
     <link rel="stylesheet" href="http://opengamestudio.org/theme/css/normalize.css" />
     <link rel="stylesheet" href="http://opengamestudio.org/theme/css/foundation.min.css" />
@@ -44,55 +44,52 @@
 
     <!-- Main Blog Content -->
     <div class="large-9 columns">
-        
-        
+<article>
+    <header>
+        <h3 class="article-title"><a href="http://opengamestudio.org/2016-november-recap.html" rel="bookmark"
+        title="Permalink to November 2016 recap">November 2016 recap</a></h3>
+    </header>
 
-
-            <article>
-                <a href="http://opengamestudio.org/2017-happy-new-year.html"><h3 class="article-title">Happy 2017</h3></a>
-<h6 class="subheader" title="2016-12-31T00:00:00+03:00">Сб 31 Декабрь 2016
-            <a class="button secondary small translation-button" href="http://opengamestudio.org/2017-happy-new-year-ru.html">ru</a>
-
-</h6><p><img alt="Happy new year" src="http://opengamestudio.org/2016-12-31_happy-new-year.png" /></p>
-<p>Okay. It's been a hard year for everyone in the team. And it's almost over. Praise it ends! Praise the new one!</p>
-<p>It may seem, that our progress stalled. Three years ago we announced the beginning of a new project (two to be precise), and now we still ...</p><p class="subheader">Category: <a href="http://opengamestudio.org/category/news.html">News</a>
-
-</p>
-
-
-                <a class="button radius secondary small right" href="http://opengamestudio.org/2017-happy-new-year.html">Read More</a>
-                <hr  class="gradient"/>
-            </article>
-
-        
-
-
-            <article>
-                <a href="http://opengamestudio.org/2016-november-recap.html"><h3 class="article-title">November 2016 recap</h3></a>
 <h6 class="subheader" title="2016-12-15T00:00:00+03:00">Чт 15 Декабрь 2016
             <a class="button secondary small translation-button" href="http://opengamestudio.org/2016-november-recap-ru.html">ru</a>
 
-</h6><p><img alt="November recap" src="http://opengamestudio.org/2016-12-15_2016-november-recap.png" /></p>
+</h6>    <p><img alt="November recap" src="http://opengamestudio.org/2016-12-15_2016-november-recap.png" /></p>
 <p>This article describes the start of MJIN library separation into modules.</p>
-<p>Once we built OpenSceneGraph for Android, it became obvious that some MJIN functionality is not suitable for Android. For example, UIQt provides a basis for OGS Editor UI. Since OGS Editor is a desktop application, we don't need ...</p><p class="subheader">Category: <a href="http://opengamestudio.org/category/news.html">News</a>
+<p>Once we built OpenSceneGraph for Android, it became obvious that some MJIN functionality is not suitable for Android. For example, UIQt provides a basis for OGS Editor UI. Since OGS Editor is a desktop application, we don't need UIQt for Android.</p>
+<p>We decided to have a look at two approaches to separate MJIN into modules: build-time separation and run-time one. 
+<strong>Build-time</strong> separation means MJIN becomes highly configurable and each platform gets specifically tailored MJIN build.
+<strong>Run-time</strong> separation means MJIN is divided into smaller libraries that are connected at run-time, which makes it easy to change functionality without rebuilding.</p>
+<p><strong>Run-time separation research.</strong></p>
+<p>Since run-time separation has more benefits, we started researching it first.
+The easiest way to achieve it was to use C API, because C ABI rules are much simpler than C++ one's.</p>
+<p>We created a sample project consisting of the application, library, and plugin.
+<strong>The application</strong> has been linked to the library and used it to load the plugin.
+<strong>The library</strong> provided functions to register plugins and call their functions.
+<strong>The plugin</strong> provided functions for the library and called library functions.</p>
+<p>The research was successful: the sample project worked correctly under Linux and Windows. However, since MJIN is currently a single large entity, we postponed C API application until we finish build-time separation.</p>
+<p><strong>Build-time separation start.</strong></p>
+<p>We extracted the following modules from MJIN:</p>
+<ul>
+<li>
+<p>Android: provides Java Native Interface (JNI) to MJIN</p>
+</li>
+<li>
+<p>Sound: provides access to OpenAL</p>
+</li>
+<li>
+<p>UIQt: provides access to Qt UI</p>
+</li>
+</ul>
+<p>Sound and UIQt modules are currently statically linked into MJIN library, while Android module is already a separate library due to JNI requirements.</p>
+<p>In the coming year, we're going to significantly restructure MJIN so that it suits as many platforms as possible.</p>
+<p>That's it for describing the start of MJIN library separation into modules.</p>
+<p class="subheader">Category: <a href="http://opengamestudio.org/category/news.html">News</a>
 
 </p>
 
 
-                <a class="button radius secondary small right" href="http://opengamestudio.org/2016-november-recap.html">Read More</a>
-                <hr  class="gradient"/>
-            </article>
 
-            <!-- /#posts-list -->
-<div class="pagination-centered">
-<h6 class="subheader">Page 2 of 2</h6>
-
-<p>
-            <a href="http://opengamestudio.org/category/news.html">&laquo; Prev</a>
-
-</p>
-</div>
-
+</article>
     </div>
     <!-- End Main Content -->
 

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8" />
+    <!-- Set the viewport width to device width for mobile -->
+    <meta name="viewport" content="width=device-width" />
+
+    <title>Ноябрь 2016 кратко</title>
+
+    <link rel="stylesheet" href="http://opengamestudio.org/theme/css/normalize.css" />
+    <link rel="stylesheet" href="http://opengamestudio.org/theme/css/foundation.min.css" />
+    <link rel="stylesheet" href="http://opengamestudio.org/theme/css/style.css" />
+    <link rel="stylesheet" href="http://opengamestudio.org/theme/css/pygments.css" />	
+    <script src="http://opengamestudio.org/theme/js/custom.modernizr.js"></script>
+
+    <!-- So Firefox can bookmark->"abo this site" -->
+        <link href="feeds/all.atom.xml" rel="alternate" title="Opensource Game Studio" type="application/atom+xml">
+
+</head>
+
+<body>
+
+<!-- Nav Bar -->
+<nav>
+
+<!-- Show menu items and pages -->
+<div class="row">
+    <div class="large-12 columns top-bar">
+	    <h1><a href="http://opengamestudio.org">Opensource Game Studio</a></h1>
+    </div>
+</div>
+<div class="row top-menu">
+<div class="large-12 columns">
+        <a href="/pages/projects.html" class="menu-button secondary">Projects</a>
+        <a href="/pages/about.html" class="menu-button secondary">About</a>
+
+</div>
+</div>
+</nav>
+<!-- End Nav -->
+
+
+<!-- Main Page Content and Sidebar -->
+<div class="row">
+
+    <!-- Main Blog Content -->
+    <div class="large-9 columns">
+<article>
+    <header>
+        <h3 class="article-title"><a href="http://opengamestudio.org/2016-november-recap-ru.html" rel="bookmark"
+        title="Permalink to Ноябрь 2016 кратко">Ноябрь 2016 кратко</a></h3>
+    </header>
+
+<h6 class="subheader" title="2016-12-15T00:00:00+03:00">Чт 15 Декабрь 2016
+            <a class="button secondary small translation-button" href="http://opengamestudio.org/2016-november-recap.html">en</a>
+
+</h6>    <p><img alt="November recap" src="http://opengamestudio.org/2016-12-15_2016-november-recap.png" /></p>
+<p>Эта статья описывает начало разделения библиотеки MJIN на модули.</p>
+<p>Как только мы собрали OpenSceneGraph для Android, стало очевидно, что часть функционала MJIN не нужна на Android. Например, UIQt - это основа интерфейса Редактора. Раз Редактор - это приложение для ПК, то UIQt не нужен на Android.</p>
+<p>Мы решили рассмотреть два подхода к разделению MJIN на модули: во время сборки (build-time) и исполнения (run-time).
+Разделение <strong>во время сборки</strong> означает гибкую систему настроек MJIN, что позволит собирать её различно под каждую платформу.
+Разделение <strong>во время исполнения</strong> означает разделение MJIN на несколько небольших библиотек с последующим соединением во время исполнения, что позволит легко менять функционал без повторной сборки.</p>
+<p><strong>Исследование разделения во время исполнения.</strong></p>
+<p>Т.к. разделение во время исполнения имеет больше преимуществ, мы начали с этого подхода.
+Самый простой способ достичь его заключался в использовании C API, т.к. правила C ABI намного проще правил C++ ABI.</p>
+<p>Мы создали маленький проект, включающий в себя приложение, библиотеку и плагин.
+<strong>Приложение</strong> было слинковано с библиотекой и использовало её для загрузки плагина.
+<strong>Библиотека</strong> предоставляла функции для регистрации плагина и вызывала его функции.
+<strong>Плагин</strong> предоставлял функции для библиотеки и вызывал её функции.</p>
+<p>Исследование прошло на ура: проект работал в полном соответствии с нашими ожиданиями на Linux и Windows.
+Тем не менее, т.к. MJIN на текущий момент является большой монолитной сущностью, мы отложили применение C API до окончания разделения во время сборки.</p>
+<p><strong>Начало разделения во время сборки.</strong></p>
+<p>Мы выделили следующие модули из MJIN:</p>
+<ul>
+<li>
+<p>Android: предоставляет Java Native Interface (JNI) к MJIN</p>
+</li>
+<li>
+<p>Sound: предоставляет доступ к OpenAL</p>
+</li>
+<li>
+<p>UIQt: предоставляет доступ к Qt</p>
+</li>
+</ul>
+<p>Модули Sound и UIQt на текущий момент статически линкуются в MJIN, тогда как модуль Android линкуется динамически из-за ограничений JNI.</p>
+<p>В следующем году мы изменим структуру MJIN так, чтобы её можно было легче собрать под разные платформы.</p>
+<p>На этом мы заканчиваем статью о начале разделения библиотеки MJIN на модули.</p>
+<p class="subheader">Category: <a href="http://opengamestudio.org/category/news.html">News</a>
+
+</p>
+
+
+
+</article>
+    </div>
+    <!-- End Main Content -->
+
+    <!-- Sidebar -->
+    <aside class="large-3 columns">
+        <!--k
+        <h5 class="sidebar-title">Site</h5>
+        <ul class="side-nav">
+            <li><a href="http://opengamestudio.org/archives.html">Archives</a>
+            <li><a href="http://opengamestudio.org/tags.html">Tags</a>
+
+
+                <li><a href="http://opengamestudio.org/feeds/all.atom.xml" rel="alternate">Atom feed</a></li>
+        </ul>
+
+		
+        <h5 class="sidebar-title">Categories</h5>
+        <ul class="side-nav">
+            <li><a href="http://opengamestudio.org/category/news.html">News</a></li>
+   
+        </ul>
+        -->
+
+
+		
+        
+        <h5 class="sidebar-title">Ads</h5>
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <!-- ogs2 -->
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-4473792248813084"
+             data-ad-slot="9024247127"
+             data-ad-format="auto"></ins>
+        <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+
+    </aside> <!-- End Sidebar -->
+
+</div> <!-- End Main Content and Sidebar -->
+
+
+<!-- Footer -->
+<footer class="row">
+    <div class="large-12 columns">
+        <hr />
+        <div class="row">
+            <div class="large-7 columns">
+                <p>Proudly powered by <a href="http://getpelican.com">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.</p>
+            </div>
+            </div>
+    </div>
+    <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-3773114-1']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+    </script>
+</footer>
