@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8" />
+    <!-- Set the viewport width to device width for mobile -->
+    <meta name="viewport" content="width=device-width" />
+
+    <title>Октябрь 2016 кратко</title>
+
+    <link rel="stylesheet" href="http://opengamestudio.org/theme/css/normalize.css" />
+    <link rel="stylesheet" href="http://opengamestudio.org/theme/css/foundation.min.css" />
+    <link rel="stylesheet" href="http://opengamestudio.org/theme/css/style.css" />
+    <link rel="stylesheet" href="http://opengamestudio.org/theme/css/pygments.css" />	
+    <script src="http://opengamestudio.org/theme/js/custom.modernizr.js"></script>
+
+    <!-- So Firefox can bookmark->"abo this site" -->
+        <link href="feeds/all.atom.xml" rel="alternate" title="Opensource Game Studio" type="application/atom+xml">
+
+</head>
+
+<body>
+
+<!-- Nav Bar -->
+<nav>
+
+<!-- Show menu items and pages -->
+<div class="row">
+    <div class="large-12 columns top-bar">
+	    <h1><a href="http://opengamestudio.org">Opensource Game Studio</a></h1>
+    </div>
+</div>
+<div class="row top-menu">
+<div class="large-12 columns">
+        <a href="/pages/projects.html" class="menu-button secondary">Projects</a>
+        <a href="/pages/about.html" class="menu-button secondary">About</a>
+
+</div>
+</div>
+</nav>
+<!-- End Nav -->
+
+
+<!-- Main Page Content and Sidebar -->
+<div class="row">
+
+    <!-- Main Blog Content -->
+    <div class="large-9 columns">
+<article>
+    <header>
+        <h3 class="article-title"><a href="http://opengamestudio.org/2016-october-recap-ru.html" rel="bookmark"
+        title="Permalink to Октябрь 2016 кратко">Октябрь 2016 кратко</a></h3>
+    </header>
+
+<h6 class="subheader" title="2016-11-19T00:00:00+03:00">Сб 19 Ноябрь 2016
+            <a class="button secondary small translation-button" href="http://opengamestudio.org/2016-october-recap.html">en</a>
+
+</h6>    <p><img alt="October recap" src="http://opengamestudio.org/2016-11-19_2016-october-recap.png" /></p>
+<p>Эта статья описывает, как мы потратили месяц на сборку OpenSceneGraph (OSG) под Android: первая попытка собрать OSG, поиск альтернатив OSG и успех в сборке OSG.</p>
+<p><strong>Первая попытка собрать OSG.</strong></p>
+<p>Не имея опыта разработки под Android, мы взяли последнюю версию Android Studio и начали проходить самоучители для начинающих.
+Java далась легко. Всё работало из коробки. Затем наступил черёд C++ и проблем.</p>
+<p><strong>CMake. </strong>Android Studio для работы с C++ использует собственную версию CMake, которая конфликтует с системной. Для нас это было явным сигналом о необходимости подготовить отдельное окружение разработки специально под Android.</p>
+<p><strong>KVM. </strong>Мы установили Ubuntu на VirtualBox. Всё шло замечательно до того момента, пока мы не запустили эмулятор Android. Оказалось, что VirtualBox не может запустить эмулятор, т.к. виртуальная машина не предоставляет виртуализацию внутри уже виртуализированного окружения.</p>
+<p><strong>Chroot для Android. </strong>Вспомнив о положительном опыте работы с chroot для сборки OGS Editor, мы решили поместить окружение разработки Android в chroot. После небольших настроек мы сумели запустить эмулятор Android и собрать проект C++.</p>
+<p><strong>OSG. </strong>К этому моменту мы считали, что собрать OSG не составит труда, но не тут-то было. Всё, что мы получили, - это падение.
+Предположив, что мы ошиблись где-то при первой сборке, мы решили пересобрать OSG ещё раз. И снова получили ту же ошибку.
+Поиск решения проблемы не дал результатов.
+Никто не помог нам в списке рассылок OSG.</p>
+<p>Мы были в отчаянии.</p>
+<p><strong>Поиск альтернатив OSG.</strong></p>
+<p>Раз сообщество OSG нам не помогло, мы решили поискать альтернативный открытый проект, который мог решить наши задачи на Android (и, возможно, на других платформах).</p>
+<p>Такой проект мы нашли: <a href="http://babylonhx.gamestudiohx.com/">BabylonHX</a>. Домашняя страница выглядела замечательно: она отображала WebGL в фоне!
+Промелькнула мысль, что мы наконец нашли алмаз. К сожалению, пример на домашней странице просто не работал.</p>
+<p>Думаем, вы понимаете наши чувства на тот момент.</p>
+<p><strong>Успех в сборке OSG.</strong></p>
+<p>Мы осознали, что никто за нас не запустит OSG на Android. Нужно было сделать это самостоятельно.</p>
+<p>Потеряв доверие к очень короткой <a href="http://www.openscenegraph.org/index.php/documentation/platform-specifics/android/178-building-openscenegraph-for-android-3-4">документации OSG 3.4</a> по сборке для Android, мы решили использовать <a href="http://www.openscenegraph.org/index.php/documentation/platform-specifics/android/44-building-openscenegraph-for-android-3-0-3-0-1">первоначальную документацию OSG 3.0</a>.
+В ходе следования ей мы наткнулись на мёртвую ссылку, которая должна была содержать зависимости.
+Поиск альтернативной ссылки вывел нас на <a href="https://xinyustudio.wordpress.com/2013/09/24/install-osg-for-android-on-ubuntu-13-04-step-by-step-tutorials/">самоучитель 2013 года</a> по сборке OSG 3.0 для Android.</p>
+<p>После прохождения самоучителя мы наконец смогли запустить OSG под Android!
+Тем не менее, был нюанс: используемые в самоучителе версии OSG и средств разработки Android были древними.
+В течение нескольких дней мы постепенно довели версии OSG и средств разработки Android до последних.</p>
+<p>В ходе этого обновления мы узнали о двух вещах, помешавших нам запустить OSG с первого раза:</p>
+<ul>
+<li>Изменение заголовков Android API в NDK r12</li>
+<li>OSG работает под Android лишь в виде статической библиотеки</li>
+</ul>
+<p>На этом мы заканчиваем описание того, как мы потратили месяц на сборку OSG под Android: первая попытка собрать OSG, поиск альтернатив OSG и успех в сборке OSG.</p>
+<p class="subheader">Category: <a href="http://opengamestudio.org/category/news.html">News</a>
+
+</p>
+
+
+
+</article>
+    </div>
+    <!-- End Main Content -->
+
+    <!-- Sidebar -->
+    <aside class="large-3 columns">
+        <!--k
+        <h5 class="sidebar-title">Site</h5>
+        <ul class="side-nav">
+            <li><a href="http://opengamestudio.org/archives.html">Archives</a>
+            <li><a href="http://opengamestudio.org/tags.html">Tags</a>
+
+
+                <li><a href="http://opengamestudio.org/feeds/all.atom.xml" rel="alternate">Atom feed</a></li>
+        </ul>
+
+		
+        <h5 class="sidebar-title">Categories</h5>
+        <ul class="side-nav">
+            <li><a href="http://opengamestudio.org/category/news.html">News</a></li>
+   
+        </ul>
+        -->
+
+
+		
+        
+        <h5 class="sidebar-title">Ads</h5>
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <!-- ogs2 -->
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-4473792248813084"
+             data-ad-slot="9024247127"
+             data-ad-format="auto"></ins>
+        <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+
+    </aside> <!-- End Sidebar -->
+
+</div> <!-- End Main Content and Sidebar -->
+
+
+<!-- Footer -->
+<footer class="row">
+    <div class="large-12 columns">
+        <hr />
+        <div class="row">
+            <div class="large-7 columns">
+                <p>Proudly powered by <a href="http://getpelican.com">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.</p>
+            </div>
+            </div>
+    </div>
+    <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-3773114-1']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+    </script>
+</footer>

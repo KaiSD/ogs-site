@@ -4,7 +4,7 @@
     <!-- Set the viewport width to device width for mobile -->
     <meta name="viewport" content="width=device-width" />
 
-    <title>Opensource Game Studio - News</title>
+    <title>October 2016 recap</title>
 
     <link rel="stylesheet" href="http://opengamestudio.org/theme/css/normalize.css" />
     <link rel="stylesheet" href="http://opengamestudio.org/theme/css/foundation.min.css" />
@@ -44,75 +44,53 @@
 
     <!-- Main Blog Content -->
     <div class="large-9 columns">
-        
-        
+<article>
+    <header>
+        <h3 class="article-title"><a href="http://opengamestudio.org/2016-october-recap.html" rel="bookmark"
+        title="Permalink to October 2016 recap">October 2016 recap</a></h3>
+    </header>
 
-
-            <article>
-                <a href="http://opengamestudio.org/2017-happy-new-year.html"><h3 class="article-title">Happy 2017</h3></a>
-<h6 class="subheader" title="2016-12-31T00:00:00+03:00">Сб 31 Декабрь 2016
-            <a class="button secondary small translation-button" href="http://opengamestudio.org/2017-happy-new-year-ru.html">ru</a>
-
-</h6><p><img alt="Happy new year" src="http://opengamestudio.org/2016-12-31_happy-new-year.png" /></p>
-<p>Okay. It's been a hard year for everyone in the team. And it's almost over. Praise it ends! Praise the new one!</p>
-<p>It may seem, that our progress stalled. Three years ago we announced the beginning of a new project (two to be precise), and now we still ...</p><p class="subheader">Category: <a href="http://opengamestudio.org/category/news.html">News</a>
-
-</p>
-
-
-                <a class="button radius secondary small right" href="http://opengamestudio.org/2017-happy-new-year.html">Read More</a>
-                <hr  class="gradient"/>
-            </article>
-
-        
-
-
-            <article>
-                <a href="http://opengamestudio.org/2016-november-recap.html"><h3 class="article-title">November 2016 recap</h3></a>
-<h6 class="subheader" title="2016-12-15T00:00:00+03:00">Чт 15 Декабрь 2016
-            <a class="button secondary small translation-button" href="http://opengamestudio.org/2016-november-recap-ru.html">ru</a>
-
-</h6><p><img alt="November recap" src="http://opengamestudio.org/2016-12-15_2016-november-recap.png" /></p>
-<p>This article describes the start of MJIN library separation into modules.</p>
-<p>Once we built OpenSceneGraph for Android, it became obvious that some MJIN functionality is not suitable for Android. For example, UIQt provides a basis for OGS Editor UI. Since OGS Editor is a desktop application, we don't need ...</p><p class="subheader">Category: <a href="http://opengamestudio.org/category/news.html">News</a>
-
-</p>
-
-
-                <a class="button radius secondary small right" href="http://opengamestudio.org/2016-november-recap.html">Read More</a>
-                <hr  class="gradient"/>
-            </article>
-
-        
-
-
-            <article>
-                <a href="http://opengamestudio.org/2016-october-recap.html"><h3 class="article-title">October 2016 recap</h3></a>
 <h6 class="subheader" title="2016-11-19T00:00:00+03:00">Сб 19 Ноябрь 2016
             <a class="button secondary small translation-button" href="http://opengamestudio.org/2016-october-recap-ru.html">ru</a>
 
-</h6><p><img alt="October recap" src="http://opengamestudio.org/2016-11-19_2016-october-recap.png" /></p>
+</h6>    <p><img alt="October recap" src="http://opengamestudio.org/2016-11-19_2016-october-recap.png" /></p>
 <p>This article describes how we spent a month building OpenSceneGraph (OSG) for Android: the first attempt to build OSG, the search for OSG alternatives, and the success in building OSG.</p>
 <p><strong>First attempt to build OSG.</strong></p>
-<p>Having no prior knowledge of Android development, we grabbed the latest Android Studio and started ...</p><p class="subheader">Category: <a href="http://opengamestudio.org/category/news.html">News</a>
+<p>Having no prior knowledge of Android development, we grabbed the latest Android Studio and started doing beginner tutorials.
+We passed Java part pretty fast. Everything worked out of the box. Then came C++ part and related problems.</p>
+<p><strong>CMake. </strong>To work with C++, Android Studio uses custom CMake, which conflicts with the system one. This was a clear indication that we had to set up a separate development environment specifically for Android.</p>
+<p><strong>KVM. </strong>We got Ubuntu under VirtualBox installed. All went fine until we tried to use Android Emulator. Turned out, VirtualBox could not run Android Emulator, because a virtual machine cannot provide kernel virtualization inside already virtualized environment.</p>
+<p><strong>Chroot for Android. </strong>Since we had a successful experience with chroot to build OGS Editor before, we decided to place Android development environment into chroot. With minor tweaking, we could finally run Android Emulator and build C++ project.</p>
+<p><strong>OSG. </strong>Building OSG seemed like a piece of cake at the time. However, all we got was a crash. Thinking that we got it wrong the first time, we tried to rebuild OSG once again. And the same crash again.
+Searching for the problem did not reveal any hint.
+Nobody helped us at the OSG mailing list.</p>
+<p>We were in despair.</p>
+<p><strong>The search for OSG alternatives.</strong></p>
+<p>Since OSG community did not help us, we decided to search for an alternative open source project to fit our Android needs (and may be more).</p>
+<p>And we found it: <a href="http://babylonhx.gamestudiohx.com/">BabylonHX</a>. The home page looked awesome: it rendered WebGL in the background!
+We thought we finally found the gem we were looking for. However, the example on the home page simply did not work.</p>
+<p>You can probably understand our feelings at the time.</p>
+<p><strong>The success in building OSG.</strong></p>
+<p>We realized nobody would make OSG work under Android for us. We had to do it ourselves.</p>
+<p>Since <a href="http://www.openscenegraph.org/index.php/documentation/platform-specifics/android/178-building-openscenegraph-for-android-3-4">OSG 3.4 document</a> on building for Android was very short, we no longer trusted it and headed to <a href="http://www.openscenegraph.org/index.php/documentation/platform-specifics/android/44-building-openscenegraph-for-android-3-0-3-0-1">original OSG 3.0 document</a>.
+While following it, we faced a dead link to third party dependencies.
+The search for an alternative download link lead us to a <a href="https://xinyustudio.wordpress.com/2013/09/24/install-osg-for-android-on-ubuntu-13-04-step-by-step-tutorials/">2013 tutorial</a> on building OSG 3.0 for Android.</p>
+<p>After following the tutorial, we finally got OSG to run under Android!
+But there was a nuance: both OSG and Android tools used in the tutorial were ancient.
+In a few days, we gradually updated both OSG and Android tools to their latest versions.</p>
+<p>During the update process, we learned two things that prevented us from having OSG to work in the first place:</p>
+<ul>
+<li>Android API headers changed in NDK r12</li>
+<li>OSG only works as a static library under Android</li>
+</ul>
+<p>That's it for describing how we spent the month building OSG for Android: the first attempt to build OSG, the search for OSG alternatives, and the success in building OSG.</p>
+<p class="subheader">Category: <a href="http://opengamestudio.org/category/news.html">News</a>
 
 </p>
 
 
-                <a class="button radius secondary small right" href="http://opengamestudio.org/2016-october-recap.html">Read More</a>
-                <hr  class="gradient"/>
-            </article>
 
-            <!-- /#posts-list -->
-<div class="pagination-centered">
-<h6 class="subheader">Page 2 of 2</h6>
-
-<p>
-            <a href="http://opengamestudio.org/category/news.html">&laquo; Prev</a>
-
-</p>
-</div>
-
+</article>
     </div>
     <!-- End Main Content -->
 
