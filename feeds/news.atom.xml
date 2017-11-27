@@ -285,4 +285,74 @@ In a few days, we gradually updated both OSG and Android tools to their latest v
 &lt;li&gt;Android API headers changed in NDK r12&lt;/li&gt;
 &lt;li&gt;OSG only works as a static library under Android&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;That's it for describing how we spent the month building OSG for Android: the first attempt to build OSG, the search for OSG alternatives, and the success in building OSG.&lt;/p&gt;</summary></entry></feed>
+&lt;p&gt;That's it for describing how we spent the month building OSG for Android: the first attempt to build OSG, the search for OSG alternatives, and the success in building OSG.&lt;/p&gt;</summary></entry><entry><title>Technology showcases</title><link href="http://opengamestudio.org/2016-tech-showcases.html" rel="alternate"></link><updated>2016-10-31T00:00:00+03:00</updated><author><name>Opensource Game Studio</name></author><id>tag:opengamestudio.org,2016-10-31:2016-tech-showcases.html</id><summary type="html">&lt;p&gt;&lt;img alt="TechShowcases" src="http://opengamestudio.org/2016-10-31_tech-showcases.png" /&gt;&lt;/p&gt;
+&lt;p&gt;In this article, we take another look at 2015-2016 live sessions' format and introduce a new showcase format for 2017.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;2015 and 2016: live sessions.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;As you know, we use live sessions to show the state of our technology and create a small functional game from scratch.
+We have conducted four live sessions in the past year, which gave birth to the following small games:
+&lt;table&gt;
+&lt;tr&gt;
+  &lt;th&gt;&lt;strong&gt;№&lt;/strong&gt;&lt;/th&gt;
+  &lt;th&gt;&lt;strong&gt;Created game&lt;/strong&gt;&lt;/th&gt;
+  &lt;th&gt;&lt;strong&gt;Live session date&lt;/strong&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td&gt;1&lt;/td&gt;
+  &lt;td&gt;Whac-a-mole&lt;/td&gt;
+  &lt;td&gt;November 2015&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td&gt;2&lt;/td&gt;
+  &lt;td&gt;Rolling ball&lt;/td&gt;
+  &lt;td&gt;February 2016&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td&gt;3&lt;/td&gt;
+  &lt;td&gt;Domino&lt;/td&gt;
+  &lt;td&gt;May 2016&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td&gt;4&lt;/td&gt;
+  &lt;td&gt;Mahjong Solitaire&lt;/td&gt;
+  &lt;td&gt;September 2016&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;&lt;/p&gt;
+&lt;p&gt;We spent four months to prepare for these live sessions.
+It has been an extremely useful experience for us. However, 2017 will have only 2 live sessions.
+Why? We want to spend more time on actual development!&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;2017: live sessions + technical previews.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Starting next year, we will be doing technical previews twice a year. A technical preview is another way to show the state of our technology, but without creating new games and conducting live sessions.&lt;/p&gt;
+&lt;p&gt;Here's an approximate schedule of technical previews and live sessions for 2017:
+&lt;table&gt;
+&lt;tr&gt;
+  &lt;th&gt;&lt;strong&gt;№&lt;/strong&gt;&lt;/th&gt;
+  &lt;th&gt;&lt;strong&gt;Month&lt;/strong&gt;&lt;/th&gt;
+  &lt;th&gt;&lt;strong&gt;Showcase type&lt;/strong&gt;&lt;/th&gt;
+  &lt;th&gt;&lt;strong&gt;Topic&lt;/strong&gt;&lt;/th&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td&gt;1&lt;/td&gt;
+  &lt;td&gt;January&lt;/td&gt;
+  &lt;td&gt;Technical preview&lt;/td&gt;
+  &lt;td&gt;Android platform support&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td&gt;2&lt;/td&gt;
+  &lt;td&gt;April&lt;/td&gt;
+  &lt;td&gt;Live session&lt;/td&gt;
+  &lt;td&gt;Android game creation&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td&gt;3&lt;/td&gt;
+  &lt;td&gt;July&lt;/td&gt;
+  &lt;td&gt;Technical preview&lt;/td&gt;
+  &lt;td&gt;To be announced&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td&gt;4&lt;/td&gt;
+  &lt;td&gt;October&lt;/td&gt;
+  &lt;td&gt;Live session&lt;/td&gt;
+  &lt;td&gt;To be announced&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;&lt;/p&gt;
+&lt;p&gt;That's it for taking another look at 2015-2016 live sessions' format and introducing the new showcase format for 2017.&lt;/p&gt;</summary></entry></feed>
