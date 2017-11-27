@@ -140,7 +140,7 @@ We spent 120 hours in five months to produce ten tutorials of the guide.&lt;/p&g
 &lt;li&gt;Model motion with a mouse under Linux, macOS, Windows and a finger under Android&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;Creating the tutorials for Linux, macOS, Windows was so easy and straightforward, that it only took us half a month. We spent the second half of the month creating Android tutorial.&lt;/p&gt;
-&lt;p&gt;Our &lt;a href="http://www.opengame.epizy.com/lang/en/news/2414"&gt;first successful Android build&lt;/a&gt; last year included hacks and non-obvious steps to make OpenSceneGraph run under Android. This time we wanted a cleaner, faster, and cheaper approach.&lt;/p&gt;
+&lt;p&gt;Our &lt;a href="http://opengamestudio.org/2016-october-recap.html"&gt;first successful Android build&lt;/a&gt; last year included hacks and non-obvious steps to make OpenSceneGraph run under Android. This time we wanted a cleaner, faster, and cheaper approach.&lt;/p&gt;
 &lt;p&gt;The approach we ended up with requires just a few files and a few changes to the original Android Studio project (with C++ support) to make sample OpenSceneGraph application run under Android.&lt;/p&gt;
 &lt;p&gt;Here's a quick rundown of the files:&lt;/p&gt;
 &lt;ol&gt;

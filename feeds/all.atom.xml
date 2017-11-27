@@ -267,7 +267,7 @@ We spent 120 hours in five months to produce ten tutorials of the guide.&lt;/p&g
 &lt;li&gt;Model motion with a mouse under Linux, macOS, Windows and a finger under Android&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;Creating the tutorials for Linux, macOS, Windows was so easy and straightforward, that it only took us half a month. We spent the second half of the month creating Android tutorial.&lt;/p&gt;
-&lt;p&gt;Our &lt;a href="http://www.opengame.epizy.com/lang/en/news/2414"&gt;first successful Android build&lt;/a&gt; last year included hacks and non-obvious steps to make OpenSceneGraph run under Android. This time we wanted a cleaner, faster, and cheaper approach.&lt;/p&gt;
+&lt;p&gt;Our &lt;a href="http://opengamestudio.org/2016-october-recap.html"&gt;first successful Android build&lt;/a&gt; last year included hacks and non-obvious steps to make OpenSceneGraph run under Android. This time we wanted a cleaner, faster, and cheaper approach.&lt;/p&gt;
 &lt;p&gt;The approach we ended up with requires just a few files and a few changes to the original Android Studio project (with C++ support) to make sample OpenSceneGraph application run under Android.&lt;/p&gt;
 &lt;p&gt;Here's a quick rundown of the files:&lt;/p&gt;
 &lt;ol&gt;
@@ -301,7 +301,7 @@ We spent 120 hours in five months to produce ten tutorials of the guide.&lt;/p&g
 &lt;li&gt;Перемещение модели с помощью мыши на Linux, macOS, Windows и пальца на Android&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;Создать самоучители для Linux, macOS, Windows было настолько простой и понятной задачей, что мы справились с ней за пару недель. Оставшуюся половину месяца мы потратили на создание самоучителя для Android.&lt;/p&gt;
-&lt;p&gt;Наша &lt;a href="http://www.opengame.epizy.com/lang/ru/news/2414"&gt;первая успешная сборка под Android&lt;/a&gt; в прошлом году требовала множество неочивидных телодвижений. В этот раз мы хотели получить более чистый, быстрый и дешёвый подход.&lt;/p&gt;
+&lt;p&gt;Наша &lt;a href="http://opengamestudio.org/2016-october-recap-ru.html"&gt;первая успешная сборка под Android&lt;/a&gt; в прошлом году требовала множество неочивидных телодвижений. В этот раз мы хотели получить более чистый, быстрый и дешёвый подход.&lt;/p&gt;
 &lt;p&gt;Нам это удалось. В результате всё, что нужно для работы приложения OpenSceneGraph на Android, уместилось в набор из нескольких файлов и небольших изменений для стандартного проекта Android Studio (с поддержкой C++).&lt;/p&gt;
 &lt;p&gt;Краткий перечень файлов:&lt;/p&gt;
 &lt;ol&gt;

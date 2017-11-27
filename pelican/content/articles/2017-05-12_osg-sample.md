@@ -22,7 +22,7 @@ The application is very basic and has the following features:
 
 Creating the tutorials for Linux, macOS, Windows was so easy and straightforward, that it only took us half a month. We spent the second half of the month creating Android tutorial.
 
-Our [first successful Android build](http://www.opengame.epizy.com/lang/en/news/2414) last year included hacks and non-obvious steps to make OpenSceneGraph run under Android. This time we wanted a cleaner, faster, and cheaper approach.
+Our [first successful Android build][oct16_article] last year included hacks and non-obvious steps to make OpenSceneGraph run under Android. This time we wanted a cleaner, faster, and cheaper approach.
 
 The approach we ended up with requires just a few files and a few changes to the original Android Studio project (with C++ support) to make sample OpenSceneGraph application run under Android.
 
@@ -57,3 +57,4 @@ Our approach includes building OpenSceneGraph for those target architectures tha
 That's it for describing the creation of the tutorials for building sample OpenSceneGraph application under Linux, macOS, Windows, and Android in April 2017.
 
 [screenshot]: {attach}/images/2017-05_osg-sample.png
+[oct16_article]: {filename}/articles/2016-11-19_2016-october-recap.md
