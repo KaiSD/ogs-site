@@ -395,4 +395,11 @@ Why? We want to spend more time on actual development!&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Publishing.&lt;/strong&gt; The release of our technologies' last version, live session materials, and stand alone game.&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;That's it for explaining September 2016 live session stages: draft, rehearsal, live session itself, and publishing.&lt;/p&gt;</summary></entry></feed>
+&lt;p&gt;That's it for explaining September 2016 live session stages: draft, rehearsal, live session itself, and publishing.&lt;/p&gt;</summary></entry><entry><title>OGS Editor 0.10 and live session materials</title><link href="http://opengamestudio.org/ogs-editor-0.10.html" rel="alternate"></link><updated>2016-10-03T00:00:00+03:00</updated><author><name>Opensource Game Studio</name></author><id>tag:opengamestudio.org,2016-10-03:ogs-editor-0.10.html</id><summary type="html">&lt;p&gt;&lt;img alt="ogs-editor-0.10" src="http://opengamestudio.org/2016-10-03_ogs-editor-0.10.png" /&gt;&lt;/p&gt;
+&lt;p&gt;Note: we won't release 0.10 for macOS due to technical difficulties with the build system. macOS support will be back for 0.11.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;OGS Editor 0.10&lt;/strong&gt; &lt;a href="https://sourceforge.net/projects/osrpgcreation/files/Editor/jenkins/51_2016-10-01_06-39-48_0.10.0/"&gt;is available at SourceForge&lt;/a&gt;. Simply unpack the archive and launch the run script.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Mahjong Solitaire game&lt;/strong&gt; &lt;a href="https://sourceforge.net/projects/osrpgcreation/files/Games/MahjongSolitaire/"&gt;is available at SourceForge&lt;/a&gt;, too. Simply unpack the archive and launch the run script.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Live session project&lt;/strong&gt; &lt;a href="https://github.com/OGStudio/mahjong-solitaire-livesession"&gt;is available at GitHub&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Live session recording&lt;/strong&gt; &lt;a href="https://youtu.be/g8Tyj_YH2Qc?list=PLWMTZqE4MAMJzBnXS9qU_ObWnzJuskI3F"&gt;is available at YouTube&lt;/a&gt;. The video depicts the whole process of creating Mahjong Solitaire from scratch using &lt;a href="https://github.com/OGStudio/mahjong-solitaire-rehearsal"&gt;rehearsal project&lt;/a&gt; resources.&lt;/li&gt;
+&lt;/ul&gt;</summary></entry></feed>
