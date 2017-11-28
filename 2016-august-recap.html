@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8" />
+    <!-- Set the viewport width to device width for mobile -->
+    <meta name="viewport" content="width=device-width" />
+
+    <title>August 2016 recap</title>
+
+    <link rel="stylesheet" href="http://opengamestudio.org/theme/css/normalize.css" />
+    <link rel="stylesheet" href="http://opengamestudio.org/theme/css/foundation.min.css" />
+    <link rel="stylesheet" href="http://opengamestudio.org/theme/css/style.css" />
+    <link rel="stylesheet" href="http://opengamestudio.org/theme/css/pygments.css" />	
+    <script src="http://opengamestudio.org/theme/js/custom.modernizr.js"></script>
+
+    <!-- So Firefox can bookmark->"abo this site" -->
+        <link href="feeds/all.atom.xml" rel="alternate" title="Opensource Game Studio" type="application/atom+xml">
+
+</head>
+
+<body>
+
+<!-- Nav Bar -->
+<nav>
+
+<!-- Show menu items and pages -->
+<div class="row">
+    <div class="large-12 columns top-bar">
+	    <h1><a href="http://opengamestudio.org">Opensource Game Studio</a></h1>
+    </div>
+</div>
+<div class="row top-menu">
+<div class="large-12 columns">
+        <a href="/pages/projects.html" class="menu-button secondary">Projects</a>
+        <a href="/pages/about.html" class="menu-button secondary">About</a>
+
+</div>
+</div>
+</nav>
+<!-- End Nav -->
+
+
+<!-- Main Page Content and Sidebar -->
+<div class="row">
+
+    <!-- Main Blog Content -->
+    <div class="large-9 columns">
+<article>
+    <header>
+        <h3 class="article-title"><a href="http://opengamestudio.org/2016-august-recap.html" rel="bookmark"
+        title="Permalink to August 2016 recap">August 2016 recap</a></h3>
+    </header>
+
+<h6 class="subheader" title="2016-09-03T00:00:00+03:00">Сб 03 Сентябрь 2016
+            <a class="button secondary small translation-button" href="http://opengamestudio.org/2016-august-recap-ru.html">ru</a>
+
+</h6>    <p><img alt="2016-august-recap" src="http://opengamestudio.org/2016-09-03_august-recap.png" /></p>
+<p>This article explains the most important technical details about development in August: UIQt module, its refactoring, a new feature based development approach, and its benefits.</p>
+<p><strong>UIQt module</strong> is a collection of UI components backed by Qt. We only use it for Editor UI at the moment.</p>
+<p>Here is a list of UIQt module components with their description and current code size:<table>
+<tr>
+  <th><strong>№</strong></th>
+  <th><strong>Component</strong></th>
+  <th><strong>Description</strong></th>
+  <th><strong>Size (B)</strong></th>
+  <th><strong>Size (%)</strong></th>
+</tr>
+<tr>
+  <td>1</td>
+  <td>UIQtAction</td>
+  <td>Actions (events) for menus</td>
+  <td>11224</td>
+  <td>9</td>
+</tr>
+<tr>
+  <td>2</td>
+  <td>UIQtAux</td>
+  <td>Initializes Qt and main window. Provides widget resolution by name to other components</td>
+  <td>15518</td>
+  <td>12</td>
+</tr>
+<tr>
+  <td>3</td>
+  <td>UIQtDock</td>
+  <td>Widget docks</td>
+  <td>5273</td>
+  <td>4</td>
+</tr>
+<tr>
+  <td>4</td>
+  <td>UIQtFileDialog</td>
+  <td>File selection dialogs</td>
+  <td>8960</td>
+  <td>7</td>
+</tr>
+<tr>
+  <td>5</td>
+  <td>UIQtMenu</td>
+  <td>Menus for main window and pop-ups (like node's add/copy/paste/delete menu)</td>
+  <td>4566</td>
+  <td>3</td>
+</tr>
+<tr>
+  <td>6</td>
+  <td>UIQtMenuBar</td>
+  <td>Menu bar for main window</td>
+  <td>4222</td>
+  <td>3</td>
+</tr>
+<tr>
+  <td>7</td>
+  <td>UIQtRunner</td>
+  <td>Allows to start QApplication</td>
+  <td>2450</td>
+  <td>2</td>
+</tr>
+<tr>
+  <td>8</td>
+  <td>UIQtThumbnailDialog</td>
+  <td>Dialog with thumbnail images</td>
+  <td>18615</td>
+  <td>14</td>
+</tr>
+<tr>
+  <td>9</td>
+  <td>UIQtToolBar</td>
+  <td>Tool bar for main window</td>
+  <td>4276</td>
+  <td>3</td>
+</tr>
+<tr>
+  <td>10</td>
+  <td>UIQtTree</td>
+  <td>Provides complex widgets like Scene tree and Property browser</td>
+  <td>51216</td>
+  <td>39</td>
+</tr>
+<tr>
+  <td>11</td>
+  <td>UIQtWidget</td>
+  <td>Common widget properties like focus and visibility</td>
+  <td>5465</td>
+  <td>4</td>
+</tr>
+</table></p>
+<p><strong>UIQt module refactoring</strong> purpose was to replace old State API with new Environment API, which allows to achieve the same functionality with less code, i.e., makes development easier and faster.</p>
+<p>Refactoring started in July and should have been done the same month. However, we only finished the work in August. Initial plan assumed 28 hours would be enough, but we spent 65 instead. We estimated planned time by relying on the number of public API calls of each component. That worked fine for small components, because the number of their public API calls was roughly equal to the number of their features, and features themselves were very small. However, it totally failed for UIQtTree, which contains 39% of UIQt module code, because there was no direct connection between public API and features.</p>
+<p><strong>Feature based development approach</strong> was born as a result of UIQtTree refactoring struggle. Since Qt uses MVC, UIQtTree component consists of several classes. By the time UIQtTree could display and manage a hierarchy of items, the component was already 27K in size. We noticed UIQtTree started to require abnormal amount of development time even for tiny features. This was an obvious <a href="http://kornerr.blogspot.com/2012/04/complexity-conservation-law-complexity.html">quantitative complexity</a> manifestation.</p>
+<p>We decided to separate UIQtTree into base part and additional ones. Base would only contain minimal code required by all features. Addition would contain specific feature code and could be safely modified. In the case of UIQtTree, item hierarchy display and modification is the minimal functionality, while item renaming is an addition.</p>
+<p>Here is a list of current UIQtTree features:</p>
+<table>
+<tr>
+  <th>**№**</th>
+  <th>**Feature**</th>
+  <th>**Description**</th>
+  <th>**Size (B)**</th>
+  <th>**Size (%)**</th>
+</tr>
+<tr>
+  <td>1</td>
+  <td>Base</td>
+  <td>Allows to construct item hierarchy, modify it, and display it</td>
+  <td>26966</td>
+  <td>52</td>
+</tr>
+<tr>
+  <td>2</td>
+  <td>Item open state</td>
+  <td>Keeps track of collapsed/expanded item properties</td>
+  <td>3094</td>
+  <td>6</td>
+</tr>
+<tr>
+  <td>3</td>
+  <td>Item renaming</td>
+  <td>Allows to rename an item</td>
+  <td>3471</td>
+  <td>7</td>
+</tr>
+<tr>
+  <td>4</td>
+  <td>Item selection</td>
+  <td>Allows to get/set selected item</td>
+  <td>2338</td>
+  <td>5</td>
+</tr>
+<tr>
+  <td>5</td>
+  <td>Item value</td>
+  <td>Provides 2nd and the rest columns for items, used by Property browser</td>
+  <td>1307</td>
+  <td>3</td>
+</tr>
+<tr>
+  <td>6</td>
+  <td>Item value editing</td>
+  <td>Allows to edit item values with a default editor widget</td>
+  <td>1996</td>
+  <td>4</td>
+</tr>
+<tr>
+  <td>7</td>
+  <td>Item value editing with combobox</td>
+  <td>Provides combobox editor</td>
+  <td>5819</td>
+  <td>11</td>
+</tr>
+<tr>
+  <td>8</td>
+  <td>Item value editing with spinner</td>
+  <td>Provides spinbox editor</td>
+  <td>5290</td>
+  <td>10</td>
+</tr>
+<tr>
+  <td>9</td>
+  <td>Menu</td>
+  <td>Provides pop-up menu</td>
+  <td>1248</td>
+  <td>2</td>
+</tr>
+</table>
+
+<p>Here's an example of UIQtTree Menu feature file: <a href="https://bitbucket.org/ogstudio-history/mjin/src/0c4cc3c3213f4687c0f3bd6a5426a6054cadd79b/f/TREE_MENU.cpp?at=Studio+0.10&amp;fileviewer=file-view-default">TREE_MENU</a>.</p>
+<p><strong>Benefits of the approach</strong> include:</p>
+<ol>
+<li>Faster code reading/understanding due to small size</li>
+<li>Easier and safer modification due to isolated code</li>
+</ol>
+<p>There's a drawback, too: new approach requires learning.</p>
+<p>That's it for the most important technical details about development in August: UIQt module, its refactoring, a new feature based development approach, and its benefits.</p>
+<p class="subheader">Category: <a href="http://opengamestudio.org/category/news.html">News</a>
+
+</p>
+
+
+
+</article>
+    </div>
+    <!-- End Main Content -->
+
+    <!-- Sidebar -->
+    <aside class="large-3 columns">
+        <!--k
+        <h5 class="sidebar-title">Site</h5>
+        <ul class="side-nav">
+            <li><a href="http://opengamestudio.org/archives.html">Archives</a>
+            <li><a href="http://opengamestudio.org/tags.html">Tags</a>
+
+
+                <li><a href="http://opengamestudio.org/feeds/all.atom.xml" rel="alternate">Atom feed</a></li>
+        </ul>
+
+		
+        <h5 class="sidebar-title">Categories</h5>
+        <ul class="side-nav">
+            <li><a href="http://opengamestudio.org/category/news.html">News</a></li>
+   
+        </ul>
+        -->
+
+
+		
+        
+        <h5 class="sidebar-title">Ads</h5>
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <!-- ogs2 -->
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-4473792248813084"
+             data-ad-slot="9024247127"
+             data-ad-format="auto"></ins>
+        <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+
+    </aside> <!-- End Sidebar -->
+
+</div> <!-- End Main Content and Sidebar -->
+
+
+<!-- Footer -->
+<footer class="row">
+    <div class="large-12 columns">
+        <hr />
+        <div class="row">
+            <div class="large-7 columns">
+                <p>Proudly powered by <a href="http://getpelican.com">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.</p>
+            </div>
+            </div>
+    </div>
+    <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-3773114-1']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+    </script>
+</footer>
