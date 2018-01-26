@@ -650,4 +650,13 @@ It's time to create simple Mahjong solitaire game.&lt;/p&gt;</summary></entry><e
 &lt;p&gt;It took us 3 years to reach the first goal: we released OGS Mahjong 1.0 in 2012. Even for a hobby project (we spend about 40 hours a month) it's too long.&lt;/p&gt;
 &lt;p&gt;Upon the game release we got it: &lt;strong&gt;Tools are means to save development time&lt;/strong&gt;.&lt;/p&gt;
 &lt;p&gt;We spent 4 more years to develop them. Now is the time to prove they are worth every single day spent. How? We will &lt;strong&gt;recreate Mahjong solitaire mode&lt;/strong&gt; in just a few hours!&lt;/p&gt;
-&lt;p&gt;Join our next live session in September.&lt;/p&gt;</summary></entry></feed>
+&lt;p&gt;Join our next live session in September.&lt;/p&gt;</summary></entry><entry><title>May 2016 live session materials</title><link href="http://opengamestudio.org/ogs-editor-0.9.html" rel="alternate"></link><updated>2016-05-29T00:00:00+03:00</updated><author><name>Opensource Game Studio</name></author><id>tag:opengamestudio.org,2016-05-29:ogs-editor-0.9.html</id><summary type="html">&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/8gHYOkMRoos?list=PLWMTZqE4MAMKp3wP1N63xbdhdgfKi-d-J" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
+
+&lt;p&gt;This time we have shown how to create a simple Domino based game. Below you can find all materials related to the game creation.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Editor 0.9 for Linux (Debian based), OS X (10.9+), Windows &lt;a title="SourceForge" href="https://sourceforge.net/projects/osrpgcreation/files/Editor/jenkins/49_2016-05-24_04-48-47_0.9.0/"&gt;is available at SourceForge&lt;/a&gt;. Simply unpack it and launch the run script.&lt;/li&gt;
+&lt;li&gt;Domino project created during live session &lt;a title="GitHub" href="https://github.com/OGStudio/domino-livesession"&gt;is available at GitHub&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Domino rehearsal videos referenced during live session &lt;a title="YouTube" href="https://www.youtube.com/playlist?list=PLWMTZqE4MAMKp3wP1N63xbdhdgfKi-d-J"&gt;are available at YouTube&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Domino rehearsal project referenced during live session &lt;a title="GitHub" href="https://github.com/OGStudio/domino-rehearsal"&gt;is available at GitHub&lt;/a&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;The next live session will be held in September 2016.&lt;/p&gt;</summary></entry></feed>

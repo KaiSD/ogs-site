@@ -1298,4 +1298,21 @@ It's time to create simple Mahjong solitaire game.&lt;/p&gt;</summary></entry><e
 &lt;p&gt;Мы потратили 3 года для достижения этой цели: выпуск OGS Mahjong 1.0 состоялся в 2012 году. Даже для хобби-проекта (мы тратим в среднем около 40 часов в месяц) это очень долго.&lt;/p&gt;
 &lt;p&gt;После выпуска игры до нас дошло: &lt;strong&gt;Средства для создания игр должны экономить время разработки&lt;/strong&gt;.&lt;/p&gt;
 &lt;p&gt;Мы потратили ещё 4 года на их разработку. Пришло время доказать, что они стоят каждого затраченного дня. Как? Мы &lt;strong&gt;воссоздадим режим "пасьянс Маджонг"&lt;/strong&gt; за считанные часы!&lt;/p&gt;
-&lt;p&gt;Присоединяйтесь к нашему следующему прямому эфиру в сентябре.&lt;/p&gt;</summary></entry></feed>
+&lt;p&gt;Присоединяйтесь к нашему следующему прямому эфиру в сентябре.&lt;/p&gt;</summary></entry><entry><title>May 2016 live session materials</title><link href="http://opengamestudio.org/ogs-editor-0.9.html" rel="alternate"></link><updated>2016-05-29T00:00:00+03:00</updated><author><name>Opensource Game Studio</name></author><id>tag:opengamestudio.org,2016-05-29:ogs-editor-0.9.html</id><summary type="html">&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/8gHYOkMRoos?list=PLWMTZqE4MAMKp3wP1N63xbdhdgfKi-d-J" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
+
+&lt;p&gt;This time we have shown how to create a simple Domino based game. Below you can find all materials related to the game creation.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Editor 0.9 for Linux (Debian based), OS X (10.9+), Windows &lt;a title="SourceForge" href="https://sourceforge.net/projects/osrpgcreation/files/Editor/jenkins/49_2016-05-24_04-48-47_0.9.0/"&gt;is available at SourceForge&lt;/a&gt;. Simply unpack it and launch the run script.&lt;/li&gt;
+&lt;li&gt;Domino project created during live session &lt;a title="GitHub" href="https://github.com/OGStudio/domino-livesession"&gt;is available at GitHub&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Domino rehearsal videos referenced during live session &lt;a title="YouTube" href="https://www.youtube.com/playlist?list=PLWMTZqE4MAMKp3wP1N63xbdhdgfKi-d-J"&gt;are available at YouTube&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Domino rehearsal project referenced during live session &lt;a title="GitHub" href="https://github.com/OGStudio/domino-rehearsal"&gt;is available at GitHub&lt;/a&gt;.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;The next live session will be held in September 2016.&lt;/p&gt;</summary></entry><entry><title>Материалы прямого эфира за май 2016</title><link href="http://opengamestudio.org/ogs-editor-0.9-ru.html" rel="alternate"></link><updated>2016-05-29T00:00:00+03:00</updated><author><name>Opensource Game Studio</name></author><id>tag:opengamestudio.org,2016-05-29:ogs-editor-0.9-ru.html</id><summary type="html">&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/8gHYOkMRoos?list=PLWMTZqE4MAMKp3wP1N63xbdhdgfKi-d-J" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
+
+&lt;p&gt;В этот раз мы показали, как создать простую игру на основе Домино. Ниже приведены все материалы, связанные с созданием игры.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Редактор 0.9 для Linux (на основе Debian), OS X (10.9+), Windows &lt;a title="SourceForge" href="https://sourceforge.net/projects/osrpgcreation/files/Editor/jenkins/49_2016-05-24_04-48-47_0.9.0/"&gt;доступен на SourceForge&lt;/a&gt;. Просто распакуйте и запустите скрипт run.&lt;/li&gt;
+&lt;li&gt;Проект Домино, созданный во время прямого эфира &lt;a title="GitHub" href="https://github.com/OGStudio/domino-livesession"&gt;доступен на GitHub&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Видео репетиции создания игры, на которые есть ссылки в прямом эфире, &lt;a title="YouTube" href="https://www.youtube.com/playlist?list=PLWMTZqE4MAMKp3wP1N63xbdhdgfKi-d-J"&gt;доступны на YouTube&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Проект Домино, созданный во время репетиции, &lt;a title="GitHub" href="https://github.com/OGStudio/domino-rehearsal"&gt;доступен на GitHub&lt;/a&gt;.&lt;/li&gt;
+&lt;/ol&gt;</summary></entry></feed>
