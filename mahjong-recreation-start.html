@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8" />
+    <!-- Set the viewport width to device width for mobile -->
+    <meta name="viewport" content="width=device-width" />
+
+    <title>Mahjong recreation start</title>
+
+    <link rel="stylesheet" href="http://opengamestudio.org/theme/css/normalize.css" />
+    <link rel="stylesheet" href="http://opengamestudio.org/theme/css/foundation.min.css" />
+    <link rel="stylesheet" href="http://opengamestudio.org/theme/css/style.css" />
+    <link rel="stylesheet" href="http://opengamestudio.org/theme/css/pygments.css" />	
+    <script src="http://opengamestudio.org/theme/js/custom.modernizr.js"></script>
+
+    <!-- So Firefox can bookmark->"abo this site" -->
+        <link href="feeds/all.atom.xml" rel="alternate" title="Opensource Game Studio" type="application/atom+xml">
+
+</head>
+
+<body>
+
+<!-- Nav Bar -->
+<nav>
+
+<!-- Show menu items and pages -->
+<div class="row">
+    <div class="large-12 columns top-bar">
+	    <h1><a href="http://opengamestudio.org">Opensource Game Studio</a></h1>
+    </div>
+</div>
+<div class="row top-menu">
+<div class="large-12 columns">
+        <a href="/pages/projects.html" class="menu-button secondary">Projects</a>
+        <a href="/pages/about.html" class="menu-button secondary">About</a>
+
+</div>
+</div>
+</nav>
+<!-- End Nav -->
+
+
+<!-- Main Page Content and Sidebar -->
+<div class="row">
+
+    <!-- Main Blog Content -->
+    <div class="large-9 columns">
+<article>
+    <header>
+        <h3 class="article-title"><a href="http://opengamestudio.org/mahjong-recreation-start.html" rel="bookmark"
+        title="Permalink to Mahjong recreation start">Mahjong recreation start</a></h3>
+    </header>
+
+<h6 class="subheader" title="2018-01-26T00:00:00+03:00">Пт 26 Январь 2018
+            <a class="button secondary small translation-button" href="http://opengamestudio.org/mahjong-recreation-start-ru.html">ru</a>
+
+</h6>    <p><img alt="Screenshot" src="http://opengamestudio.org/2018-01-26-mahjong-recreation-start.png" /></p>
+<p>This article describes the start of Mahjong game recreation.</p>
+<p><strong>Plan</strong></p>
+<p>We started Mahjong recreation endeavour by composing a brief plan to get gameplay with minimal graphics:</p>
+<ul>
+<li>Load single layout</li>
+<li>Place tiles in layout positions</li>
+<li>Distinguish tiles</li>
+<li>Implement selection</li>
+<li>Implement matching</li>
+</ul>
+<p>Just like any other plan, this one looked fine at first sight. However, once you get down to work, new details start to come out. This plan was no exception. Below are a few problems that came out during development.</p>
+<p><strong>Problem №1: provide binary resources across supported platforms</strong></p>
+<p>Mahjong is going to be available on desktop, mobile, and web. Each of these platforms has its constraints on accessing external files:</p>
+<ul>
+<li>Desktop can access almost any file</li>
+<li>Android/iOS have limited access to file system</li>
+<li>Web does not have any file system at all</li>
+</ul>
+<p>To provide a unified way for accessing resources, we decided to include them into final executable. This decision led to the birth of <strong>mjin-resource</strong> and <strong>mahjong-data</strong> projects.</p>
+<p><a href="https://bitbucket.org/ogstudio/mjin-resource">mjin-resource</a>:</p>
+<ul>
+<li>converts binary files to C header files with the help of <strong>xxd</strong> utility</li>
+<li>generates MJIN project that contains generated headers to be compiled into static library</li>
+<li>provides C++ interface for accessing generated resources</li>
+</ul>
+<p><a href="https://bitbucket.org/ogstudio-games/mahjong-data">mahjong-data</a> is an example of such generated MJIN project that is referenced by <a href="https://bitbucket.org/ogstudio-games/mahjong">mahjong</a> project.</p>
+<p><strong>Problem №2: load PNG images across supported platforms</strong></p>
+<p>To load PNG, we use corresponding OpenSceneGraph plugin. We built it for desktop with no issues. Building for web (Emscripten) turned out to be more difficult: Emscripten provides its own version of <strong>libpng</strong>, which OpenSceneGraph build script can't detect. We had to work around several OpenSceneGraph checks to successfully build the plugin for Emscripten.
+Building the plugin for Android and iOS is still waiting for us. Once we get PNG plugin working across supported platforms, we are going to publish a new tutorial for <a href="https://github.com/ogstudio/openscenegraph-cross-platform-guide">OpenSceneGraph cross-platform guide</a> to cover PNG image loading. We already got a <a href="https://github.com/OGStudio/openscenegraph-cross-platform-guide/issues/4">request to describe image loading</a>.</p>
+<p><strong>Development</strong></p>
+<p><a href="http://opengamestudio.org/lets-go.html">As you know</a>, we published OpenSceneGraph cross-platform guide to make OpenSceneGraph community stronger. We value education, and we love to share our knowledge. That's why we decided to develop Mahjong in small reproducible chunks uniquely identified by internal versions. These versions are available in <a href="https://bitbucket.org/ogstudio-games/mahjong">mahjong repository</a>.</p>
+<p>We also provide <a href="http://ogstudio.github.io/game-mahjong">version history and web releases of each internal version</a> for the following reasons:</p>
+<ul>
+<li>education: show how development looks like internally</li>
+<li>accessibility: provide older versions for comparison</li>
+</ul>
+<p><strong>Current Mahjong game status</strong></p>
+<p>As of the time of this writing, we have implemented tile selection. <a href="https://ogstudio.github.io/game-mahjong/versions/010/mjin-player.html">Try it in your browser!</a></p>
+<p>Once we finish tile matching implementation, we are going to publish the intermediate result for all supported platforms.</p>
+<p>That's it for describing the start of Mahjong game recreation.</p>
+<p class="subheader">Category: <a href="http://opengamestudio.org/category/news.html">News</a>
+
+</p>
+
+
+
+</article>
+    </div>
+    <!-- End Main Content -->
+
+    <!-- Sidebar -->
+    <aside class="large-3 columns">
+        <!--k
+        <h5 class="sidebar-title">Site</h5>
+        <ul class="side-nav">
+            <li><a href="http://opengamestudio.org/archives.html">Archives</a>
+            <li><a href="http://opengamestudio.org/tags.html">Tags</a>
+
+
+                <li><a href="http://opengamestudio.org/feeds/all.atom.xml" rel="alternate">Atom feed</a></li>
+        </ul>
+
+		
+        <h5 class="sidebar-title">Categories</h5>
+        <ul class="side-nav">
+            <li><a href="http://opengamestudio.org/category/news.html">News</a></li>
+   
+        </ul>
+        -->
+
+
+		
+        
+        <h5 class="sidebar-title">Ads</h5>
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <!-- ogs2 -->
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-4473792248813084"
+             data-ad-slot="9024247127"
+             data-ad-format="auto"></ins>
+        <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+
+    </aside> <!-- End Sidebar -->
+
+</div> <!-- End Main Content and Sidebar -->
+
+
+<!-- Footer -->
+<footer class="row">
+    <div class="large-12 columns">
+        <hr />
+        <div class="row">
+            <div class="large-7 columns">
+                <p>Proudly powered by <a href="http://getpelican.com">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.</p>
+            </div>
+            </div>
+    </div>
+    <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-3773114-1']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+    </script>
+</footer>

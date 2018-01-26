@@ -42,5 +42,5 @@ The preview should now be available at
 `git push`
 
 The publich site should now be available at
-[http://ogstudio.github.io](http://ogstudio.github.io).
+[http://kaisd.github.io/ogs-site](http://kaisd.github.io/ogs-site).
 

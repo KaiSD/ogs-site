@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8" />
+    <!-- Set the viewport width to device width for mobile -->
+    <meta name="viewport" content="width=device-width" />
+
+    <title>Начало воссоздания Маджонга</title>
+
+    <link rel="stylesheet" href="http://opengamestudio.org/theme/css/normalize.css" />
+    <link rel="stylesheet" href="http://opengamestudio.org/theme/css/foundation.min.css" />
+    <link rel="stylesheet" href="http://opengamestudio.org/theme/css/style.css" />
+    <link rel="stylesheet" href="http://opengamestudio.org/theme/css/pygments.css" />	
+    <script src="http://opengamestudio.org/theme/js/custom.modernizr.js"></script>
+
+    <!-- So Firefox can bookmark->"abo this site" -->
+        <link href="feeds/all.atom.xml" rel="alternate" title="Opensource Game Studio" type="application/atom+xml">
+
+</head>
+
+<body>
+
+<!-- Nav Bar -->
+<nav>
+
+<!-- Show menu items and pages -->
+<div class="row">
+    <div class="large-12 columns top-bar">
+	    <h1><a href="http://opengamestudio.org">Opensource Game Studio</a></h1>
+    </div>
+</div>
+<div class="row top-menu">
+<div class="large-12 columns">
+        <a href="/pages/projects.html" class="menu-button secondary">Projects</a>
+        <a href="/pages/about.html" class="menu-button secondary">About</a>
+
+</div>
+</div>
+</nav>
+<!-- End Nav -->
+
+
+<!-- Main Page Content and Sidebar -->
+<div class="row">
+
+    <!-- Main Blog Content -->
+    <div class="large-9 columns">
+<article>
+    <header>
+        <h3 class="article-title"><a href="http://opengamestudio.org/mahjong-recreation-start-ru.html" rel="bookmark"
+        title="Permalink to Начало воссоздания Маджонга">Начало воссоздания Маджонга</a></h3>
+    </header>
+
+<h6 class="subheader" title="2018-01-26T00:00:00+03:00">Пт 26 Январь 2018
+            <a class="button secondary small translation-button" href="http://opengamestudio.org/mahjong-recreation-start.html">en</a>
+
+</h6>    <p><img alt="Screenshot" src="http://opengamestudio.org/2018-01-26-mahjong-recreation-start.png" /></p>
+<p>Эта статья описывает начало воссоздания игры Маджонг.</p>
+<p><strong>План</strong></p>
+<p>Мы начали воссоздание Маджонга с составления краткого плана реализации игровой механики с минимальной графикой:</p>
+<ul>
+<li>Загрузить раскладку</li>
+<li>Поместить фишки в позиции раскладки</li>
+<li>Различить фишки</li>
+<li>Реализовать выбор фишек</li>
+<li>Реализовать сравнение фишек</li>
+</ul>
+<p>Как и любой другой план, этот выглядел вполне адекватно на первый взгляд. Тем не менее стоит начать разработку, как появляются новые детали. Этот план не был исключением. Ниже представлена пара проблем, вскрывшихся во время разработки.</p>
+<p><strong>Проблема №1: предоставить бинарные ресурсы на поддерживаемых платформах</strong></p>
+<p>Маджонг будет доступен для десктопа, мобилок и веба. Каждая платформа имеет ограничения на доступ к внешним файлам:</p>
+<ul>
+<li>Десктоп позволяет получить доступ почти к любому файлу</li>
+<li>Мобилки имеют ограниченный доступ к файловой системе</li>
+<li>Веб не имеет файловой системы</li>
+</ul>
+<p>Мы решили сделать единый способ доступа к ресурсам путём их встраивания в исполняемый файл. Это решение привело к рождению проектов <strong>mjin-resource</strong> и <strong>mahjong-data</strong>.</p>
+<p>Проект <a href="https://bitbucket.org/ogstudio/mjin-resource">mjin-resource</a> служит для:</p>
+<ul>
+<li>перевода бинарных файлов в заголовочные файлы C с помощью утилиты <strong>xxd</strong></li>
+<li>создания проекта MJIN, состоящего из сгенерированных заголовочных файлов, который собирается в статическую библиотеку</li>
+<li>предоставления интерфейса C++ для работы с ресурсами</li>
+</ul>
+<p>Проект <a href="https://bitbucket.org/ogstudio-games/mahjong-data">mahjong-data</a> является примером подобного проекта MJIN, ресурсы из которого использует проект <a href="https://bitbucket.org/ogstudio-games/mahjong">mahjong</a>.</p>
+<p><strong>Проблема №2: загрузка изображений PNG на поддерживаемых платформах</strong></p>
+<p>Для загрузки PNG мы используем соответствующий плагин OpenSceneGraph. Мы собрали его без проблем для десктопа. Сборка же для веба (Emscripten) оказалась сложнее: Emscripten содержит собственную версию <strong>libpng</strong>, которую сборочный скрипт OpenSceneGraph не видит. Нам пришлось обойти несколько проверок OpenSceneGraph, чтобы успешно собрать плагин для Emscripten.
+Сборка плагина под мобилки ещё ждёт нас впереди. Как только мы разберёмся с плагином PNG на всех поддерживаемых платформах, мы опубликуем информацию о его сборке в новом самоучителе для <a href="https://github.com/ogstudio/openscenegraph-cross-platform-guide">кросс-платформенного руководства OpenSceneGraph</a>. Нас уже <a href="https://github.com/OGStudio/openscenegraph-cross-platform-guide/issues/4">попросили это сделать</a>.</p>
+<p><strong>Разработка</strong></p>
+<p><a href="http://opengamestudio.org/lets-go-ru.html">Как вы знаете</a>, мы опубликовали кросс-платформенное руководство OpenSceneGraph для усиления сообщества OpenSceneGraph. Мы ценим обучение и любим делиться своими знаниями. Поэтому мы решили разрабатывать Маджонг небольшими воспроизводимыми частями, каждая из которых имеет уникальную внутреннюю версию. Эти версии доступны в <a href="https://bitbucket.org/ogstudio-games/mahjong">хранилище проекта mahjong</a>.</p>
+<p>Мы также предоставляем <a href="http://ogstudio.github.io/game-mahjong">историю версий, каждая из которых сопровождается сборкой под веб</a>, для следующих целей:</p>
+<ul>
+<li>обучение: показать ход разработки изнутри</li>
+<li>доступность: предоставить старые версии для сравнения</li>
+</ul>
+<p><strong>Текущее состояние игры Маджонг</strong></p>
+<p>На момент написания этой статьи мы закончили реализацию выбора фишек. <a href="https://ogstudio.github.io/game-mahjong/versions/010/mjin-player.html">Проверьте в своём браузере!</a></p>
+<p>После реализации сравнения фишек мы опубликуем промежуточный результат для всех поддерживаемых платформ.</p>
+<p>На этом мы заканчиваем описание начала воссоздания игры Маджонг.</p>
+<p class="subheader">Category: <a href="http://opengamestudio.org/category/news.html">News</a>
+
+</p>
+
+
+
+</article>
+    </div>
+    <!-- End Main Content -->
+
+    <!-- Sidebar -->
+    <aside class="large-3 columns">
+        <!--k
+        <h5 class="sidebar-title">Site</h5>
+        <ul class="side-nav">
+            <li><a href="http://opengamestudio.org/archives.html">Archives</a>
+            <li><a href="http://opengamestudio.org/tags.html">Tags</a>
+
+
+                <li><a href="http://opengamestudio.org/feeds/all.atom.xml" rel="alternate">Atom feed</a></li>
+        </ul>
+
+		
+        <h5 class="sidebar-title">Categories</h5>
+        <ul class="side-nav">
+            <li><a href="http://opengamestudio.org/category/news.html">News</a></li>
+   
+        </ul>
+        -->
+
+
+		
+        
+        <h5 class="sidebar-title">Ads</h5>
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <!-- ogs2 -->
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-4473792248813084"
+             data-ad-slot="9024247127"
+             data-ad-format="auto"></ins>
+        <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+
+    </aside> <!-- End Sidebar -->
+
+</div> <!-- End Main Content and Sidebar -->
+
+
+<!-- Footer -->
+<footer class="row">
+    <div class="large-12 columns">
+        <hr />
+        <div class="row">
+            <div class="large-7 columns">
+                <p>Proudly powered by <a href="http://getpelican.com">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.</p>
+            </div>
+            </div>
+    </div>
+    <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-3773114-1']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+    </script>
+</footer>

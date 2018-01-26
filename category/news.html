@@ -48,31 +48,51 @@
         
 
             <article>
-                <a href="http://opengamestudio.org/the-year-of-lessons.html"><h3 class="article-title">The year of lessons</h3></a>
-<h6 class="subheader" title="2017-12-31T22:00:00+03:00">Sun 31 December 2017
-            <a class="button secondary small translation-button" href="http://opengamestudio.org/the-year-of-lessons-ru.html">ru</a>
+                <a href="http://opengamestudio.org/mahjong-recreation-start.html"><h3 class="article-title">Mahjong recreation start</h3></a>
+<h6 class="subheader" title="2018-01-26T00:00:00+03:00">Пт 26 Январь 2018
+            <a class="button secondary small translation-button" href="http://opengamestudio.org/mahjong-recreation-start-ru.html">ru</a>
 
-</h6><p><img alt="Screenshot" src="http://opengamestudio.org/2017-12-31-celebration.jpg"></p>
-<p>So, the year 2017 is approaching its finale, the year's results have already
-been summed up. We're going to take a break from igniting the fireworks or
-preparation of the champagne so that we can designate our goal for the
-following year.</p>
-<p>As it may be clear from other articles on the site, half of our plans in 2017
-were destined to be completed at least approximately as we assumed. The other
-half was changed significantly.</p>
-<p>During the year, people joined the team and left it. As a result, we meet the
-end of the year with exactly the same team as 365 days ago. It made us think.
-A lot. But We'll save the story for another time.</p>
-<p>There will be exactly one goal for 2018. We will take all the results, and then
-we will make a new mahjong game. We're already know how to make a mahjong
-solitaire so we will begin with it. This time, it will be cross-platform.
-We will definitely try to cover Windows, Linux, macOs, Web, and Android.
-We can't promis anything about the iOS right now (although we'll see what
-we can do).</p>
-<p>There is no point in writing more than We want to say. We learned a lot for
-this year, and we will try to apply all this knowledge to achieve more in the
-next one. We wish everyone a Happy New Year. Stay tuned.</p>
-<p>The Opensource Game Studio Team.</p><p class="subheader">Category: <a href="http://opengamestudio.org/category/news.html">News</a>
+</h6><p><img alt="Screenshot" src="http://opengamestudio.org/2018-01-26-mahjong-recreation-start.png" /></p>
+<p>This article describes the start of Mahjong game recreation.</p>
+<p><strong>Plan</strong></p>
+<p>We started Mahjong recreation endeavour by composing a brief plan to get gameplay with minimal graphics:</p>
+<ul>
+<li>Load single layout</li>
+<li>Place tiles in layout positions</li>
+<li>Distinguish tiles</li>
+<li>Implement selection</li>
+<li>Implement matching</li>
+</ul>
+<p>Just like any other plan, this one looked fine at first sight. However, once you get down to work, new details start to come out. This plan was no exception. Below are a few problems that came out during development.</p>
+<p><strong>Problem №1: provide binary resources across supported platforms</strong></p>
+<p>Mahjong is going to be available on desktop, mobile, and web. Each of these platforms has its constraints on accessing external files:</p>
+<ul>
+<li>Desktop can access almost any file</li>
+<li>Android/iOS have limited access to file system</li>
+<li>Web does not have any file system at all</li>
+</ul>
+<p>To provide a unified way for accessing resources, we decided to include them into final executable. This decision led to the birth of <strong>mjin-resource</strong> and <strong>mahjong-data</strong> projects.</p>
+<p><a href="https://bitbucket.org/ogstudio/mjin-resource">mjin-resource</a>:</p>
+<ul>
+<li>converts binary files to C header files with the help of <strong>xxd</strong> utility</li>
+<li>generates MJIN project that contains generated headers to be compiled into static library</li>
+<li>provides C++ interface for accessing generated resources</li>
+</ul>
+<p><a href="https://bitbucket.org/ogstudio-games/mahjong-data">mahjong-data</a> is an example of such generated MJIN project that is referenced by <a href="https://bitbucket.org/ogstudio-games/mahjong">mahjong</a> project.</p>
+<p><strong>Problem №2: load PNG images across supported platforms</strong></p>
+<p>To load PNG, we use corresponding OpenSceneGraph plugin. We built it for desktop with no issues. Building for web (Emscripten) turned out to be more difficult: Emscripten provides its own version of <strong>libpng</strong>, which OpenSceneGraph build script can't detect. We had to work around several OpenSceneGraph checks to successfully build the plugin for Emscripten.
+Building the plugin for Android and iOS is still waiting for us. Once we get PNG plugin working across supported platforms, we are going to publish a new tutorial for <a href="https://github.com/ogstudio/openscenegraph-cross-platform-guide">OpenSceneGraph cross-platform guide</a> to cover PNG image loading. We already got a <a href="https://github.com/OGStudio/openscenegraph-cross-platform-guide/issues/4">request to describe image loading</a>.</p>
+<p><strong>Development</strong></p>
+<p><a href="http://opengamestudio.org/lets-go.html">As you know</a>, we published OpenSceneGraph cross-platform guide to make OpenSceneGraph community stronger. We value education, and we love to share our knowledge. That's why we decided to develop Mahjong in small reproducible chunks uniquely identified by internal versions. These versions are available in <a href="https://bitbucket.org/ogstudio-games/mahjong">mahjong repository</a>.</p>
+<p>We also provide <a href="http://ogstudio.github.io/game-mahjong">version history and web releases of each internal version</a> for the following reasons:</p>
+<ul>
+<li>education: show how development looks like internally</li>
+<li>accessibility: provide older versions for comparison</li>
+</ul>
+<p><strong>Current Mahjong game status</strong></p>
+<p>As of the time of this writing, we have implemented tile selection. <a href="https://ogstudio.github.io/game-mahjong/versions/010/mjin-player.html">Try it in your browser!</a></p>
+<p>Once we finish tile matching implementation, we are going to publish the intermediate result for all supported platforms.</p>
+<p>That's it for describing the start of Mahjong game recreation.</p><p class="subheader">Category: <a href="http://opengamestudio.org/category/news.html">News</a>
 
 </p>
 
@@ -87,15 +107,37 @@ next one. We wish everyone a Happy New Year. Stay tuned.</p>
 
 
             <article>
+                <a href="http://opengamestudio.org/the-year-of-lessons.html"><h3 class="article-title">The year of lessons</h3></a>
+<h6 class="subheader" title="2017-12-31T22:00:00+03:00">Вс 31 Декабрь 2017
+            <a class="button secondary small translation-button" href="http://opengamestudio.org/the-year-of-lessons-ru.html">ru</a>
+
+</h6><p><img alt="Screenshot" src="http://opengamestudio.org/2017-12-31-celebration.jpg" /></p>
+<p>So, the year 2017 is approaching its finale, the year's results have already
+been summed up. We're going to take a break from igniting the fireworks or
+preparation of the champagne so that we can designate our goal for the
+following year.</p>
+<p>As it may be clear from ...</p><p class="subheader">Category: <a href="http://opengamestudio.org/category/news.html">News</a>
+
+</p>
+
+
+                <a class="button radius secondary small right" href="http://opengamestudio.org/the-year-of-lessons.html">Read More</a>
+                <hr  class="gradient"/>
+            </article>
+
+        
+
+
+            <article>
                 <a href="http://opengamestudio.org/2017-summary.html"><h3 class="article-title">2017 summary</h3></a>
-<h6 class="subheader" title="2017-11-22T00:00:00+03:00">Wed 22 November 2017
+<h6 class="subheader" title="2017-11-22T00:00:00+03:00">Ср 22 Ноябрь 2017
             <a class="button secondary small translation-button" href="http://opengamestudio.org/2017-summary-ru.html">ru</a>
 
-</h6><p><img alt="Screenshot" src="http://opengamestudio.org/2017-11-22-2017-summary.png"></p>
+</h6><p><img alt="Screenshot" src="http://opengamestudio.org/2017-11-22-2017-summary.png" /></p>
 <p>It's time to step back to see our accomplishments in 2017 and how they connect to the overall goal of Opensource Game Studio project.</p>
 <p><strong>Brief history</strong></p>
 <p>Opensource Game Studio project is 12 years old now.</p>
-<p><strong>2005.</strong> We started the project with a <a href="https://www.linuxquestions.org/questions/general-10/the-creation-of-the-best-rpg-355858/">fanatic call</a> to create the best game ever …</p><p class="subheader">Category: <a href="http://opengamestudio.org/category/news.html">News</a>
+<p><strong>2005.</strong> We started the project with a <a href="https://www.linuxquestions.org/questions/general-10/the-creation-of-the-best-rpg-355858/">fanatic call</a> to create the best game ...</p><p class="subheader">Category: <a href="http://opengamestudio.org/category/news.html">News</a>
 
 </p>
 
@@ -109,13 +151,13 @@ next one. We wish everyone a Happy New Year. Stay tuned.</p>
 
             <article>
                 <a href="http://opengamestudio.org/back-to-the-static.html"><h3 class="article-title">Back to the Static</h3></a>
-<h6 class="subheader" title="2017-10-16T00:00:00+03:00">Mon 16 October 2017
+<h6 class="subheader" title="2017-10-16T00:00:00+03:00">Пн 16 Октябрь 2017
             <a class="button secondary small translation-button" href="http://opengamestudio.org/back-to-the-static-ru.html">ru</a>
 
-</h6><p><img alt="Back to the Static" src="http://opengamestudio.org/2017-10-16-back-to-the-static.png"></p>
+</h6><p><img alt="Back to the Static" src="http://opengamestudio.org/2017-10-16-back-to-the-static.png" /></p>
 <p>We have been using Wordpress as our website engine for more than seven years. And now it's time to move forward. Or backward.
 For some time we've been tracking the development of the new breed of website engines - static site generators.
-It seems that this is the technology capable of …</p><p class="subheader">Category: <a href="http://opengamestudio.org/category/news.html">News</a>
+It seems that this is the technology ...</p><p class="subheader">Category: <a href="http://opengamestudio.org/category/news.html">News</a>
 
 </p>
 
@@ -129,10 +171,10 @@ It seems that this is the technology capable of …</p><p class="subheader">Cate
 
             <article>
                 <a href="http://opengamestudio.org/mjin-world-birth.html"><h3 class="article-title">The birth of MJIN world</h3></a>
-<h6 class="subheader" title="2017-09-10T00:00:00+03:00">Sun 10 September 2017
+<h6 class="subheader" title="2017-09-10T00:00:00+03:00">Вс 10 Сентябрь 2017
             <a class="button secondary small translation-button" href="http://opengamestudio.org/mjin-world-birth-ru.html">ru</a>
 
-</h6><p><img alt="The birth of MJIN world" src="http://opengamestudio.org/2017-09-mjin-world-birth.png"></p>
+</h6><p><img alt="The birth of MJIN world" src="http://opengamestudio.org/2017-09-mjin-world-birth.png" /></p>
 <p>This article describes the birth of MJIN world in August 2017.</p>
 <p><strong>mjin-player</strong></p>
 <p>As you know, <a href="http://opengamestudio.org/scripting-research.html">we spent July to research scripting</a>. We found a solution that satisfies the following criteria. Scripts should:</p>
@@ -140,7 +182,7 @@ It seems that this is the technology capable of …</p><p class="subheader">Cate
 <li>run unchanged on all supported platforms</li>
 <li>allow extending C++ code</li>
 </ol>
-<p>We have verified the second criterion by writing …</p><p class="subheader">Category: <a href="http://opengamestudio.org/category/news.html">News</a>
+<p>We have verified the second criterion by writing ...</p><p class="subheader">Category: <a href="http://opengamestudio.org/category/news.html">News</a>
 
 </p>
 
@@ -154,13 +196,13 @@ It seems that this is the technology capable of …</p><p class="subheader">Cate
 
             <article>
                 <a href="http://opengamestudio.org/scripting-research.html"><h3 class="article-title">Scripting research</h3></a>
-<h6 class="subheader" title="2017-08-16T00:00:00+03:00">Wed 16 August 2017
+<h6 class="subheader" title="2017-08-16T00:00:00+03:00">Ср 16 Август 2017
             <a class="button secondary small translation-button" href="http://opengamestudio.org/scripting-research-ru.html">ru</a>
 
-</h6><p><img alt="Scripting research" src="http://opengamestudio.org/2017-08-scripting-research.png"></p>
+</h6><p><img alt="Scripting research" src="http://opengamestudio.org/2017-08-scripting-research.png" /></p>
 <p>This article describes scripting research in July 2017.</p>
 <p><strong>Our first goal of using a scripting language was to have a platform-independent code that runs unchanged on every supported platform.</strong></p>
-<p>OGS Editor 0.10 supports Python for such a code thanks to <a href="http://swig.org/">SWIG</a>. SWIG provides a way to wrap almost any …</p><p class="subheader">Category: <a href="http://opengamestudio.org/category/news.html">News</a>
+<p>OGS Editor 0.10 supports Python for such a code thanks to <a href="http://swig.org/">SWIG</a>. SWIG provides a way to wrap almost any ...</p><p class="subheader">Category: <a href="http://opengamestudio.org/category/news.html">News</a>
 
 </p>
 
@@ -174,13 +216,13 @@ It seems that this is the technology capable of …</p><p class="subheader">Cate
 
             <article>
                 <a href="http://opengamestudio.org/openscenegraph-cross-platform-guide.html"><h3 class="article-title">OpenSceneGraph cross-platform guide</h3></a>
-<h6 class="subheader" title="2017-07-17T00:00:00+03:00">Mon 17 July 2017
+<h6 class="subheader" title="2017-07-17T00:00:00+03:00">Пн 17 Июль 2017
             <a class="button secondary small translation-button" href="http://opengamestudio.org/openscenegraph-cross-platform-guide-ru.html">ru</a>
 
-</h6><p><img alt="OpenSceneGraph guide" src="http://opengamestudio.org/2017-07-openscenegraph-guide.png"></p>
+</h6><p><img alt="OpenSceneGraph guide" src="http://opengamestudio.org/2017-07-openscenegraph-guide.png" /></p>
 <p>This article summarizes the work we did to produce OpenSceneGraph cross-platform guide.</p>
 <p>June marked the finish of <a href="https://github.com/OGStudio/openscenegraph-cross-platform-guide">OpenSceneGraph cross-platform guide</a> with the publishing of the last (initially planned) tutorial. The tutorial describes <a href="https://github.com/OGStudio/openscenegraph-cross-platform-guide/tree/master/1.10.SampleWeb">how to build and run sample OpenSceneGraph application in Web</a> using Emscripten.
-In case you missed it, here's …</p><p class="subheader">Category: <a href="http://opengamestudio.org/category/news.html">News</a>
+In case you missed it, here ...</p><p class="subheader">Category: <a href="http://opengamestudio.org/category/news.html">News</a>
 
 </p>
 
@@ -194,12 +236,12 @@ In case you missed it, here's …</p><p class="subheader">Category: <a href="htt
 
             <article>
                 <a href="http://opengamestudio.org/ios-tutorial.html"><h3 class="article-title">iOS tutorial</h3></a>
-<h6 class="subheader" title="2017-06-08T10:00:00+03:00">Thu 08 June 2017
+<h6 class="subheader" title="2017-06-08T10:00:00+03:00">Чт 08 Июнь 2017
             <a class="button secondary small translation-button" href="http://opengamestudio.org/ios-tutorial-ru.html">ru</a>
 
-</h6><p><img alt="iOS tutorial" src="http://opengamestudio.org/2017-06-08-ios-refactoring.png"></p>
+</h6><p><img alt="iOS tutorial" src="http://opengamestudio.org/2017-06-08-ios-refactoring.png" /></p>
 <p>This article describes problems we faced during the creation of iOS tutorial in May 2017.</p>
-<p><a href="https://twitter.com/OpenGameStudio/status/826816343433498627">This February</a> we managed to get simple model rendered under iOS in just a few days. We expected to finish iOS tutorial in no time. However, the reality reminded us: it's easy to come up …</p><p class="subheader">Category: <a href="http://opengamestudio.org/category/news.html">News</a>
+<p><a href="https://twitter.com/OpenGameStudio/status/826816343433498627">This February</a> we managed to get simple model rendered under iOS in just a few days. We expected to finish iOS tutorial in no time. However, the reality reminded us: it's easy to come ...</p><p class="subheader">Category: <a href="http://opengamestudio.org/category/news.html">News</a>
 
 </p>
 
@@ -213,12 +255,12 @@ In case you missed it, here's …</p><p class="subheader">Category: <a href="htt
 
             <article>
                 <a href="http://opengamestudio.org/osg-sample.html"><h3 class="article-title">OpenSceneGraph sample</h3></a>
-<h6 class="subheader" title="2017-05-12T00:00:00+03:00">Fri 12 May 2017
+<h6 class="subheader" title="2017-05-12T00:00:00+03:00">Пт 12 Май 2017
             <a class="button secondary small translation-button" href="http://opengamestudio.org/osg-sample-ru.html">ru</a>
 
-</h6><p><img alt="OSG sample" src="http://opengamestudio.org/2017-05_osg-sample.png"></p>
+</h6><p><img alt="OSG sample" src="http://opengamestudio.org/2017-05_osg-sample.png" /></p>
 <p>This article describes creation of the tutorials for building sample OpenSceneGraph application under Linux, macOS, Windows, and Android in April 2017.</p>
-<p>Previous tutorials described how to install OpenSceneGraph under Linux, macOS, Windows and render a model using the standard <strong>osgviewer</strong> tool. This time we worked on a <a href="https://github.com/OGStudio/openscenegraph-cross-platform-guide-application">sample OpenSceneGraph application …</a></p><p class="subheader">Category: <a href="http://opengamestudio.org/category/news.html">News</a>
+<p>Previous tutorials described how to install OpenSceneGraph under Linux, macOS, Windows and render a model using the standard <strong>osgviewer</strong> tool. This time we worked on a <a href="https://github.com/OGStudio/openscenegraph-cross-platform-guide-application">sample OpenSceneGraph application ...</a></p><p class="subheader">Category: <a href="http://opengamestudio.org/category/news.html">News</a>
 
 </p>
 
@@ -232,38 +274,18 @@ In case you missed it, here's …</p><p class="subheader">Category: <a href="htt
 
             <article>
                 <a href="http://opengamestudio.org/its-all-fine.html"><h3 class="article-title">It's all fine</h3></a>
-<h6 class="subheader" title="2017-04-07T00:00:00+03:00">Fri 07 April 2017
+<h6 class="subheader" title="2017-04-07T00:00:00+03:00">Пт 07 Апрель 2017
             <a class="button secondary small translation-button" href="http://opengamestudio.org/its-all-fine-ru.html">ru</a>
 
-</h6><p><img alt="ItsAllFine" src="http://opengamestudio.org/2017-04_its-all-fine.png"></p>
+</h6><p><img alt="ItsAllFine" src="http://opengamestudio.org/2017-04_its-all-fine.png" /></p>
 <p>This article describes creation of the first four OpenSceneGraph tutorials in March 2017.</p>
 <p>The <a href="https://github.com/OGStudio/openscenegraph-cross-platform-guide/">first four OpenSceneGraph tutorials</a> explain how to create a cube model with Blender and display the model under Linux, macOS, or Windows using OpenSceneGraph tool called osgviewer.</p>
-<p>The whole process of creating a single tutorial turned …</p><p class="subheader">Category: <a href="http://opengamestudio.org/category/news.html">News</a>
+<p>The whole process of creating a single tutorial turned ...</p><p class="subheader">Category: <a href="http://opengamestudio.org/category/news.html">News</a>
 
 </p>
 
 
                 <a class="button radius secondary small right" href="http://opengamestudio.org/its-all-fine.html">Read More</a>
-                <hr  class="gradient"/>
-            </article>
-
-        
-
-
-            <article>
-                <a href="http://opengamestudio.org/lets-go.html"><h3 class="article-title">Let's go</h3></a>
-<h6 class="subheader" title="2017-03-16T00:00:00+03:00">Thu 16 March 2017
-            <a class="button secondary small translation-button" href="http://opengamestudio.org/lets-go-ru.html">ru</a>
-
-</h6><p><img alt="Let's go" src="http://opengamestudio.org/2017-03_lets-go.png"></p>
-<p>In this article we describe our progress in January and February of 2017: rendering under iOS/Web and a new tutorial tool.</p>
-<p><strong>Rendering under iOS/Web</strong></p>
-<p>To our surprise, we got a simple red cube rendered under <a href="https://twitter.com/OpenGameStudio/status/826816343433498627">iOS</a> and <a href="https://twitter.com/OpenGameStudio/status/829731986264698881">Web</a> pretty fast: in early February. However, this is only the …</p><p class="subheader">Category: <a href="http://opengamestudio.org/category/news.html">News</a>
-
-</p>
-
-
-                <a class="button radius secondary small right" href="http://opengamestudio.org/lets-go.html">Read More</a>
                 <hr  class="gradient"/>
             </article>
 
