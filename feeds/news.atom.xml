@@ -662,4 +662,18 @@ It's time to create simple Mahjong solitaire game.&lt;/p&gt;</summary></entry><e
 &lt;p&gt;The next live session will be held in September 2016.&lt;/p&gt;</summary></entry><entry><title>Live session: 28 May 2016</title><link href="http://opengamestudio.org/may-live-session-announcement.html" rel="alternate"></link><updated>2016-05-17T00:00:00+03:00</updated><author><name>Opensource Game Studio</name></author><id>tag:opengamestudio.org,2016-05-17:may-live-session-announcement.html</id><summary type="html">&lt;p&gt;We're glad to annouce that the &lt;a title="LiveCoding" href="https://www.livecoding.tv/kornerr"&gt;LiveCoding&lt;/a&gt; session will take place on &lt;a title="Local time" href="http://www.timeanddate.com/worldclock/fixedtime.html?msg=Open+Game+Studio+May+live+session&amp;iso=20160528T12&amp;p1=37&amp;ah=3"&gt;28 May 2016 at 12:00 CEST&lt;/a&gt;. Join us!&lt;/p&gt;</summary></entry><entry><title>May live session (Editor 0.9)</title><link href="http://opengamestudio.org/may-live-session-decision.html" rel="alternate"></link><updated>2016-04-24T00:00:00+03:00</updated><author><name>Opensource Game Studio</name></author><id>tag:opengamestudio.org,2016-04-24:may-live-session-decision.html</id><summary type="html">&lt;p&gt;As you know, the previously published roadmap assumed, that we would hold a live session in April and it would feature a ping-pong game created with Editor 0.9.&lt;/p&gt;
 &lt;p&gt;We have to admit, our abilities to plan are not yet good enough. That's why the next live session will take place by the end of May. The exact date will be announced later.&lt;/p&gt;
 &lt;p&gt;Here's a short preview of the coming game:
-&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/V3EvCVPc6kg" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;&lt;/p&gt;</summary></entry></feed>
+&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/V3EvCVPc6kg" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;&lt;/p&gt;</summary></entry><entry><title>"Rolling ball" live session videos and downloads</title><link href="http://opengamestudio.org/rolling-ball.html" rel="alternate"></link><updated>2016-02-10T00:00:00+03:00</updated><author><name>Opensource Game Studio</name></author><id>tag:opengamestudio.org,2016-02-10:rolling-ball.html</id><summary type="html">&lt;p&gt;Since we held 2 live sessions to create "Rolling ball" game, here are 2 YouTube videos of the process:&lt;/p&gt;
+&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/70Jny1xJxK8" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
+
+&lt;iframe width="560" height="315" src="http://www.youtube.com/embed/851IlFT7y18" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
+
+&lt;p&gt;"Rolling ball" game for Linux (Debian based), OS X (10.9+), Windows &lt;a title="SourceForge" href="http://sourceforge.net/projects/osrpgcreation/files/Games/RollingBall/"&gt;is available at SourceForge&lt;/a&gt;.
+Simply unpack it and launch the run script.&lt;/p&gt;
+&lt;p&gt;Editor 0.8 &lt;a title="SourceForge" href="http://sourceforge.net/projects/osrpgcreation/files/Editor/jenkins/46_2016-01-30_22-20-41_0.8.0/"&gt;is available at SourceForge&lt;/a&gt;, too.&lt;/p&gt;
+&lt;p&gt;"Rolling ball" project for the Editor &lt;a title="GitHub" href="https://github.com/OGStudio/rollingBall.ogs/archive/master.zip"&gt;is available at GitHub&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;To open it in the Editor:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;replace slideDown.ogs with rollingBall.ogs you downloaded&lt;/li&gt;
+&lt;li&gt;rename rollingBall.ogs to slideDown.ogs&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Since live session took us so long, we decided to concentrate on polishing. Editor already has a lot of features, but their use is inconvenient. We will fix major obstacles for the next Editor release.&lt;/p&gt;</summary></entry></feed>

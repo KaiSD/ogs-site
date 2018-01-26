@@ -1321,4 +1321,32 @@ It's time to create simple Mahjong solitaire game.&lt;/p&gt;</summary></entry><e
 &lt;iframe width="560" height="315" src="https://www.youtube.com/embed/V3EvCVPc6kg" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;&lt;/p&gt;</summary></entry><entry><title>Майский прямой эфир (Редактор 0.9)</title><link href="http://opengamestudio.org/may-live-session-decision-ru.html" rel="alternate"></link><updated>2016-04-24T00:00:00+03:00</updated><author><name>Opensource Game Studio</name></author><id>tag:opengamestudio.org,2016-04-24:may-live-session-decision-ru.html</id><summary type="html">&lt;p&gt;Как вы знаете, ранее опубликованная дорожная карта предполагала, что в апреле будет прямой эфир, в котором с помощью Редактора 0.9 мы создадим игру пинг-понг.&lt;/p&gt;
 &lt;p&gt;Мы должны признать, что наши способности к планированию всё ещё недостаточно высоки, поэтому следующий прямой эфир состоится в конце мая. Точную дату мы объявим позже.&lt;/p&gt;
 &lt;p&gt;Вот пара моментов из будущей игры:
-&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/V3EvCVPc6kg" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;&lt;/p&gt;</summary></entry></feed>
+&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/V3EvCVPc6kg" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;&lt;/p&gt;</summary></entry><entry><title>"Rolling ball" live session videos and downloads</title><link href="http://opengamestudio.org/rolling-ball.html" rel="alternate"></link><updated>2016-02-10T00:00:00+03:00</updated><author><name>Opensource Game Studio</name></author><id>tag:opengamestudio.org,2016-02-10:rolling-ball.html</id><summary type="html">&lt;p&gt;Since we held 2 live sessions to create "Rolling ball" game, here are 2 YouTube videos of the process:&lt;/p&gt;
+&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/70Jny1xJxK8" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
+
+&lt;iframe width="560" height="315" src="http://www.youtube.com/embed/851IlFT7y18" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
+
+&lt;p&gt;"Rolling ball" game for Linux (Debian based), OS X (10.9+), Windows &lt;a title="SourceForge" href="http://sourceforge.net/projects/osrpgcreation/files/Games/RollingBall/"&gt;is available at SourceForge&lt;/a&gt;.
+Simply unpack it and launch the run script.&lt;/p&gt;
+&lt;p&gt;Editor 0.8 &lt;a title="SourceForge" href="http://sourceforge.net/projects/osrpgcreation/files/Editor/jenkins/46_2016-01-30_22-20-41_0.8.0/"&gt;is available at SourceForge&lt;/a&gt;, too.&lt;/p&gt;
+&lt;p&gt;"Rolling ball" project for the Editor &lt;a title="GitHub" href="https://github.com/OGStudio/rollingBall.ogs/archive/master.zip"&gt;is available at GitHub&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;To open it in the Editor:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;replace slideDown.ogs with rollingBall.ogs you downloaded&lt;/li&gt;
+&lt;li&gt;rename rollingBall.ogs to slideDown.ogs&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Since live session took us so long, we decided to concentrate on polishing. Editor already has a lot of features, but their use is inconvenient. We will fix major obstacles for the next Editor release.&lt;/p&gt;</summary></entry><entry><title>Запись прямого эфира "Катящийся мяч" и материалы</title><link href="http://opengamestudio.org/rolling-ball-ru.html" rel="alternate"></link><updated>2016-02-10T00:00:00+03:00</updated><author><name>Opensource Game Studio</name></author><id>tag:opengamestudio.org,2016-02-10:rolling-ball-ru.html</id><summary type="html">&lt;p&gt;Т.к. мы провели 2 прямые трансляции для создания игры "Катящийся мяч", ниже вы можете увидеть 2 записи этого процесса на YouTube:&lt;/p&gt;
+&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/70Jny1xJxK8" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
+
+&lt;iframe width="560" height="315" src="http://www.youtube.com/embed/851IlFT7y18" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
+
+&lt;p&gt;Игра "Катящийся мяч" для Linux (на основе Debian), OS X (10.9+), Windows &lt;a title="SourceForge" href="http://sourceforge.net/projects/osrpgcreation/files/Games/RollingBall/"&gt;доступна на SourceForge&lt;/a&gt;.
+Просто распакуйте и запустите скрипт 'run'.&lt;/p&gt;
+&lt;p&gt;Редактор 0.8 &lt;a title="SourceForge" href="http://sourceforge.net/projects/osrpgcreation/files/Editor/jenkins/46_2016-01-30_22-20-41_0.8.0/"&gt;доступен тоже на SourceForge&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Проект "Катящийся мяч" для Редактора &lt;a title="GitHub" href="https://github.com/OGStudio/rollingBall.ogs/archive/master.zip"&gt;доступен на GitHub&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Чтобы открыть его в Редакторе:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;замените slideDown.ogs загруженным rollingBall.ogs&lt;/li&gt;
+&lt;li&gt;переименуйте rollingBall.ogs в slideDown.ogs&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Т.к. прямой эфир занял гораздо больше времени, чем мы планировали, мы решили сконцентрировать свои усилия на улучшении удобства редактора. Его возможности уже довольно обширны, но использовать их крайне неудобно. Наиболее серьезные из этих проблем мы планируем исправить в следующем релизе Редактора.&lt;/p&gt;</summary></entry></feed>
