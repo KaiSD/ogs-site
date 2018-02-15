@@ -28,7 +28,7 @@ OUTPUT_PATH = '..'
 
 # Menu
 MENUITEMS = (
-    ('Projects', 'pages/projects.html'),
-    ('About', 'pages/about.html'),
+    ('Projects', '/pages/projects.html'),
+    ('About', '/pages/about.html'),
 )
 DISPLAY_PAGES_ON_MENU = False
