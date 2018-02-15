@@ -25,3 +25,10 @@ DELETE_OUTPUT_DIRECTORY = True
 GOOGLE_ANALYTICS = "UA-3773114-1"
 
 OUTPUT_PATH = '..'
+
+# Menu
+MENUITEMS = (
+    ('Projects', 'pages/projects.html'),
+    ('About', 'pages/about.html'),
+)
+DISPLAY_PAGES_ON_MENU = False
