@@ -1,5 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Opensource Game Studio</title><link href="http://opengamestudio.org/" rel="alternate"></link><link href="http://opengamestudio.org/feeds/all.atom.xml" rel="self"></link><id>http://opengamestudio.org/</id><updated>2018-01-26T00:00:00+03:00</updated><entry><title>Mahjong recreation start</title><link href="http://opengamestudio.org/mahjong-recreation-start.html" rel="alternate"></link><updated>2018-01-26T00:00:00+03:00</updated><author><name>Opensource Game Studio</name></author><id>tag:opengamestudio.org,2018-01-26:mahjong-recreation-start.html</id><summary type="html">&lt;p&gt;&lt;img alt="Screenshot" src="http://opengamestudio.org/2018-01-26-mahjong-recreation-start.png" /&gt;&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Opensource Game Studio</title><link href="http://opengamestudio.org/" rel="alternate"></link><link href="http://opengamestudio.org/feeds/all.atom.xml" rel="self"></link><id>http://opengamestudio.org/</id><updated>2018-02-16T00:00:00+03:00</updated><entry><title>First techdemo of OGS Mahjong 2: Gameplay</title><link href="http://opengamestudio.org/mahjong-techdemo1-gameplay.html" rel="alternate"></link><updated>2018-02-16T00:00:00+03:00</updated><author><name>Opensource Game Studio</name></author><id>tag:opengamestudio.org,2018-02-16:mahjong-techdemo1-gameplay.html</id><summary type="html">&lt;p&gt;&lt;img alt="Screenshot" src="http://opengamestudio.org/2018-02-16-mahjong-techdemo1-gameplay.png" /&gt;&lt;/p&gt;
+&lt;p&gt;We are glad to announce the release of the first technical demonstration of
+OGS Mahjong 2. The purpose of this release was to verify gameplay across
+supported platforms.&lt;/p&gt;
+&lt;p&gt;Get techdemo for your platform:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Run &lt;a href="https://ogstudio.github.io/game-mahjong/versions/013/mjin-player.html"&gt;Web version&lt;/a&gt; in your browser&lt;/li&gt;
+&lt;li&gt;Get &lt;a href="https://drive.google.com/open?id=1KW8IEN8Dpz8ODeg8BctVSJyzj9-AL9hR"&gt;Android version&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Get &lt;a href="https://drive.google.com/open?id=1oj0-OXSmEatttzn86u2vgP9SRAIC0ozB"&gt;Windows version&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Get &lt;a href="https://drive.google.com/open?id=1EX7kLIThLiMz9_W7VmBPySms3mlrF-i6"&gt;Linux version&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Get &lt;a href="https://drive.google.com/open?id=1KWnvbHzan8MpMcZPG2QC-7KWoEYbqrM2"&gt;macOS version&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Notes:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;iOS version is not released because it cannot be easily shared outside AppStore.&lt;/li&gt;
+&lt;li&gt;Launch &lt;code&gt;run&lt;/code&gt; script under Linux and macOS.&lt;/li&gt;
+&lt;li&gt;Linux version is only available in 64-bit variant.&lt;/li&gt;
+&lt;li&gt;macOS version should run on macOS Sierra or newer.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;That's it for now, have a nice testing!&lt;/p&gt;</summary></entry><entry><title>Первая технодемка OGS Mahjong 2: Игровая механика</title><link href="http://opengamestudio.org/mahjong-techdemo1-gameplay-ru.html" rel="alternate"></link><updated>2018-02-16T00:00:00+03:00</updated><author><name>Opensource Game Studio</name></author><id>tag:opengamestudio.org,2018-02-16:mahjong-techdemo1-gameplay-ru.html</id><summary type="html">&lt;p&gt;&lt;img alt="Screenshot" src="http://opengamestudio.org/2018-02-16-mahjong-techdemo1-gameplay.png" /&gt;&lt;/p&gt;
+&lt;p&gt;Мы ради сообщить о выпуске первой технической демонастрации OGS Mahjong 2.
+Её цель была в проверке игровой механики на всех поддерживаемых платформах.&lt;/p&gt;
+&lt;p&gt;Проверьте технодемку на своей платформе:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Запустить &lt;a href="https://ogstudio.github.io/game-mahjong/versions/013/mjin-player.html"&gt;версию для веба&lt;/a&gt; в браузере&lt;/li&gt;
+&lt;li&gt;Получить &lt;a href="https://drive.google.com/open?id=1KW8IEN8Dpz8ODeg8BctVSJyzj9-AL9hR"&gt;версию для Android&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Получить &lt;a href="https://drive.google.com/open?id=1oj0-OXSmEatttzn86u2vgP9SRAIC0ozB"&gt;версию для Windows&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Получить &lt;a href="https://drive.google.com/open?id=1EX7kLIThLiMz9_W7VmBPySms3mlrF-i6"&gt;версию для Linux&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Получить &lt;a href="https://drive.google.com/open?id=1KWnvbHzan8MpMcZPG2QC-7KWoEYbqrM2"&gt;версию для macOS&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Замечания:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Версия для iOS не выпущена, т.к. нет простого способа её распространения вне AppStore.&lt;/li&gt;
+&lt;li&gt;Запустите скрипт &lt;code&gt;run&lt;/code&gt; в версиях для Linux и macOS.&lt;/li&gt;
+&lt;li&gt;Версия для Linux доступна лишь в 64-битном варианте.&lt;/li&gt;
+&lt;li&gt;Версия для macOS должна работать на macOS Sierra или новее.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;На сегодня это всё, хорошей проверки!&lt;/p&gt;</summary></entry><entry><title>Mahjong recreation start</title><link href="http://opengamestudio.org/mahjong-recreation-start.html" rel="alternate"></link><updated>2018-01-26T00:00:00+03:00</updated><author><name>Opensource Game Studio</name></author><id>tag:opengamestudio.org,2018-01-26:mahjong-recreation-start.html</id><summary type="html">&lt;p&gt;&lt;img alt="Screenshot" src="http://opengamestudio.org/2018-01-26-mahjong-recreation-start.png" /&gt;&lt;/p&gt;
 &lt;p&gt;This article describes the start of Mahjong game recreation.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Plan&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;We started Mahjong recreation endeavour by composing a brief plan to get gameplay with minimal graphics:&lt;/p&gt;
