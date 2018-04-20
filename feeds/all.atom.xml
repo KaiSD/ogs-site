@@ -1,5 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Opensource Game Studio</title><link href="http://opengamestudio.org/" rel="alternate"></link><link href="http://opengamestudio.org/feeds/all.atom.xml" rel="self"></link><id>http://opengamestudio.org/</id><updated>2018-02-16T00:00:00+03:00</updated><entry><title>First techdemo of OGS Mahjong 2: Gameplay</title><link href="http://opengamestudio.org/mahjong-techdemo1-gameplay.html" rel="alternate"></link><updated>2018-02-16T00:00:00+03:00</updated><author><name>Opensource Game Studio</name></author><id>tag:opengamestudio.org,2018-02-16:mahjong-techdemo1-gameplay.html</id><summary type="html">&lt;p&gt;&lt;img alt="Screenshot" src="http://opengamestudio.org/2018-02-16-mahjong-techdemo1-gameplay.png" /&gt;&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Opensource Game Studio</title><link href="http://opengamestudio.org/" rel="alternate"></link><link href="http://opengamestudio.org/feeds/all.atom.xml" rel="self"></link><id>http://opengamestudio.org/</id><updated>2018-04-20T00:00:00+03:00</updated><entry><title>OpenSceneGraph cross-platform examples</title><link href="http://opengamestudio.org/openscenegraph-examples.html" rel="alternate"></link><updated>2018-04-20T00:00:00+03:00</updated><author><name>Opensource Game Studio</name></author><id>tag:opengamestudio.org,2018-04-20:openscenegraph-examples.html</id><summary type="html">&lt;p&gt;&lt;img alt="Screenshot" src="http://opengamestudio.org/2018-04-20-openscenegraph-examples.png" /&gt;&lt;/p&gt;
+&lt;p&gt;This article summarizes the work we did to produce the first two
+cross-platform OpenSceneGraph examples.&lt;/p&gt;
+&lt;p&gt;By the time &lt;a href="http://opengamestudio.org/mahjong-techdemo1-gameplay.html"&gt;the first technology demonstration of OGS Mahjong 2&lt;/a&gt;
+has been released, we've already had &lt;a href="https://github.com/OGStudio/openscenegraph-cross-platform-guide/issues/4"&gt;issue request&lt;/a&gt;
+(to explain how to load images with OpenSceneGraph on Android) hanging for some
+time. We considered creating a new tutorial for
+&lt;a href="https://github.com/OGStudio/openscenegraph-cross-platform-guide"&gt;OpenSceneGraph cross-platform guide&lt;/a&gt; at first. However, we realized
+that it's time-consuming and excessive for such a tiny topic (compared to
+what an average game has) as image loading. We decided to continue sharing our
+knowledge in the form of concrete examples. That's how
+&lt;a href="https://github.com/OGStudio/openscenegraph-cross-platform-examples"&gt;OpenSceneGraph cross-platform examples&lt;/a&gt; were born.&lt;/p&gt;
+&lt;p&gt;Each example:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;explains crucial code necessary to perform a specific task&lt;/li&gt;
+&lt;li&gt;accents platform-specific nuances&lt;/li&gt;
+&lt;li&gt;provides implementations to cover desktop, mobile, and web platforms&lt;/li&gt;
+&lt;li&gt;provides a web build to showcase results&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The first two examples cover the following topics:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Embed resource into executable: this greatly simplifies resource handling across platforms&lt;/li&gt;
+&lt;li&gt;Use PNG images with PNG plugins: this explains the requirements necessary to build and use PNG plugins&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;We will be adding new examples as we proceed with OGS Mahjong 2 development.&lt;/p&gt;
+&lt;p&gt;That's it for summarizing the work we did to produce the first two cross-platform OpenSceneGraph examples.&lt;/p&gt;</summary></entry><entry><title>Кросс-платформенные примеры OpenSceneGraph</title><link href="http://opengamestudio.org/openscenegraph-examples-ru.html" rel="alternate"></link><updated>2018-04-20T00:00:00+03:00</updated><author><name>Opensource Game Studio</name></author><id>tag:opengamestudio.org,2018-04-20:openscenegraph-examples-ru.html</id><summary type="html">&lt;p&gt;&lt;img alt="Screenshot" src="http://opengamestudio.org/2018-04-20-openscenegraph-examples.png" /&gt;&lt;/p&gt;
+&lt;p&gt;Эта статья резюмирует создание первых двух кросс-платформенных примеров
+OpenSceneGraph.&lt;/p&gt;
+&lt;p&gt;К тому времени, как мы выпустили
+&lt;a href="http://opengamestudio.org/mahjong-techdemo1-gameplay-ru.html"&gt;первую техническую демонстрацию OGS Mahjong 2&lt;/a&gt;, нас уже дожидался
+&lt;a href="https://github.com/OGStudio/openscenegraph-cross-platform-guide/issues/4"&gt;запрос на описание работы с изображениями&lt;/a&gt; в
+OpenSceneGraph на Android. Сначала мы рассматривали возможность создания нового
+самоучителя для &lt;a href="https://github.com/OGStudio/openscenegraph-cross-platform-guide"&gt;кросс-платформенного руководства OpenSceneGraph&lt;/a&gt;, но
+позже мы оценили необходимые трудозатраты и посчитали их излишними для
+освещения такой небольшой темы (по сравнению с тем, что умеет средняя игра)
+как загрузка изображений. Мы решили продолжить делиться нашими знаниями в виде
+конкретных примеров. Так на свет появились
+&lt;a href="https://github.com/OGStudio/openscenegraph-cross-platform-examples"&gt;кросс-платформенные примеры OpenSceneGraph&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Каждый пример:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;объясняет критически важный код для выполнения поставленной задачи&lt;/li&gt;
+&lt;li&gt;акцентирует внимание на нюансах, специфичных для каждой платформы&lt;/li&gt;
+&lt;li&gt;предоставляет реализации примера для десктопа, мобилок и веба&lt;/li&gt;
+&lt;li&gt;предоставляет сборку для веба, чтобы упростить оценку результата&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Первая пара примеров освещает следующие темы:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Встраивание ресурсов в исполняемый файл: значительное упрощение работы с ресурсами на всех платформах&lt;/li&gt;
+&lt;li&gt;Использование изображений PNG с помощью плагинов PNG: описание требований, необходимых для сборки и использования плагинов PNG&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Мы будем и впредь добавлять новые примеры по мере продвижения нашей разработки OGS Mahjong 2.&lt;/p&gt;
+&lt;p&gt;На этом мы заканчиваем резюме о создании первых двух кросс-платформенных примеров OpenSceneGraph.&lt;/p&gt;</summary></entry><entry><title>First techdemo of OGS Mahjong 2: Gameplay</title><link href="http://opengamestudio.org/mahjong-techdemo1-gameplay.html" rel="alternate"></link><updated>2018-02-16T00:00:00+03:00</updated><author><name>Opensource Game Studio</name></author><id>tag:opengamestudio.org,2018-02-16:mahjong-techdemo1-gameplay.html</id><summary type="html">&lt;p&gt;&lt;img alt="Screenshot" src="http://opengamestudio.org/2018-02-16-mahjong-techdemo1-gameplay.png" /&gt;&lt;/p&gt;
 &lt;p&gt;We are glad to announce the release of the first technical demonstration of
 OGS Mahjong 2. The purpose of this release was to verify gameplay across
 supported platforms.&lt;/p&gt;
@@ -1400,4 +1451,45 @@ The exact date and time is to be announced in the coming days. Stay tuned!&lt;/p
 &lt;li&gt;Редактор + Проигрыватель 0.8.0 (Январь 2016): Звуковая система, игра "Поймай крота" со звуком&lt;/li&gt;
 &lt;li&gt;Редактор + Проигрыватель 0.9.0 (Апрель 2016): Сетевая система, простая игра ping pong для двух игроков по сети&lt;/li&gt;
 &lt;li&gt;Редактор + Проигрыватель 0.10.0 (Июль 2016): Полировка, прототип игры "Шуан"&lt;/li&gt;
-&lt;/ol&gt;</summary></entry></feed>
+&lt;/ol&gt;</summary></entry><entry><title>Live session video and downloads</title><link href="http://opengamestudio.org/livesession-materials-editor-07.html" rel="alternate"></link><updated>2015-11-15T00:00:00+03:00</updated><author><name>Opensource Game Studio</name></author><id>tag:opengamestudio.org,2015-11-15:livesession-materials-editor-07.html</id><summary type="html">&lt;p&gt;If you missed the live session, you can watch it here:
+&lt;a href="https://www.livecoding.tv/video/kornerr/playlists/whac-a-mole-from-scratch/"&gt;https://www.livecoding.tv/video/kornerr/playlists/whac-a-mole-from-scratch/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;You can download the resulting project here:
+&lt;a href="https://github.com/OGStudio/liveSessionWhacAMole/archive/master.zip"&gt;https://github.com/OGStudio/liveSessionWhacAMole/archive/master.zip&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;The latest editor can be found here:
+&lt;a href="http://sourceforge.net/projects/osrpgcreation/files/Editor/jenkins/42_2015-11-13_08-16-46_0.7.4/"&gt;http://sourceforge.net/projects/osrpgcreation/files/Editor/jenkins/42_2015-11-13_08-16-46_0.7.4/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Download the editor archive, unpack, delete the wam.ogs folder, copy wam.ogs from the live session archive to the editor folder.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;in Windows - run the &lt;code&gt;run.bat&lt;/code&gt; file.&lt;/li&gt;
+&lt;li&gt;in Linux and OSX - run the &lt;code&gt;run&lt;/code&gt; file.&lt;/li&gt;
+&lt;/ul&gt;</summary></entry><entry><title>Видеозапись живой сессии и материалы</title><link href="http://opengamestudio.org/livesession-materials-editor-07-ru.html" rel="alternate"></link><updated>2015-11-15T00:00:00+03:00</updated><author><name>Opensource Game Studio</name></author><id>tag:opengamestudio.org,2015-11-15:livesession-materials-editor-07-ru.html</id><summary type="html">&lt;p&gt;Если вы пропустили живую сессию, вы можете посмотреть ее здесь:
+&lt;a href="https://www.livecoding.tv/video/kornerr/playlists/whac-a-mole-from-scratch/"&gt;https://www.livecoding.tv/video/kornerr/playlists/whac-a-mole-from-scratch/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Проект, созданный в ходе сессии, можно скачать здесь:
+&lt;a href="https://github.com/OGStudio/liveSessionWhacAMole/archive/master.zip"&gt;https://github.com/OGStudio/liveSessionWhacAMole/archive/master.zip&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Последняя версия редактора доступна здесь:
+&lt;a href="http://sourceforge.net/projects/osrpgcreation/files/Editor/jenkins/42_2015-11-13_08-16-46_0.7.4/"&gt;http://sourceforge.net/projects/osrpgcreation/files/Editor/jenkins/42_2015-11-13_08-16-46_0.7.4/&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Скачайте редактор, разархивируйте, удалите папку wam.ogs из редактора, скопируйте папку wam.ogs из архива живой сессии в папку редактора.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;в Windows - запустите файл &lt;code&gt;run.bat&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;в Linux и OSX - запустите файл &lt;code&gt;run&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;</summary></entry><entry><title>Creating a simple game live: 15 November 2015</title><link href="http://opengamestudio.org/livesession-editor-07.html" rel="alternate"></link><updated>2015-11-09T00:00:00+03:00</updated><author><name>Opensource Game Studio</name></author><id>tag:opengamestudio.org,2015-11-09:livesession-editor-07.html</id><summary type="html">&lt;p&gt;We're glad to annouce that the &lt;a title="LiveCoding" href="https://www.livecoding.tv/kornerr"&gt;LiveCoding&lt;/a&gt; session will take place on &lt;a title="Local time" href="http://www.timeanddate.com/worldclock/fixedtime.html?msg=Whac-a-mole+game+from+scratch+live&amp;amp;iso=20151115T12&amp;amp;p1=37&amp;amp;ah=3"&gt;15 November 2015 at 12:00 CET&lt;/a&gt;. Join us!&lt;/p&gt;</summary></entry><entry><title>Создание простой игры в прямом эфире: 15 ноября 2015</title><link href="http://opengamestudio.org/livesession-editor-07-ru.html" rel="alternate"></link><updated>2015-11-09T00:00:00+03:00</updated><author><name>Opensource Game Studio</name></author><id>tag:opengamestudio.org,2015-11-09:livesession-editor-07-ru.html</id><summary type="html">&lt;p&gt;Мы рады сообщить, что трансляция &lt;a title="LiveCoding" href="https://www.livecoding.tv/kornerr"&gt;LiveCoding&lt;/a&gt; состоится &lt;a title="Локальное время" href="http://www.timeanddate.com/worldclock/fixedtime.html?msg=Whac-a-mole+game+from+scratch+live&amp;amp;iso=20151115T14&amp;amp;p1=166&amp;amp;ah=3"&gt;15 ноября 2015 в 14:00 MSK&lt;/a&gt;. Присоединяйтесь!&lt;/p&gt;</summary></entry><entry><title>SOON: Creating a simple game live (Editor 0.7)</title><link href="http://opengamestudio.org/soon-game-creation-editor-07.html" rel="alternate"></link><updated>2015-11-02T00:00:00+03:00</updated><author><name>Opensource Game Studio</name></author><id>tag:opengamestudio.org,2015-11-02:soon-game-creation-editor-07.html</id><summary type="html">&lt;p&gt;As we have promised, we are ready to give you Editor 0.7 which is capable of creating the complete test chamber. However, after recreating the test chamber ourselves, it became clear that:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;it takes more than 8 hours to recreate it (too long)&lt;/li&gt;
+&lt;li&gt;it's inappropriate to be presented in the form of an article (too boring)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Therefore we decided to hold a live session at &lt;a title="LiveCoding" href="https://www.livecoding.tv/kornerr"&gt;LiveCoding&lt;/a&gt; SOON to show you how to create a simple &lt;a title="Whac-a-mole" href="http://google.com/search?q=whac+a+mole"&gt;whac-a-mole like game&lt;/a&gt; from scratch.&lt;/p&gt;
+&lt;p&gt;Currently we are busy making final preparations, so we'll tell you the exact time and date this week. Stay tuned!&lt;/p&gt;</summary></entry><entry><title>СКОРО: Создание простой игры в прямом эфире (Редактор 0.7)</title><link href="http://opengamestudio.org/soon-game-creation-editor-07-ru.html" rel="alternate"></link><updated>2015-11-02T00:00:00+03:00</updated><author><name>Opensource Game Studio</name></author><id>tag:opengamestudio.org,2015-11-02:soon-game-creation-editor-07-ru.html</id><summary type="html">&lt;p&gt;Как и было обещано, мы готовы предоставить вам Редактор 0.7, с помощью которого можно создать тестовый цех. Тем не менее, после воссоздания цеха стало ясно, что:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;это занимает более 8 часов (слишком долго)&lt;/li&gt;
+&lt;li&gt;описание в виде статьи не подходит по формату (слишком скучно)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Поэтому мы решили провести прямую трансляцию на &lt;a title="LiveCoding" href="https://www.livecoding.tv/kornerr"&gt;LiveCoding&lt;/a&gt; СКОРО, чтобы показать, как создать простую &lt;a title="Whac-a-mole" href="http://google.com/search?q=whac+a+mole"&gt;игру типа "поймай крота"&lt;/a&gt; с нуля.&lt;/p&gt;
+&lt;p&gt;Сейчас мы заняты последними приготовлениями, поэтому точные дату и время мы сообщим на этой неделе. Оставайтесь на связи!&lt;/p&gt;</summary></entry><entry><title>Desura no more, hello Humble Bundle Widget</title><link href="http://opengamestudio.org/bye-desura-hello-humblebundle.html" rel="alternate"></link><updated>2015-07-23T00:00:00+03:00</updated><author><name>Opensource Game Studio</name></author><id>tag:opengamestudio.org,2015-07-23:bye-desura-hello-humblebundle.html</id><summary type="html">&lt;p&gt;After the recent bankruptcy of Desura's parent company, we decided, that we need a new place for our Deluxe version. Something better, more modern and more trustworthy. We have chosen the Humble Widget, with which you can buy the deluxe version of the game without leaving our site.&lt;/p&gt;
+&lt;p&gt;Here it is:&lt;/p&gt;
+&lt;iframe src="https://www.humblebundle.com/widget/v2/product/ogsmahjong/ySGF3h34?theme=transparent-light" width="526" height="325" style="border: none;" scrolling="no" frameborder="0"&gt;&lt;/iframe&gt;
+
+&lt;p&gt;We haven't received a single penny from Desura (due to the minimal cache out limitations), but if you bought the deluxe version from them and experiencing any problems with downloading it (right now we see no problems with that), send us a letter, tell your name on Desura, we'll figure something out.&lt;/p&gt;</summary></entry><entry><title>Прощай, Desura. Здравствуй, Humble Bundle Widget</title><link href="http://opengamestudio.org/bye-desura-hello-humblebundle-ru.html" rel="alternate"></link><updated>2015-07-23T00:00:00+03:00</updated><author><name>Opensource Game Studio</name></author><id>tag:opengamestudio.org,2015-07-23:bye-desura-hello-humblebundle-ru.html</id><summary type="html">&lt;p&gt;После недавнего банкротства родительской компании сервиса Desura мы пришли к выводу, что нам необходима новая площадка для распространения Deluxe-версии игры. Более современная, удобная, надежная.
+Наш выбор пал на Humble Widget, благодаря которому вы можете приобрести Deluxe-версию игры прямо у нас на сайте.&lt;/p&gt;
+&lt;p&gt;Вот он:&lt;/p&gt;
+&lt;iframe src="https://www.humblebundle.com/widget/v2/product/ogsmahjong/ySGF3h34?theme=transparent-light" width="526" height="325" style="border: none;" scrolling="no" frameborder="0"&gt;&lt;/iframe&gt;
+
+&lt;p&gt;К сожалению, мы не получили от Desura ни копейки (из-за минимального порога вывода средств, которого мы не достигли), однако, если вы приобретали Deluxe-версию OGS Mahjong на Desura и испытываете проблемы с ее скачиванием (в настоящее время проблем не обнаружено), напишите нам, указав свое имя на Desura, и мы что-нибудь придумаем.&lt;/p&gt;</summary></entry></feed>
