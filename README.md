@@ -39,8 +39,9 @@ To publish new content:
     pelican -s publishconf.py
     ```
 
-* upload it to GitHub with the following command:
+* upload it to GitHub with the following commands:
     ```
+    git add .
     git push
     ```
 

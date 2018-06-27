@@ -48,6 +48,67 @@
         
 
             <article>
+                <a href="http://opengamestudio.org/example-driven-development.html"><h3 class="article-title">Example-driven development</h3></a>
+<h6 class="subheader" title="2018-06-27T00:00:00+03:00">Ср 27 Июнь 2018
+            <a class="button secondary small translation-button" href="http://opengamestudio.org/example-driven-development-ru.html">ru</a>
+
+</h6><p><img alt="Screenshot" src="http://opengamestudio.org/2018-06-27-example-driven-development.png" /></p>
+<p>This article explains how the third OpenSceneGraph cross-platform example
+opened our eyes to example-driven development.</p>
+<p><strong>The third OpenSceneGraph cross-platform example</strong></p>
+<p>The third OpenSceneGraph cross-platform example explains how to implement
+<a href="https://github.com/OGStudio/openscenegraph-cross-platform-examples/tree/master/03.RemoteDebugging">remote debugging across platforms</a>. This example is less about
+OpenSceneGraph and more about different platforms.</p>
+<p>Remote anything nowadays assumes the use of HTTP(s) over TCP/IP. Thus, the
+first idea was to embed HTTP server into an application and let HTTP clients
+interact with the server. However, serving HTTP across all platforms is
+complicated:</p>
+<ul>
+<li>desktops have firewalls</li>
+<li>mobiles have restrictions on background processes</li>
+<li>web browsers are HTTP clients by design</li>
+</ul>
+<p>That's why we decided to create a mediator between debugged application and UI.
+<a href="https://github.com/OGStudio/debug-broker">Debug broker</a>, a small Node.js application, became that mediator.
+Debug broker uses no external dependencies, so it's easy to run virtually
+anywhere. Also, since debug broker is a server application, you can configure
+it once and use it for any number of applications.</p>
+<p>Both <a href="https://github.com/OGStudio/debug-ui">debug UI</a> and <a href="https://github.com/OGStudio/debug-broker">debug broker</a> use JavaScript
+because we wanted these tools to be accessible from anywhere with no prior
+installation. This decision limited us to web browser solution. Providing
+any sort of desktop application would incur additional installation and
+maintenance effort, which would only complicate the tools.</p>
+<p><strong>Example-driven development establishment</strong></p>
+<p>Once the third example was implemented, we realized how important and
+beneficial it is to develop new features outside the main project:</p>
+<ul>
+<li>the main project is freed from excessive commit noise</li>
+<li>a new feature is publicly shared for everyone to learn, criticize, and improve</li>
+</ul>
+<p>When we publicly share our knowledge:</p>
+<ul>
+<li>we must create documentation for everyone (including ourselves later) to understand what's going on</li>
+<li>we must not use hacks because that would break your trust in us</li>
+</ul>
+<p>From now on, all new features like input handling, Mahjong layout loading,
+resource caching, etc. are going to be first implemented as examples.
+We call this example-driven development.</p>
+<p>That's it for explaining how the third OpenSceneGraph cross-platform example
+opened our eyes to example-driven development.</p><p class="subheader">Category: <a href="http://opengamestudio.org/category/news.html">News</a>
+
+</p>
+
+
+            </article>
+
+
+                <hr  class="gradient"/>
+
+
+        
+
+
+            <article>
                 <a href="http://opengamestudio.org/openscenegraph-examples.html"><h3 class="article-title">OpenSceneGraph cross-platform examples</h3></a>
 <h6 class="subheader" title="2018-04-20T00:00:00+03:00">Пт 20 Апрель 2018
             <a class="button secondary small translation-button" href="http://opengamestudio.org/openscenegraph-examples-ru.html">ru</a>
@@ -58,35 +119,14 @@ cross-platform OpenSceneGraph examples.</p>
 <p>By the time <a href="http://opengamestudio.org/mahjong-techdemo1-gameplay.html">the first technology demonstration of OGS Mahjong 2</a>
 has been released, we've already had <a href="https://github.com/OGStudio/openscenegraph-cross-platform-guide/issues/4">issue request</a>
 (to explain how to load images with OpenSceneGraph on Android) hanging for some
-time. We considered creating a new tutorial for
-<a href="https://github.com/OGStudio/openscenegraph-cross-platform-guide">OpenSceneGraph cross-platform guide</a> at first. However, we realized
-that it's time-consuming and excessive for such a tiny topic (compared to
-what an average game has) as image loading. We decided to continue sharing our
-knowledge in the form of concrete examples. That's how
-<a href="https://github.com/OGStudio/openscenegraph-cross-platform-examples">OpenSceneGraph cross-platform examples</a> were born.</p>
-<p>Each example:</p>
-<ul>
-<li>explains crucial code necessary to perform a specific task</li>
-<li>accents platform-specific nuances</li>
-<li>provides implementations to cover desktop, mobile, and web platforms</li>
-<li>provides a web build to showcase results</li>
-</ul>
-<p>The first two examples cover the following topics:</p>
-<ul>
-<li>Embed resource into executable: this greatly simplifies resource handling across platforms</li>
-<li>Use PNG images with PNG plugins: this explains the requirements necessary to build and use PNG plugins</li>
-</ul>
-<p>We will be adding new examples as we proceed with OGS Mahjong 2 development.</p>
-<p>That's it for summarizing the work we did to produce the first two cross-platform OpenSceneGraph examples.</p><p class="subheader">Category: <a href="http://opengamestudio.org/category/news.html">News</a>
+time. We ...</p><p class="subheader">Category: <a href="http://opengamestudio.org/category/news.html">News</a>
 
 </p>
 
 
-            </article>
-
-
+                <a class="button radius secondary small right" href="http://opengamestudio.org/openscenegraph-examples.html">Read More</a>
                 <hr  class="gradient"/>
-
+            </article>
 
         
 
@@ -268,25 +308,6 @@ In case you missed it, here ...</p><p class="subheader">Category: <a href="http:
 
 
                 <a class="button radius secondary small right" href="http://opengamestudio.org/openscenegraph-cross-platform-guide.html">Read More</a>
-                <hr  class="gradient"/>
-            </article>
-
-        
-
-
-            <article>
-                <a href="http://opengamestudio.org/ios-tutorial.html"><h3 class="article-title">iOS tutorial</h3></a>
-<h6 class="subheader" title="2017-06-08T10:00:00+03:00">Чт 08 Июнь 2017
-            <a class="button secondary small translation-button" href="http://opengamestudio.org/ios-tutorial-ru.html">ru</a>
-
-</h6><p><img alt="iOS tutorial" src="http://opengamestudio.org/2017-06-08-ios-refactoring.png" /></p>
-<p>This article describes problems we faced during the creation of iOS tutorial in May 2017.</p>
-<p><a href="https://twitter.com/OpenGameStudio/status/826816343433498627">This February</a> we managed to get simple model rendered under iOS in just a few days. We expected to finish iOS tutorial in no time. However, the reality reminded us: it's easy to come ...</p><p class="subheader">Category: <a href="http://opengamestudio.org/category/news.html">News</a>
-
-</p>
-
-
-                <a class="button radius secondary small right" href="http://opengamestudio.org/ios-tutorial.html">Read More</a>
                 <hr  class="gradient"/>
             </article>
 

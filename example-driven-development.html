@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8" />
+    <!-- Set the viewport width to device width for mobile -->
+    <meta name="viewport" content="width=device-width" />
+
+    <title>Example-driven development</title>
+
+    <link rel="stylesheet" href="http://opengamestudio.org/theme/css/normalize.css" />
+    <link rel="stylesheet" href="http://opengamestudio.org/theme/css/foundation.min.css" />
+    <link rel="stylesheet" href="http://opengamestudio.org/theme/css/style.css" />
+    <link rel="stylesheet" href="http://opengamestudio.org/theme/css/pygments.css" />	
+    <script src="http://opengamestudio.org/theme/js/custom.modernizr.js"></script>
+
+    <!-- So Firefox can bookmark->"abo this site" -->
+        <link href="feeds/all.atom.xml" rel="alternate" title="Opensource Game Studio" type="application/atom+xml">
+
+</head>
+
+<body>
+
+<!-- Nav Bar -->
+<nav>
+
+<!-- Show menu items and pages -->
+<div class="row">
+    <div class="large-12 columns top-bar">
+	    <h1><a href="http://opengamestudio.org">Opensource Game Studio</a></h1>
+    </div>
+</div>
+<div class="row top-menu">
+<div class="large-12 columns">
+        <a href="/pages/projects.html" class="menu-button secondary">Projects</a>
+        <a href="/pages/about.html" class="menu-button secondary">About</a>
+
+</div>
+</div>
+</nav>
+<!-- End Nav -->
+
+
+<!-- Main Page Content and Sidebar -->
+<div class="row">
+
+    <!-- Main Blog Content -->
+    <div class="large-9 columns">
+<article>
+    <header>
+        <h3 class="article-title"><a href="http://opengamestudio.org/example-driven-development.html" rel="bookmark"
+        title="Permalink to Example-driven development">Example-driven development</a></h3>
+    </header>
+
+<h6 class="subheader" title="2018-06-27T00:00:00+03:00">Ср 27 Июнь 2018
+            <a class="button secondary small translation-button" href="http://opengamestudio.org/example-driven-development-ru.html">ru</a>
+
+</h6>    <p><img alt="Screenshot" src="http://opengamestudio.org/2018-06-27-example-driven-development.png" /></p>
+<p>This article explains how the third OpenSceneGraph cross-platform example
+opened our eyes to example-driven development.</p>
+<p><strong>The third OpenSceneGraph cross-platform example</strong></p>
+<p>The third OpenSceneGraph cross-platform example explains how to implement
+<a href="https://github.com/OGStudio/openscenegraph-cross-platform-examples/tree/master/03.RemoteDebugging">remote debugging across platforms</a>. This example is less about
+OpenSceneGraph and more about different platforms.</p>
+<p>Remote anything nowadays assumes the use of HTTP(s) over TCP/IP. Thus, the
+first idea was to embed HTTP server into an application and let HTTP clients
+interact with the server. However, serving HTTP across all platforms is
+complicated:</p>
+<ul>
+<li>desktops have firewalls</li>
+<li>mobiles have restrictions on background processes</li>
+<li>web browsers are HTTP clients by design</li>
+</ul>
+<p>That's why we decided to create a mediator between debugged application and UI.
+<a href="https://github.com/OGStudio/debug-broker">Debug broker</a>, a small Node.js application, became that mediator.
+Debug broker uses no external dependencies, so it's easy to run virtually
+anywhere. Also, since debug broker is a server application, you can configure
+it once and use it for any number of applications.</p>
+<p>Both <a href="https://github.com/OGStudio/debug-ui">debug UI</a> and <a href="https://github.com/OGStudio/debug-broker">debug broker</a> use JavaScript
+because we wanted these tools to be accessible from anywhere with no prior
+installation. This decision limited us to web browser solution. Providing
+any sort of desktop application would incur additional installation and
+maintenance effort, which would only complicate the tools.</p>
+<p><strong>Example-driven development establishment</strong></p>
+<p>Once the third example was implemented, we realized how important and
+beneficial it is to develop new features outside the main project:</p>
+<ul>
+<li>the main project is freed from excessive commit noise</li>
+<li>a new feature is publicly shared for everyone to learn, criticize, and improve</li>
+</ul>
+<p>When we publicly share our knowledge:</p>
+<ul>
+<li>we must create documentation for everyone (including ourselves later) to understand what's going on</li>
+<li>we must not use hacks because that would break your trust in us</li>
+</ul>
+<p>From now on, all new features like input handling, Mahjong layout loading,
+resource caching, etc. are going to be first implemented as examples.
+We call this example-driven development.</p>
+<p>That's it for explaining how the third OpenSceneGraph cross-platform example
+opened our eyes to example-driven development.</p>
+<p class="subheader">Category: <a href="http://opengamestudio.org/category/news.html">News</a>
+
+</p>
+
+
+
+</article>
+    </div>
+    <!-- End Main Content -->
+
+    <!-- Sidebar -->
+    <aside class="large-3 columns">
+        <!--k
+        <h5 class="sidebar-title">Site</h5>
+        <ul class="side-nav">
+            <li><a href="http://opengamestudio.org/archives.html">Archives</a>
+            <li><a href="http://opengamestudio.org/tags.html">Tags</a>
+
+
+                <li><a href="http://opengamestudio.org/feeds/all.atom.xml" rel="alternate">Atom feed</a></li>
+        </ul>
+
+		
+        <h5 class="sidebar-title">Categories</h5>
+        <ul class="side-nav">
+            <li><a href="http://opengamestudio.org/category/news.html">News</a></li>
+   
+        </ul>
+        -->
+
+
+		
+        
+        <h5 class="sidebar-title">Ads</h5>
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <!-- ogs2 -->
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-4473792248813084"
+             data-ad-slot="9024247127"
+             data-ad-format="auto"></ins>
+        <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+
+    </aside> <!-- End Sidebar -->
+
+</div> <!-- End Main Content and Sidebar -->
+
+
+<!-- Footer -->
+<footer class="row">
+    <div class="large-12 columns">
+        <hr />
+        <div class="row">
+            <div class="large-7 columns">
+                <p>Proudly powered by <a href="http://getpelican.com">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.</p>
+            </div>
+            </div>
+    </div>
+    <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-3773114-1']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+    </script>
+</footer>

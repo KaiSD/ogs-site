@@ -1,5 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Opensource Game Studio</title><link href="http://opengamestudio.org/" rel="alternate"></link><link href="http://opengamestudio.org/feeds/news.atom.xml" rel="self"></link><id>http://opengamestudio.org/</id><updated>2018-04-20T00:00:00+03:00</updated><entry><title>OpenSceneGraph cross-platform examples</title><link href="http://opengamestudio.org/openscenegraph-examples.html" rel="alternate"></link><updated>2018-04-20T00:00:00+03:00</updated><author><name>Opensource Game Studio</name></author><id>tag:opengamestudio.org,2018-04-20:openscenegraph-examples.html</id><summary type="html">&lt;p&gt;&lt;img alt="Screenshot" src="http://opengamestudio.org/2018-04-20-openscenegraph-examples.png" /&gt;&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Opensource Game Studio</title><link href="http://opengamestudio.org/" rel="alternate"></link><link href="http://opengamestudio.org/feeds/news.atom.xml" rel="self"></link><id>http://opengamestudio.org/</id><updated>2018-06-27T00:00:00+03:00</updated><entry><title>Example-driven development</title><link href="http://opengamestudio.org/example-driven-development.html" rel="alternate"></link><updated>2018-06-27T00:00:00+03:00</updated><author><name>Opensource Game Studio</name></author><id>tag:opengamestudio.org,2018-06-27:example-driven-development.html</id><summary type="html">&lt;p&gt;&lt;img alt="Screenshot" src="http://opengamestudio.org/2018-06-27-example-driven-development.png" /&gt;&lt;/p&gt;
+&lt;p&gt;This article explains how the third OpenSceneGraph cross-platform example
+opened our eyes to example-driven development.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;The third OpenSceneGraph cross-platform example&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;The third OpenSceneGraph cross-platform example explains how to implement
+&lt;a href="https://github.com/OGStudio/openscenegraph-cross-platform-examples/tree/master/03.RemoteDebugging"&gt;remote debugging across platforms&lt;/a&gt;. This example is less about
+OpenSceneGraph and more about different platforms.&lt;/p&gt;
+&lt;p&gt;Remote anything nowadays assumes the use of HTTP(s) over TCP/IP. Thus, the
+first idea was to embed HTTP server into an application and let HTTP clients
+interact with the server. However, serving HTTP across all platforms is
+complicated:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;desktops have firewalls&lt;/li&gt;
+&lt;li&gt;mobiles have restrictions on background processes&lt;/li&gt;
+&lt;li&gt;web browsers are HTTP clients by design&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;That's why we decided to create a mediator between debugged application and UI.
+&lt;a href="https://github.com/OGStudio/debug-broker"&gt;Debug broker&lt;/a&gt;, a small Node.js application, became that mediator.
+Debug broker uses no external dependencies, so it's easy to run virtually
+anywhere. Also, since debug broker is a server application, you can configure
+it once and use it for any number of applications.&lt;/p&gt;
+&lt;p&gt;Both &lt;a href="https://github.com/OGStudio/debug-ui"&gt;debug UI&lt;/a&gt; and &lt;a href="https://github.com/OGStudio/debug-broker"&gt;debug broker&lt;/a&gt; use JavaScript
+because we wanted these tools to be accessible from anywhere with no prior
+installation. This decision limited us to web browser solution. Providing
+any sort of desktop application would incur additional installation and
+maintenance effort, which would only complicate the tools.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Example-driven development establishment&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Once the third example was implemented, we realized how important and
+beneficial it is to develop new features outside the main project:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;the main project is freed from excessive commit noise&lt;/li&gt;
+&lt;li&gt;a new feature is publicly shared for everyone to learn, criticize, and improve&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;When we publicly share our knowledge:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;we must create documentation for everyone (including ourselves later) to understand what's going on&lt;/li&gt;
+&lt;li&gt;we must not use hacks because that would break your trust in us&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;From now on, all new features like input handling, Mahjong layout loading,
+resource caching, etc. are going to be first implemented as examples.
+We call this example-driven development.&lt;/p&gt;
+&lt;p&gt;That's it for explaining how the third OpenSceneGraph cross-platform example
+opened our eyes to example-driven development.&lt;/p&gt;</summary></entry><entry><title>OpenSceneGraph cross-platform examples</title><link href="http://opengamestudio.org/openscenegraph-examples.html" rel="alternate"></link><updated>2018-04-20T00:00:00+03:00</updated><author><name>Opensource Game Studio</name></author><id>tag:opengamestudio.org,2018-04-20:openscenegraph-examples.html</id><summary type="html">&lt;p&gt;&lt;img alt="Screenshot" src="http://opengamestudio.org/2018-04-20-openscenegraph-examples.png" /&gt;&lt;/p&gt;
 &lt;p&gt;This article summarizes the work we did to produce the first two
 cross-platform OpenSceneGraph examples.&lt;/p&gt;
 &lt;p&gt;By the time &lt;a href="http://opengamestudio.org/mahjong-techdemo1-gameplay.html"&gt;the first technology demonstration of OGS Mahjong 2&lt;/a&gt;

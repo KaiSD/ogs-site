@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8" />
+    <!-- Set the viewport width to device width for mobile -->
+    <meta name="viewport" content="width=device-width" />
+
+    <title>Разработка через создание примеров</title>
+
+    <link rel="stylesheet" href="http://opengamestudio.org/theme/css/normalize.css" />
+    <link rel="stylesheet" href="http://opengamestudio.org/theme/css/foundation.min.css" />
+    <link rel="stylesheet" href="http://opengamestudio.org/theme/css/style.css" />
+    <link rel="stylesheet" href="http://opengamestudio.org/theme/css/pygments.css" />	
+    <script src="http://opengamestudio.org/theme/js/custom.modernizr.js"></script>
+
+    <!-- So Firefox can bookmark->"abo this site" -->
+        <link href="feeds/all.atom.xml" rel="alternate" title="Opensource Game Studio" type="application/atom+xml">
+
+</head>
+
+<body>
+
+<!-- Nav Bar -->
+<nav>
+
+<!-- Show menu items and pages -->
+<div class="row">
+    <div class="large-12 columns top-bar">
+	    <h1><a href="http://opengamestudio.org">Opensource Game Studio</a></h1>
+    </div>
+</div>
+<div class="row top-menu">
+<div class="large-12 columns">
+        <a href="/pages/projects.html" class="menu-button secondary">Projects</a>
+        <a href="/pages/about.html" class="menu-button secondary">About</a>
+
+</div>
+</div>
+</nav>
+<!-- End Nav -->
+
+
+<!-- Main Page Content and Sidebar -->
+<div class="row">
+
+    <!-- Main Blog Content -->
+    <div class="large-9 columns">
+<article>
+    <header>
+        <h3 class="article-title"><a href="http://opengamestudio.org/example-driven-development-ru.html" rel="bookmark"
+        title="Permalink to Разработка через создание примеров">Разработка через создание примеров</a></h3>
+    </header>
+
+<h6 class="subheader" title="2018-06-27T00:00:00+03:00">Ср 27 Июнь 2018
+            <a class="button secondary small translation-button" href="http://opengamestudio.org/example-driven-development.html">en</a>
+
+</h6>    <p><img alt="Screenshot" src="http://opengamestudio.org/2018-06-27-example-driven-development.png" /></p>
+<p>Эта статья описывает то, как создание третьего кросс-платформенного примера
+OpenSceneGraph привело нас к разработке через создание примеров.</p>
+<p><strong>Третий кросс-платформенный пример OpenSceneGraph</strong></p>
+<p>Третий кросс-платформенный пример OpenSceneGraph содержит реализацию
+<a href="https://github.com/OGStudio/openscenegraph-cross-platform-examples/tree/master/03.RemoteDebugging">удалённой отладки, работающей на всех поддерживаемых платформах</a>.
+Этот пример относится не столько к OpenSceneGraph, сколько к поддержке
+различных платформ.</p>
+<p>Удалённое взаимодействие ныне предполагает использование HTTP(s) поверх
+TCP/IP. Таким образом, первая идея реализации подразумевала встраивание сервера
+HTTP в приложение, чтобы клиенты HTTP могли взаимодействовать с этим сервером.
+Однако, раздача HTTP на различных платформах имеет свои сложности:</p>
+<ul>
+<li>на десктопах есть межсетевые экраны (firewalls)</li>
+<li>на мобилках есть ограничения по работе фоновых процессов</li>
+<li>веб-браузеры являются клиентами HTTP по дизайну</li>
+</ul>
+<p>Эти ограничения подтолкнули нас к созданию посредника между отлаживаемым
+приложением и пользовательским интерфейсом отладки.
+<a href="https://github.com/OGStudio/debug-broker">Брокер отладки</a>, небольшое приложение Node.js, стало тем самым
+посредником. Брокер отладки не имеет внешних зависимостей, поэтому его легко
+использовать практически везде. Благодаря тому, что брокер отладки - это
+серверное приложение, его достаточно настроить лишь раз и использовать для
+любого количества приложений.</p>
+<p>И <a href="https://github.com/OGStudio/debug-ui">пользовательский интерфейс отладки</a>,
+и <a href="https://github.com/OGStudio/debug-broker">брокер отладки</a> используют JavaScript, т.к. мы хотели сделать
+эти инструменты максимально доступными без предварительной установки. Данное
+решение привело нас к реализации инструментов именно для веб-браузеров.
+Десктопное приложение потребовало бы дополнительных усилий на установку и
+поддержку, что лишь усложнило бы работу с инструментами.</p>
+<p><strong>Разработка через создание примеров</strong></p>
+<p>После создания третьего примера мы осознали важность и достоинства разработки
+новых функций вне основного проекта:</p>
+<ul>
+<li>освобождение основного проекта от шума изменений (commit noise)</li>
+<li>публичное освещение новой функции приглашает всех к её изучению, критике и улучшению</li>
+</ul>
+<p>Когда мы делимся нашими знаниями:</p>
+<ul>
+<li>мы обязаны создавать документацию, объясняющую происходящее (в том числе для нас самих позже)</li>
+<li>мы обязаны сторониться непродуманных решений, т.к. они повредят нашей репутации</li>
+</ul>
+<p>С этого момента все новые функции вроде обработки ввода, загрузки раскладок
+Маджонга, кэширования ресурсов и т.п. мы будем сначала реализовывать в виде
+примеров. Мы называем этот подход разработкой через создание примеров.</p>
+<p>На этом мы заканчиваем описание того, как создание третьего
+кросс-платформенного примера OpenSceneGraph привело нас к разработке через
+создание примеров.</p>
+<p class="subheader">Category: <a href="http://opengamestudio.org/category/news.html">News</a>
+
+</p>
+
+
+
+</article>
+    </div>
+    <!-- End Main Content -->
+
+    <!-- Sidebar -->
+    <aside class="large-3 columns">
+        <!--k
+        <h5 class="sidebar-title">Site</h5>
+        <ul class="side-nav">
+            <li><a href="http://opengamestudio.org/archives.html">Archives</a>
+            <li><a href="http://opengamestudio.org/tags.html">Tags</a>
+
+
+                <li><a href="http://opengamestudio.org/feeds/all.atom.xml" rel="alternate">Atom feed</a></li>
+        </ul>
+
+		
+        <h5 class="sidebar-title">Categories</h5>
+        <ul class="side-nav">
+            <li><a href="http://opengamestudio.org/category/news.html">News</a></li>
+   
+        </ul>
+        -->
+
+
+		
+        
+        <h5 class="sidebar-title">Ads</h5>
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <!-- ogs2 -->
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-4473792248813084"
+             data-ad-slot="9024247127"
+             data-ad-format="auto"></ins>
+        <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+
+    </aside> <!-- End Sidebar -->
+
+</div> <!-- End Main Content and Sidebar -->
+
+
+<!-- Footer -->
+<footer class="row">
+    <div class="large-12 columns">
+        <hr />
+        <div class="row">
+            <div class="large-7 columns">
+                <p>Proudly powered by <a href="http://getpelican.com">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.</p>
+            </div>
+            </div>
+    </div>
+    <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-3773114-1']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+    </script>
+</footer>
