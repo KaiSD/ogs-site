@@ -1,46 +1,53 @@
 # Overview
 
-We consider changing [Opensource Game Studio website](http://opengamestudio.org)'s
-engine from Wordpress to [Pelican](http://getpelican.com). This is Pelican
-evaluation.
+This is an internal document describing how to update
+[Opensource Game Studio website][opengamestudio]
+powered by [Pelican][pelican].
 
 # Installation
 
-You need a working Python's `pip`.
-
 Install Pelican with the following command:
 
-`sudo apt install pelican`
+```
+sudo apt install pelican
+```
 
 # Preview
 
-* Generate local copy with the following commands:
+To preview results locally:
 
-`cd pelican`
+* generate local copy with the following commands:
+    ```
+    cd pelican
+    pelican -s pelicanconf.py
+    ```
+* serve the local copy with the following commands:
+    ```
+    cd output
+    python -m SimpleHTTPServer
+    ```
 
-`pelican -s pelicanconf.py`
-
-* Serve the local copy with the following commands:
-
-`cd output`
-
-`python -m SimpleHTTPServer`
-
-The preview should now be available at
-[http://localhost:8000](http://localhost:8000).
+The preview should now be available at [http://localhost:8000][preview].
 
 # Publishing
 
-* Generate public site with the following commands:
+To publish new content:
 
-`cd pelican`
+* generate public site with the following commands:
+    ```
+    cd pelican
+    pelican -s publishconf.py
+    ```
 
-`pelican -s publishconf.py`
+* upload it to GitHub with the following command:
+    ```
+    git push
+    ```
 
-* Upload it to GitHub with the following commands:
+The public site should now be available at
+[Opensource Game Studio website][opengamestudio].
 
-`git push`
-
-The publich site should now be available at
-[http://kaisd.github.io/ogs-site](http://kaisd.github.io/ogs-site).
+[opengamestudio]: http://opengamestudio.org
+[pelican]: http://getpelican.com
+[preview]: http://localhost:8000
 
