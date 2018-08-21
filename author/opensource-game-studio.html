@@ -48,53 +48,67 @@
         
 
             <article>
-                <a href="http://opengamestudio.org/example-driven-development.html"><h3 class="article-title">Example-driven development</h3></a>
-<h6 class="subheader" title="2018-06-27T00:00:00+03:00">Ср 27 Июнь 2018
-            <a class="button secondary small translation-button" href="http://opengamestudio.org/example-driven-development-ru.html">ru</a>
+                <a href="http://opengamestudio.org/examples-and-dependencies.html"><h3 class="article-title">Examples and dependencies</h3></a>
+<h6 class="subheader" title="2018-08-21T00:00:00+03:00">Вт 21 августа 2018
+            <a class="button secondary small translation-button" href="http://opengamestudio.org/examples-and-dependencies-ru.html">ru</a>
 
-</h6><p><img alt="Screenshot" src="http://opengamestudio.org/2018-06-27-example-driven-development.png" /></p>
-<p>This article explains how the third OpenSceneGraph cross-platform example
-opened our eyes to example-driven development.</p>
-<p><strong>The third OpenSceneGraph cross-platform example</strong></p>
-<p>The third OpenSceneGraph cross-platform example explains how to implement
-<a href="https://github.com/OGStudio/openscenegraph-cross-platform-examples/tree/master/03.RemoteDebugging">remote debugging across platforms</a>. This example is less about
-OpenSceneGraph and more about different platforms.</p>
-<p>Remote anything nowadays assumes the use of HTTP(s) over TCP/IP. Thus, the
-first idea was to embed HTTP server into an application and let HTTP clients
-interact with the server. However, serving HTTP across all platforms is
-complicated:</p>
+</h6><p><img alt="Screenshot" src="http://opengamestudio.org/2018-08-21-examples-and-dependencies.png"></p>
+<p>This article describes two new OpenSceneGraph cross-platform examples and the
+change in handling dependencies.</p>
+<p><strong>Examples of HTTP client and node selection</strong></p>
+<p>Once we finished working on <a href="https://github.com/OGStudio/openscenegraph-cross-platform-examples/tree/master/04.RemoteDebugging">the remote debugging example</a> and
+<a href="http://opengamestudio.org/example-driven-development.html">reported its completion</a>, we were surprised by the fact
+that secure HTTP connection between a debugged application and debug broker
+was only working in the web version of the example. Desktop and mobile versions
+only worked with insecure HTTP.</p>
+<p>Since current debug scheme has no authentication, insecure debugging over HTTP
+doesn't really hurt. However, if we want to access resources located at popular
+sites like GitHub and BitBucket, we have to support secure HTTP.</p>
+<p>The need to support HTTPS on each platform spurred us to create
+<a href="https://github.com/OGStudio/openscenegraph-cross-platform-examples/tree/master/03.HTTPClient">HTTP client example</a>. Turned out, each platform had its own
+preferred way of doing secure HTTP:</p>
 <ul>
-<li>desktops have firewalls</li>
-<li>mobiles have restrictions on background processes</li>
-<li>web browsers are HTTP clients by design</li>
+<li>web (Emscripten) provides Fetch API</li>
+<li>desktop is fine with Mongoose and OpenSSL</li>
+<li>Android provides HttpUrlConnection in Java</li>
+<li>iOS provides NSURLSession in Objective-C</li>
 </ul>
-<p>That's why we decided to create a mediator between debugged application and UI.
-<a href="https://github.com/OGStudio/debug-broker">Debug broker</a>, a small Node.js application, became that mediator.
-Debug broker uses no external dependencies, so it's easy to run virtually
-anywhere. Also, since debug broker is a server application, you can configure
-it once and use it for any number of applications.</p>
-<p>Both <a href="https://github.com/OGStudio/debug-ui">debug UI</a> and <a href="https://github.com/OGStudio/debug-broker">debug broker</a> use JavaScript
-because we wanted these tools to be accessible from anywhere with no prior
-installation. This decision limited us to web browser solution. Providing
-any sort of desktop application would incur additional installation and
-maintenance effort, which would only complicate the tools.</p>
-<p><strong>Example-driven development establishment</strong></p>
-<p>Once the third example was implemented, we realized how important and
-beneficial it is to develop new features outside the main project:</p>
+<p>The need to support different languages on different platforms resulted
+in the creation of so-called 'host-guest' pattern:</p>
 <ul>
-<li>the main project is freed from excessive commit noise</li>
-<li>a new feature is publicly shared for everyone to learn, criticize, and improve</li>
+<li>guest (platform agnostic)<ul>
+<li>provides networking representation</li>
+<li>used by cross-platform C++ code</li>
 </ul>
-<p>When we publicly share our knowledge:</p>
+</li>
+<li>host (specific platform)<ul>
+<li>polls guest for pending requests</li>
+<li>processes them</li>
+<li>reports results back to the guest</li>
+</ul>
+</li>
+</ul>
+<p><a href="https://github.com/OGStudio/openscenegraph-cross-platform-examples/tree/master/05.NodeSelection">Node selection example</a> was straightforward and caused no troubles.</p>
+<p><strong>The change in handling dependencies</strong></p>
+<p>For over a year we had to deal with the following
+<a href="http://forum.openscenegraph.org/viewtopic.php?t=17443">shortcomings</a> when building OpenSceneGraph across platforms
+using conventional methods:</p>
 <ul>
-<li>we must create documentation for everyone (including ourselves later) to understand what's going on</li>
-<li>we must not use hacks because that would break your trust in us</li>
+<li>macOS builds failing due to certain compile flags we use</li>
+<li>hacking PNG plugin safety guards to have PNG support under Android</li>
+<li>iOS simulator and device builds of the same example being in separate Xcode projects</li>
+<li>OpenSceneGraph taking 20-30 minutes to build</li>
 </ul>
-<p>From now on, all new features like input handling, Mahjong layout loading,
-resource caching, etc. are going to be first implemented as examples.
-We call this example-driven development.</p>
-<p>That's it for explaining how the third OpenSceneGraph cross-platform example
-opened our eyes to example-driven development.</p><p class="subheader">Category: <a href="http://opengamestudio.org/category/news.html">News</a>
+<p>These shortcomings were slowing us down and complicating the development of
+new examples. Upon hitting these problems ten more times this month we decided
+it was time to solve them once and for all. Now OpenSceneGraph is built as part
+of each example in 2-3 minutes, and there's no more dependency magic involved.
+We took the same approach of building dependencies as part of each example to
+other external libraries like Mongoose and libpng-android, too.</p>
+<p>With these obstacles out of the way, we can now iterate faster. Just in time
+for the next technical demonstration of Mahjong 2!</p>
+<p>That's it for describing two new OpenSceneGraph cross-platform examples and
+the change in handling dependencies.</p><p class="subheader">Category: <a href="http://opengamestudio.org/category/news.html">News</a>
 
 </p>
 
@@ -109,17 +123,40 @@ opened our eyes to example-driven development.</p><p class="subheader">Category:
 
 
             <article>
+                <a href="http://opengamestudio.org/example-driven-development.html"><h3 class="article-title">Example-driven development</h3></a>
+<h6 class="subheader" title="2018-06-27T00:00:00+03:00">Ср 27 июня 2018
+            <a class="button secondary small translation-button" href="http://opengamestudio.org/example-driven-development-ru.html">ru</a>
+
+</h6><p><img alt="Screenshot" src="http://opengamestudio.org/2018-06-27-example-driven-development.png"></p>
+<p>This article explains how the third OpenSceneGraph cross-platform example
+opened our eyes to example-driven development.</p>
+<p><strong>2018-08 EDIT</strong>: the third example has been renamed to the fourth one due to
+the reasons described in the <a href="http://opengamestudio.org/examples-and-dependencies.html">next article</a>.</p>
+<p><strong>The third OpenSceneGraph cross-platform example</strong></p>
+<p>The third OpenSceneGraph cross-platform example explains how to implement …</p><p class="subheader">Category: <a href="http://opengamestudio.org/category/news.html">News</a>
+
+</p>
+
+
+                <a class="button radius secondary small right" href="http://opengamestudio.org/example-driven-development.html">Read More</a>
+                <hr  class="gradient"/>
+            </article>
+
+        
+
+
+            <article>
                 <a href="http://opengamestudio.org/openscenegraph-examples.html"><h3 class="article-title">OpenSceneGraph cross-platform examples</h3></a>
-<h6 class="subheader" title="2018-04-20T00:00:00+03:00">Пт 20 Апрель 2018
+<h6 class="subheader" title="2018-04-20T00:00:00+03:00">Пт 20 апреля 2018
             <a class="button secondary small translation-button" href="http://opengamestudio.org/openscenegraph-examples-ru.html">ru</a>
 
-</h6><p><img alt="Screenshot" src="http://opengamestudio.org/2018-04-20-openscenegraph-examples.png" /></p>
+</h6><p><img alt="Screenshot" src="http://opengamestudio.org/2018-04-20-openscenegraph-examples.png"></p>
 <p>This article summarizes the work we did to produce the first two
 cross-platform OpenSceneGraph examples.</p>
 <p>By the time <a href="http://opengamestudio.org/mahjong-techdemo1-gameplay.html">the first technology demonstration of OGS Mahjong 2</a>
 has been released, we've already had <a href="https://github.com/OGStudio/openscenegraph-cross-platform-guide/issues/4">issue request</a>
 (to explain how to load images with OpenSceneGraph on Android) hanging for some
-time. We ...</p><p class="subheader">Category: <a href="http://opengamestudio.org/category/news.html">News</a>
+time. We considered …</p><p class="subheader">Category: <a href="http://opengamestudio.org/category/news.html">News</a>
 
 </p>
 
@@ -133,10 +170,10 @@ time. We ...</p><p class="subheader">Category: <a href="http://opengamestudio.or
 
             <article>
                 <a href="http://opengamestudio.org/mahjong-techdemo1-gameplay.html"><h3 class="article-title">First techdemo of OGS Mahjong 2: Gameplay</h3></a>
-<h6 class="subheader" title="2018-02-16T00:00:00+03:00">Пт 16 Февраль 2018
+<h6 class="subheader" title="2018-02-16T00:00:00+03:00">Пт 16 февраля 2018
             <a class="button secondary small translation-button" href="http://opengamestudio.org/mahjong-techdemo1-gameplay-ru.html">ru</a>
 
-</h6><p><img alt="Screenshot" src="http://opengamestudio.org/2018-02-16-mahjong-techdemo1-gameplay.png" /></p>
+</h6><p><img alt="Screenshot" src="http://opengamestudio.org/2018-02-16-mahjong-techdemo1-gameplay.png"></p>
 <p>We are glad to announce the release of the first technical demonstration of
 OGS Mahjong 2. The purpose of this release was to verify gameplay across
 supported platforms.</p>
@@ -146,7 +183,7 @@ supported platforms.</p>
 <li>Get <a href="https://drive.google.com/open?id=1KW8IEN8Dpz8ODeg8BctVSJyzj9-AL9hR">Android version</a></li>
 <li>Get <a href="https://drive.google.com/open?id=1oj0-OXSmEatttzn86u2vgP9SRAIC0ozB">Windows version</a></li>
 <li>Get <a href="https://drive.google.com/open?id=1EX7kLIThLiMz9_W7VmBPySms3mlrF-i6">Linux version</a></li>
-<li>Get <a href="https://drive.google.com/open?id=1KWnvbHzan8MpMcZPG2QC-7KWoEYbqrM2">macOS ...</a></li></ul><p class="subheader">Category: <a href="http://opengamestudio.org/category/news.html">News</a>
+<li>Get <a href="https://drive.google.com/open?id=1KWnvbHzan8MpMcZPG2QC-7KWoEYbqrM2">macOS …</a></li></ul><p class="subheader">Category: <a href="http://opengamestudio.org/category/news.html">News</a>
 
 </p>
 
@@ -160,10 +197,10 @@ supported platforms.</p>
 
             <article>
                 <a href="http://opengamestudio.org/mahjong-recreation-start.html"><h3 class="article-title">Mahjong recreation start</h3></a>
-<h6 class="subheader" title="2018-01-26T00:00:00+03:00">Пт 26 Январь 2018
+<h6 class="subheader" title="2018-01-26T00:00:00+03:00">Пт 26 января 2018
             <a class="button secondary small translation-button" href="http://opengamestudio.org/mahjong-recreation-start-ru.html">ru</a>
 
-</h6><p><img alt="Screenshot" src="http://opengamestudio.org/2018-01-26-mahjong-recreation-start.png" /></p>
+</h6><p><img alt="Screenshot" src="http://opengamestudio.org/2018-01-26-mahjong-recreation-start.png"></p>
 <p>This article describes the start of Mahjong game recreation.</p>
 <p><strong>Plan</strong></p>
 <p>We started Mahjong recreation endeavour by composing a brief plan to get gameplay with minimal graphics:</p>
@@ -174,7 +211,7 @@ supported platforms.</p>
 <li>Implement selection</li>
 <li>Implement matching</li>
 </ul>
-<p>Just like any other plan, this one looked fine at ...</p><p class="subheader">Category: <a href="http://opengamestudio.org/category/news.html">News</a>
+<p>Just like any other plan, this one looked fine at …</p><p class="subheader">Category: <a href="http://opengamestudio.org/category/news.html">News</a>
 
 </p>
 
@@ -188,15 +225,15 @@ supported platforms.</p>
 
             <article>
                 <a href="http://opengamestudio.org/the-year-of-lessons.html"><h3 class="article-title">The year of lessons</h3></a>
-<h6 class="subheader" title="2017-12-31T22:00:00+03:00">Вс 31 Декабрь 2017
+<h6 class="subheader" title="2017-12-31T22:00:00+03:00">Вс 31 декабря 2017
             <a class="button secondary small translation-button" href="http://opengamestudio.org/the-year-of-lessons-ru.html">ru</a>
 
-</h6><p><img alt="Screenshot" src="http://opengamestudio.org/2017-12-31-celebration.jpg" /></p>
+</h6><p><img alt="Screenshot" src="http://opengamestudio.org/2017-12-31-celebration.jpg"></p>
 <p>So, the year 2017 is approaching its finale, the year's results have already
 been summed up. We're going to take a break from igniting the fireworks or
 preparation of the champagne so that we can designate our goal for the
 following year.</p>
-<p>As it may be clear from ...</p><p class="subheader">Category: <a href="http://opengamestudio.org/category/news.html">News</a>
+<p>As it may be clear from other articles …</p><p class="subheader">Category: <a href="http://opengamestudio.org/category/news.html">News</a>
 
 </p>
 
@@ -210,14 +247,14 @@ following year.</p>
 
             <article>
                 <a href="http://opengamestudio.org/2017-summary.html"><h3 class="article-title">2017 summary</h3></a>
-<h6 class="subheader" title="2017-11-22T00:00:00+03:00">Ср 22 Ноябрь 2017
+<h6 class="subheader" title="2017-11-22T00:00:00+03:00">Ср 22 ноября 2017
             <a class="button secondary small translation-button" href="http://opengamestudio.org/2017-summary-ru.html">ru</a>
 
-</h6><p><img alt="Screenshot" src="http://opengamestudio.org/2017-11-22-2017-summary.png" /></p>
+</h6><p><img alt="Screenshot" src="http://opengamestudio.org/2017-11-22-2017-summary.png"></p>
 <p>It's time to step back to see our accomplishments in 2017 and how they connect to the overall goal of Opensource Game Studio project.</p>
 <p><strong>Brief history</strong></p>
 <p>Opensource Game Studio project is 12 years old now.</p>
-<p><strong>2005.</strong> We started the project with a <a href="https://www.linuxquestions.org/questions/general-10/the-creation-of-the-best-rpg-355858/">fanatic call</a> to create the best game ...</p><p class="subheader">Category: <a href="http://opengamestudio.org/category/news.html">News</a>
+<p><strong>2005.</strong> We started the project with a <a href="https://www.linuxquestions.org/questions/general-10/the-creation-of-the-best-rpg-355858/">fanatic call</a> to create the best game ever …</p><p class="subheader">Category: <a href="http://opengamestudio.org/category/news.html">News</a>
 
 </p>
 
@@ -231,13 +268,13 @@ following year.</p>
 
             <article>
                 <a href="http://opengamestudio.org/back-to-the-static.html"><h3 class="article-title">Back to the Static</h3></a>
-<h6 class="subheader" title="2017-10-16T00:00:00+03:00">Пн 16 Октябрь 2017
+<h6 class="subheader" title="2017-10-16T00:00:00+03:00">Пн 16 октября 2017
             <a class="button secondary small translation-button" href="http://opengamestudio.org/back-to-the-static-ru.html">ru</a>
 
-</h6><p><img alt="Back to the Static" src="http://opengamestudio.org/2017-10-16-back-to-the-static.png" /></p>
+</h6><p><img alt="Back to the Static" src="http://opengamestudio.org/2017-10-16-back-to-the-static.png"></p>
 <p>We have been using Wordpress as our website engine for more than seven years. And now it's time to move forward. Or backward.
 For some time we've been tracking the development of the new breed of website engines - static site generators.
-It seems that this is the technology ...</p><p class="subheader">Category: <a href="http://opengamestudio.org/category/news.html">News</a>
+It seems that this is the technology capable of …</p><p class="subheader">Category: <a href="http://opengamestudio.org/category/news.html">News</a>
 
 </p>
 
@@ -251,10 +288,10 @@ It seems that this is the technology ...</p><p class="subheader">Category: <a hr
 
             <article>
                 <a href="http://opengamestudio.org/mjin-world-birth.html"><h3 class="article-title">The birth of MJIN world</h3></a>
-<h6 class="subheader" title="2017-09-10T00:00:00+03:00">Вс 10 Сентябрь 2017
+<h6 class="subheader" title="2017-09-10T00:00:00+03:00">Вс 10 сентября 2017
             <a class="button secondary small translation-button" href="http://opengamestudio.org/mjin-world-birth-ru.html">ru</a>
 
-</h6><p><img alt="The birth of MJIN world" src="http://opengamestudio.org/2017-09-mjin-world-birth.png" /></p>
+</h6><p><img alt="The birth of MJIN world" src="http://opengamestudio.org/2017-09-mjin-world-birth.png"></p>
 <p>This article describes the birth of MJIN world in August 2017.</p>
 <p><strong>mjin-player</strong></p>
 <p>As you know, <a href="http://opengamestudio.org/scripting-research.html">we spent July to research scripting</a>. We found a solution that satisfies the following criteria. Scripts should:</p>
@@ -262,7 +299,7 @@ It seems that this is the technology ...</p><p class="subheader">Category: <a hr
 <li>run unchanged on all supported platforms</li>
 <li>allow extending C++ code</li>
 </ol>
-<p>We have verified the second criterion by writing ...</p><p class="subheader">Category: <a href="http://opengamestudio.org/category/news.html">News</a>
+<p>We have verified the second criterion by writing …</p><p class="subheader">Category: <a href="http://opengamestudio.org/category/news.html">News</a>
 
 </p>
 
@@ -276,38 +313,18 @@ It seems that this is the technology ...</p><p class="subheader">Category: <a hr
 
             <article>
                 <a href="http://opengamestudio.org/scripting-research.html"><h3 class="article-title">Scripting research</h3></a>
-<h6 class="subheader" title="2017-08-16T00:00:00+03:00">Ср 16 Август 2017
+<h6 class="subheader" title="2017-08-16T00:00:00+03:00">Ср 16 августа 2017
             <a class="button secondary small translation-button" href="http://opengamestudio.org/scripting-research-ru.html">ru</a>
 
-</h6><p><img alt="Scripting research" src="http://opengamestudio.org/2017-08-scripting-research.png" /></p>
+</h6><p><img alt="Scripting research" src="http://opengamestudio.org/2017-08-scripting-research.png"></p>
 <p>This article describes scripting research in July 2017.</p>
 <p><strong>Our first goal of using a scripting language was to have a platform-independent code that runs unchanged on every supported platform.</strong></p>
-<p>OGS Editor 0.10 supports Python for such a code thanks to <a href="http://swig.org/">SWIG</a>. SWIG provides a way to wrap almost any ...</p><p class="subheader">Category: <a href="http://opengamestudio.org/category/news.html">News</a>
+<p>OGS Editor 0.10 supports Python for such a code thanks to <a href="http://swig.org/">SWIG</a>. SWIG provides a way to wrap almost any …</p><p class="subheader">Category: <a href="http://opengamestudio.org/category/news.html">News</a>
 
 </p>
 
 
                 <a class="button radius secondary small right" href="http://opengamestudio.org/scripting-research.html">Read More</a>
-                <hr  class="gradient"/>
-            </article>
-
-        
-
-
-            <article>
-                <a href="http://opengamestudio.org/openscenegraph-cross-platform-guide.html"><h3 class="article-title">OpenSceneGraph cross-platform guide</h3></a>
-<h6 class="subheader" title="2017-07-17T00:00:00+03:00">Пн 17 Июль 2017
-            <a class="button secondary small translation-button" href="http://opengamestudio.org/openscenegraph-cross-platform-guide-ru.html">ru</a>
-
-</h6><p><img alt="OpenSceneGraph guide" src="http://opengamestudio.org/2017-07-openscenegraph-guide.png" /></p>
-<p>This article summarizes the work we did to produce OpenSceneGraph cross-platform guide.</p>
-<p>June marked the finish of <a href="https://github.com/OGStudio/openscenegraph-cross-platform-guide">OpenSceneGraph cross-platform guide</a> with the publishing of the last (initially planned) tutorial. The tutorial describes <a href="https://github.com/OGStudio/openscenegraph-cross-platform-guide/tree/master/1.10.SampleWeb">how to build and run sample OpenSceneGraph application in Web</a> using Emscripten.
-In case you missed it, here ...</p><p class="subheader">Category: <a href="http://opengamestudio.org/category/news.html">News</a>
-
-</p>
-
-
-                <a class="button radius secondary small right" href="http://opengamestudio.org/openscenegraph-cross-platform-guide.html">Read More</a>
                 <hr  class="gradient"/>
             </article>
 

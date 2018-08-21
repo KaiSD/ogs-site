@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8" />
+    <!-- Set the viewport width to device width for mobile -->
+    <meta name="viewport" content="width=device-width" />
+
+    <title>Examples and dependencies</title>
+
+    <link rel="stylesheet" href="http://opengamestudio.org/theme/css/normalize.css" />
+    <link rel="stylesheet" href="http://opengamestudio.org/theme/css/foundation.min.css" />
+    <link rel="stylesheet" href="http://opengamestudio.org/theme/css/style.css" />
+    <link rel="stylesheet" href="http://opengamestudio.org/theme/css/pygments.css" />	
+    <script src="http://opengamestudio.org/theme/js/custom.modernizr.js"></script>
+
+    <!-- So Firefox can bookmark->"abo this site" -->
+        <link href="feeds/all.atom.xml" rel="alternate" title="Opensource Game Studio" type="application/atom+xml">
+
+</head>
+
+<body>
+
+<!-- Nav Bar -->
+<nav>
+
+<!-- Show menu items and pages -->
+<div class="row">
+    <div class="large-12 columns top-bar">
+	    <h1><a href="http://opengamestudio.org">Opensource Game Studio</a></h1>
+    </div>
+</div>
+<div class="row top-menu">
+<div class="large-12 columns">
+        <a href="/pages/projects.html" class="menu-button secondary">Projects</a>
+        <a href="/pages/about.html" class="menu-button secondary">About</a>
+
+</div>
+</div>
+</nav>
+<!-- End Nav -->
+
+
+<!-- Main Page Content and Sidebar -->
+<div class="row">
+
+    <!-- Main Blog Content -->
+    <div class="large-9 columns">
+<article>
+    <header>
+        <h3 class="article-title"><a href="http://opengamestudio.org/examples-and-dependencies.html" rel="bookmark"
+        title="Permalink to Examples and dependencies">Examples and dependencies</a></h3>
+    </header>
+
+<h6 class="subheader" title="2018-08-21T00:00:00+03:00">Вт 21 августа 2018
+            <a class="button secondary small translation-button" href="http://opengamestudio.org/examples-and-dependencies-ru.html">ru</a>
+
+</h6>    <p><img alt="Screenshot" src="http://opengamestudio.org/2018-08-21-examples-and-dependencies.png"></p>
+<p>This article describes two new OpenSceneGraph cross-platform examples and the
+change in handling dependencies.</p>
+<p><strong>Examples of HTTP client and node selection</strong></p>
+<p>Once we finished working on <a href="https://github.com/OGStudio/openscenegraph-cross-platform-examples/tree/master/04.RemoteDebugging">the remote debugging example</a> and
+<a href="http://opengamestudio.org/example-driven-development.html">reported its completion</a>, we were surprised by the fact
+that secure HTTP connection between a debugged application and debug broker
+was only working in the web version of the example. Desktop and mobile versions
+only worked with insecure HTTP.</p>
+<p>Since current debug scheme has no authentication, insecure debugging over HTTP
+doesn't really hurt. However, if we want to access resources located at popular
+sites like GitHub and BitBucket, we have to support secure HTTP.</p>
+<p>The need to support HTTPS on each platform spurred us to create
+<a href="https://github.com/OGStudio/openscenegraph-cross-platform-examples/tree/master/03.HTTPClient">HTTP client example</a>. Turned out, each platform had its own
+preferred way of doing secure HTTP:</p>
+<ul>
+<li>web (Emscripten) provides Fetch API</li>
+<li>desktop is fine with Mongoose and OpenSSL</li>
+<li>Android provides HttpUrlConnection in Java</li>
+<li>iOS provides NSURLSession in Objective-C</li>
+</ul>
+<p>The need to support different languages on different platforms resulted
+in the creation of so-called 'host-guest' pattern:</p>
+<ul>
+<li>guest (platform agnostic)<ul>
+<li>provides networking representation</li>
+<li>used by cross-platform C++ code</li>
+</ul>
+</li>
+<li>host (specific platform)<ul>
+<li>polls guest for pending requests</li>
+<li>processes them</li>
+<li>reports results back to the guest</li>
+</ul>
+</li>
+</ul>
+<p><a href="https://github.com/OGStudio/openscenegraph-cross-platform-examples/tree/master/05.NodeSelection">Node selection example</a> was straightforward and caused no troubles.</p>
+<p><strong>The change in handling dependencies</strong></p>
+<p>For over a year we had to deal with the following
+<a href="http://forum.openscenegraph.org/viewtopic.php?t=17443">shortcomings</a> when building OpenSceneGraph across platforms
+using conventional methods:</p>
+<ul>
+<li>macOS builds failing due to certain compile flags we use</li>
+<li>hacking PNG plugin safety guards to have PNG support under Android</li>
+<li>iOS simulator and device builds of the same example being in separate Xcode projects</li>
+<li>OpenSceneGraph taking 20-30 minutes to build</li>
+</ul>
+<p>These shortcomings were slowing us down and complicating the development of
+new examples. Upon hitting these problems ten more times this month we decided
+it was time to solve them once and for all. Now OpenSceneGraph is built as part
+of each example in 2-3 minutes, and there's no more dependency magic involved.
+We took the same approach of building dependencies as part of each example to
+other external libraries like Mongoose and libpng-android, too.</p>
+<p>With these obstacles out of the way, we can now iterate faster. Just in time
+for the next technical demonstration of Mahjong 2!</p>
+<p>That's it for describing two new OpenSceneGraph cross-platform examples and
+the change in handling dependencies.</p>
+<p class="subheader">Category: <a href="http://opengamestudio.org/category/news.html">News</a>
+
+</p>
+
+
+
+</article>
+    </div>
+    <!-- End Main Content -->
+
+    <!-- Sidebar -->
+    <aside class="large-3 columns">
+        <!--k
+        <h5 class="sidebar-title">Site</h5>
+        <ul class="side-nav">
+            <li><a href="http://opengamestudio.org/archives.html">Archives</a>
+            <li><a href="http://opengamestudio.org/tags.html">Tags</a>
+
+
+                <li><a href="http://opengamestudio.org/feeds/all.atom.xml" rel="alternate">Atom feed</a></li>
+        </ul>
+
+		
+        <h5 class="sidebar-title">Categories</h5>
+        <ul class="side-nav">
+            <li><a href="http://opengamestudio.org/category/news.html">News</a></li>
+   
+        </ul>
+        -->
+
+
+		
+        
+        <h5 class="sidebar-title">Ads</h5>
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <!-- ogs2 -->
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-4473792248813084"
+             data-ad-slot="9024247127"
+             data-ad-format="auto"></ins>
+        <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+
+    </aside> <!-- End Sidebar -->
+
+</div> <!-- End Main Content and Sidebar -->
+
+
+<!-- Footer -->
+<footer class="row">
+    <div class="large-12 columns">
+        <hr />
+        <div class="row">
+            <div class="large-7 columns">
+                <p>Proudly powered by <a href="http://getpelican.com">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.</p>
+            </div>
+            </div>
+    </div>
+    <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-3773114-1']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+    </script>
+</footer>

@@ -9,10 +9,13 @@ Lang: en
 This article explains how the third OpenSceneGraph cross-platform example
 opened our eyes to example-driven development.
 
+**2018-08 EDIT**: the third example has been renamed to the fourth one due to
+the reasons described in the [next article][article-2018-august].
+
 **The third OpenSceneGraph cross-platform example**
 
 The third OpenSceneGraph cross-platform example explains how to implement
-[remote debugging across platforms][osgcpe-03]. This example is less about
+[remote debugging across platforms][osgcpe-04]. This example is less about
 OpenSceneGraph and more about different platforms.
 
 Remote anything nowadays assumes the use of HTTP(s) over TCP/IP. Thus, the
@@ -57,8 +60,9 @@ That's it for explaining how the third OpenSceneGraph cross-platform example
 opened our eyes to example-driven development.
 
 [screenshot]: {attach}/images/2018-06-27-example-driven-development.png
+[article-2018-august]: {filename}/articles/2018-08-21-examples-and-dependencies.md
 
-[osgcpe-03]: https://github.com/OGStudio/openscenegraph-cross-platform-examples/tree/master/03.RemoteDebugging
+[osgcpe-04]: https://github.com/OGStudio/openscenegraph-cross-platform-examples/tree/master/04.RemoteDebugging
 [debug-broker]: https://github.com/OGStudio/debug-broker
 [debug-ui]: https://github.com/OGStudio/debug-ui
 

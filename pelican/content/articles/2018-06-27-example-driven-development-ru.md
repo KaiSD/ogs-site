@@ -9,6 +9,9 @@ Lang: ru
 Эта статья описывает то, как создание третьего кросс-платформенного примера
 OpenSceneGraph привело нас к разработке через создание примеров.
 
+**ИЗМЕНЕНИЯ ОТ 2018-08**: третий пример был переименован в четвёртый в связи
+с причинами, изложенными в [следующей статье][article-2018-august].
+
 **Третий кросс-платформенный пример OpenSceneGraph**
 
 Третий кросс-платформенный пример OpenSceneGraph содержит реализацию
@@ -63,6 +66,7 @@ HTTP в приложение, чтобы клиенты HTTP могли взаи
 
 
 [screenshot]: {attach}/images/2018-06-27-example-driven-development.png
+[article-2018-august]: {filename}/articles/2018-08-21-examples-and-dependencies-ru.md
 
 [osgcpe-03]: https://github.com/OGStudio/openscenegraph-cross-platform-examples/tree/master/03.RemoteDebugging
 [debug-broker]: https://github.com/OGStudio/debug-broker
