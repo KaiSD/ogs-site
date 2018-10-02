@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8" />
+    <!-- Set the viewport width to device width for mobile -->
+    <meta name="viewport" content="width=device-width" />
+
+    <title>OGS Mahjong 2: Demo 2</title>
+
+    <link rel="stylesheet" href="http://opengamestudio.org/theme/css/normalize.css" />
+    <link rel="stylesheet" href="http://opengamestudio.org/theme/css/foundation.min.css" />
+    <link rel="stylesheet" href="http://opengamestudio.org/theme/css/style.css" />
+    <link rel="stylesheet" href="http://opengamestudio.org/theme/css/pygments.css" />	
+    <script src="http://opengamestudio.org/theme/js/custom.modernizr.js"></script>
+
+    <!-- So Firefox can bookmark->"abo this site" -->
+        <link href="feeds/all.atom.xml" rel="alternate" title="Opensource Game Studio" type="application/atom+xml">
+
+</head>
+
+<body>
+
+<!-- Nav Bar -->
+<nav>
+
+<!-- Show menu items and pages -->
+<div class="row">
+    <div class="large-12 columns top-bar">
+	    <h1><a href="http://opengamestudio.org">Opensource Game Studio</a></h1>
+    </div>
+</div>
+<div class="row top-menu">
+<div class="large-12 columns">
+        <a href="/pages/projects.html" class="menu-button secondary">Projects</a>
+        <a href="/pages/about.html" class="menu-button secondary">About</a>
+
+</div>
+</div>
+</nav>
+<!-- End Nav -->
+
+
+<!-- Main Page Content and Sidebar -->
+<div class="row">
+
+    <!-- Main Blog Content -->
+    <div class="large-9 columns">
+<article>
+    <header>
+        <h3 class="article-title"><a href="http://opengamestudio.org/mahjong-demo2-ru.html" rel="bookmark"
+        title="Permalink to OGS Mahjong 2: Demo 2">OGS Mahjong 2: Demo 2</a></h3>
+    </header>
+
+<h6 class="subheader" title="2018-10-02T00:00:00+03:00">Вт 02 октября 2018
+            <a class="button secondary small translation-button" href="http://opengamestudio.org/mahjong-demo2.html">en</a>
+
+</h6>    <p><img alt="Screenshot" src="http://opengamestudio.org/2018-10-02-mahjong-demo2.png"></p>
+<p>Мы рады сообщить о выпуске второй демонстрации OGS Mahjong 2. Её целью были
+улучшение техники разработки и создание надёжной основы кроссплатформенной
+разработки.</p>
+<p><strong>Выпуск</strong></p>
+<p>Запустите последний выпуск OGS Mahjong 2 в вашем браузере:
+<a href="http://ogstudio.github.io/ogs-mahjong">http://ogstudio.github.io/ogs-mahjong</a></p>
+<p>Рекомендуем запускать игру с параметром <code>seed</code> следующим образом:
+<a href="http://ogstudio.github.io/ogs-mahjong?seed=0">http://ogstudio.github.io/ogs-mahjong?seed=0</a></p>
+<p>Это позволяет вам играть в ту же самую раскладку после перезапуска.</p>
+<p>Каждое значение зерна (seed) однозначно задаёт расположение фишек, так что
+разные значения зерна дают разнообразие партий.</p>
+<p><strong>Техника разработки и основа</strong></p>
+<p>Во время разработки второй демонстрации мы перешли с обычной разработки на
+<a href="http://opengamestudio.org/example-driven-development.html">разработку через создание примеров</a>. Это привело к
+появлению трёх различных хранилищ для обеспечения разработки OGS Mahjong 2:</p>
+<ul>
+<li>Хранилище <a href="https://github.com/OGStudio/openscenegraph-cross-platform-examples">кроссплатформенных примеров OpenSceneGraph</a> содержит основу вроде работы с ресурсами, создание графического окна и т.д.</li>
+<li>Хранилище <a href="https://github.com/OGStudio/ogs-mahjong-components">компонент OGS Mahjong</a> содержит специфичную для Маджонга функциональность вроде разбора раскладки, сопоставления фишек и т.д.</li>
+<li>Хранилище <a href="https://bitbucket.org/ogstudio-games/ogs-mahjong">OGS Mahjong</a> содержит снимок набора функциональностей <code>компонент OGS Mahjong</code>, которые определяют версию игры. Например, версия <code>Demo 2</code> почти полностью повторяет пример <a href="https://github.com/OGStudio/ogs-mahjong-components/tree/master/05.ColorfulStatus">05.ColorfulStatus</a> из <code>компонент OGS Mahjong</code>.</li>
+</ul>
+<p><strong>За пределами пасьянса Маджонг</strong></p>
+<p>В дополнение к параметру <code>seed</code> вы можете указать игре использовать удалённую
+раскладку, расположенную на GitHub:
+<a href="http://ogstudio.github.io/ogs-mahjong?seed=0&amp;layout=github://OGStudio/ogs-mahjong-components/data/cat.layout">http://ogstudio.github.io/ogs-mahjong?seed=0&amp;layout=github://OGStudio/ogs-mahjong-components/data/cat.layout</a></p>
+<p>Использование удалённых ресурсов открывает огромные возможности, т.к. позволяет
+любому желающему создать раскладку на свой вкус и моментально её проверить.</p>
+<p>Наш следующий шаг - это выделение игровой логики в виде ресурса.</p>
+<p class="subheader">Category: <a href="http://opengamestudio.org/category/news.html">News</a>
+
+</p>
+
+
+
+</article>
+    </div>
+    <!-- End Main Content -->
+
+    <!-- Sidebar -->
+    <aside class="large-3 columns">
+        <!--k
+        <h5 class="sidebar-title">Site</h5>
+        <ul class="side-nav">
+            <li><a href="http://opengamestudio.org/archives.html">Archives</a>
+            <li><a href="http://opengamestudio.org/tags.html">Tags</a>
+
+
+                <li><a href="http://opengamestudio.org/feeds/all.atom.xml" rel="alternate">Atom feed</a></li>
+        </ul>
+
+		
+        <h5 class="sidebar-title">Categories</h5>
+        <ul class="side-nav">
+            <li><a href="http://opengamestudio.org/category/news.html">News</a></li>
+   
+        </ul>
+        -->
+
+
+		
+        
+        <h5 class="sidebar-title">Ads</h5>
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <!-- ogs2 -->
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-4473792248813084"
+             data-ad-slot="9024247127"
+             data-ad-format="auto"></ins>
+        <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+
+    </aside> <!-- End Sidebar -->
+
+</div> <!-- End Main Content and Sidebar -->
+
+
+<!-- Footer -->
+<footer class="row">
+    <div class="large-12 columns">
+        <hr />
+        <div class="row">
+            <div class="large-7 columns">
+                <p>Proudly powered by <a href="http://getpelican.com">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.</p>
+            </div>
+            </div>
+    </div>
+    <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-3773114-1']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+    </script>
+</footer>

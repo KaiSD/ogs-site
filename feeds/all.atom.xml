@@ -1,5 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Opensource Game Studio</title><link href="http://opengamestudio.org/" rel="alternate"></link><link href="http://opengamestudio.org/feeds/all.atom.xml" rel="self"></link><id>http://opengamestudio.org/</id><updated>2018-08-21T00:00:00+03:00</updated><entry><title>Examples and dependencies</title><link href="http://opengamestudio.org/examples-and-dependencies.html" rel="alternate"></link><published>2018-08-21T00:00:00+03:00</published><updated>2018-08-21T00:00:00+03:00</updated><author><name>Opensource Game Studio</name></author><id>tag:opengamestudio.org,2018-08-21:/examples-and-dependencies.html</id><summary type="html">&lt;p&gt;&lt;img alt="Screenshot" src="http://opengamestudio.org/2018-08-21-examples-and-dependencies.png"&gt;&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Opensource Game Studio</title><link href="http://opengamestudio.org/" rel="alternate"></link><link href="http://opengamestudio.org/feeds/all.atom.xml" rel="self"></link><id>http://opengamestudio.org/</id><updated>2018-10-02T00:00:00+03:00</updated><entry><title>OGS Mahjong 2: Demo 2</title><link href="http://opengamestudio.org/mahjong-demo2.html" rel="alternate"></link><published>2018-10-02T00:00:00+03:00</published><updated>2018-10-02T00:00:00+03:00</updated><author><name>Opensource Game Studio</name></author><id>tag:opengamestudio.org,2018-10-02:/mahjong-demo2.html</id><summary type="html">&lt;p&gt;&lt;img alt="Screenshot" src="http://opengamestudio.org/2018-10-02-mahjong-demo2.png"&gt;&lt;/p&gt;
+&lt;p&gt;We are glad to announce the release of the second demonstration of OGS Mahjong 2.
+The purposes of this release were to refine our development techniques and
+build a solid cross-platform foundation.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Release&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Run the latest version of OGS Mahjong 2 in your web browser:
+&lt;a href="http://ogstudio.github.io/ogs-mahjong"&gt;http://ogstudio.github.io/ogs-mahjong …&lt;/a&gt;&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;img alt="Screenshot" src="http://opengamestudio.org/2018-10-02-mahjong-demo2.png"&gt;&lt;/p&gt;
+&lt;p&gt;We are glad to announce the release of the second demonstration of OGS Mahjong 2.
+The purposes of this release were to refine our development techniques and
+build a solid cross-platform foundation.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Release&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Run the latest version of OGS Mahjong 2 in your web browser:
+&lt;a href="http://ogstudio.github.io/ogs-mahjong"&gt;http://ogstudio.github.io/ogs-mahjong&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;You are encouraged to run the game with &lt;code&gt;seed&lt;/code&gt; parameter like this:
+&lt;a href="http://ogstudio.github.io/ogs-mahjong?seed=0"&gt;http://ogstudio.github.io/ogs-mahjong?seed=0&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;This allows you to play the same layout each time you launch the game.&lt;/p&gt;
+&lt;p&gt;Each seed uniquely identifies the placement of tiles. Thus, different seeds
+give you a different experience.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Development techniques and foundation&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;During the second demonstration development, we switched from standard
+development to &lt;a href="http://opengamestudio.org/example-driven-development.html"&gt;example-driven one&lt;/a&gt;. This resulted in the
+creation of three distinct repositories to back the development of OGS Mahjong 2:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://github.com/OGStudio/openscenegraph-cross-platform-examples"&gt;OpenSceneGraph cross-platform examples&lt;/a&gt; repository provides cross-platform foundation like resource handling, render window setup, etc.&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/OGStudio/ogs-mahjong-components"&gt;OGS Mahjong components&lt;/a&gt; repository provides Mahjong specific functionality like parsing layout, matching tiles, etc.&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://bitbucket.org/ogstudio-games/ogs-mahjong"&gt;OGS Mahjong&lt;/a&gt; repository contains snapshots of &lt;code&gt;OGS Mahjong components&lt;/code&gt; features that comprise specific game version. E.g., &lt;code&gt;Demo 2&lt;/code&gt; version is almost identical to &lt;a href="https://github.com/OGStudio/ogs-mahjong-components/tree/master/05.ColorfulStatus"&gt;05.ColorfulStatus&lt;/a&gt; example of &lt;code&gt;OGS Mahjong components&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Beyond Mahjong solitaire&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;In addition to &lt;code&gt;seed&lt;/code&gt; parameter, you can let the game use remote layout hosted at GitHub:
+&lt;a href="http://ogstudio.github.io/ogs-mahjong?seed=0&amp;amp;layout=github://OGStudio/ogs-mahjong-components/data/cat.layout"&gt;http://ogstudio.github.io/ogs-mahjong?seed=0&amp;amp;layout=github://OGStudio/ogs-mahjong-components/data/cat.layout&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Utilizing remote resources is an extremely powerful approach allowing anyone
+to create a layout of his/her choice and see the layout in action instantly.&lt;/p&gt;
+&lt;p&gt;Our next step is to turn game logic into a resource, too.&lt;/p&gt;</content></entry><entry><title>OGS Mahjong 2: Demo 2</title><link href="http://opengamestudio.org/mahjong-demo2-ru.html" rel="alternate"></link><published>2018-10-02T00:00:00+03:00</published><updated>2018-10-02T00:00:00+03:00</updated><author><name>Opensource Game Studio</name></author><id>tag:opengamestudio.org,2018-10-02:/mahjong-demo2-ru.html</id><summary type="html">&lt;p&gt;&lt;img alt="Screenshot" src="http://opengamestudio.org/2018-10-02-mahjong-demo2.png"&gt;&lt;/p&gt;
+&lt;p&gt;Мы рады сообщить о выпуске второй демонстрации OGS Mahjong 2. Её целью были
+улучшение техники разработки и создание надёжной основы кроссплатформенной
+разработки.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Выпуск&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Запустите последний выпуск OGS Mahjong 2 в вашем браузере:
+&lt;a href="http://ogstudio.github.io/ogs-mahjong"&gt;http://ogstudio.github.io/ogs-mahjong&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Рекомендуем запускать игру с параметром &lt;code&gt;seed&lt;/code&gt; следующим образом:
+&lt;a href="http://ogstudio.github.io/ogs-mahjong?seed=0"&gt;http://ogstudio.github.io/ogs-mahjong …&lt;/a&gt;&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;img alt="Screenshot" src="http://opengamestudio.org/2018-10-02-mahjong-demo2.png"&gt;&lt;/p&gt;
+&lt;p&gt;Мы рады сообщить о выпуске второй демонстрации OGS Mahjong 2. Её целью были
+улучшение техники разработки и создание надёжной основы кроссплатформенной
+разработки.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Выпуск&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Запустите последний выпуск OGS Mahjong 2 в вашем браузере:
+&lt;a href="http://ogstudio.github.io/ogs-mahjong"&gt;http://ogstudio.github.io/ogs-mahjong&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Рекомендуем запускать игру с параметром &lt;code&gt;seed&lt;/code&gt; следующим образом:
+&lt;a href="http://ogstudio.github.io/ogs-mahjong?seed=0"&gt;http://ogstudio.github.io/ogs-mahjong?seed=0&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Это позволяет вам играть в ту же самую раскладку после перезапуска.&lt;/p&gt;
+&lt;p&gt;Каждое значение зерна (seed) однозначно задаёт расположение фишек, так что
+разные значения зерна дают разнообразие партий.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Техника разработки и основа&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Во время разработки второй демонстрации мы перешли с обычной разработки на
+&lt;a href="http://opengamestudio.org/example-driven-development.html"&gt;разработку через создание примеров&lt;/a&gt;. Это привело к
+появлению трёх различных хранилищ для обеспечения разработки OGS Mahjong 2:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Хранилище &lt;a href="https://github.com/OGStudio/openscenegraph-cross-platform-examples"&gt;кроссплатформенных примеров OpenSceneGraph&lt;/a&gt; содержит основу вроде работы с ресурсами, создание графического окна и т.д.&lt;/li&gt;
+&lt;li&gt;Хранилище &lt;a href="https://github.com/OGStudio/ogs-mahjong-components"&gt;компонент OGS Mahjong&lt;/a&gt; содержит специфичную для Маджонга функциональность вроде разбора раскладки, сопоставления фишек и т.д.&lt;/li&gt;
+&lt;li&gt;Хранилище &lt;a href="https://bitbucket.org/ogstudio-games/ogs-mahjong"&gt;OGS Mahjong&lt;/a&gt; содержит снимок набора функциональностей &lt;code&gt;компонент OGS Mahjong&lt;/code&gt;, которые определяют версию игры. Например, версия &lt;code&gt;Demo 2&lt;/code&gt; почти полностью повторяет пример &lt;a href="https://github.com/OGStudio/ogs-mahjong-components/tree/master/05.ColorfulStatus"&gt;05.ColorfulStatus&lt;/a&gt; из &lt;code&gt;компонент OGS Mahjong&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;За пределами пасьянса Маджонг&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;В дополнение к параметру &lt;code&gt;seed&lt;/code&gt; вы можете указать игре использовать удалённую
+раскладку, расположенную на GitHub:
+&lt;a href="http://ogstudio.github.io/ogs-mahjong?seed=0&amp;amp;layout=github://OGStudio/ogs-mahjong-components/data/cat.layout"&gt;http://ogstudio.github.io/ogs-mahjong?seed=0&amp;amp;layout=github://OGStudio/ogs-mahjong-components/data/cat.layout&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Использование удалённых ресурсов открывает огромные возможности, т.к. позволяет
+любому желающему создать раскладку на свой вкус и моментально её проверить.&lt;/p&gt;
+&lt;p&gt;Наш следующий шаг - это выделение игровой логики в виде ресурса.&lt;/p&gt;</content></entry><entry><title>Examples and dependencies</title><link href="http://opengamestudio.org/examples-and-dependencies.html" rel="alternate"></link><published>2018-08-21T00:00:00+03:00</published><updated>2018-08-21T00:00:00+03:00</updated><author><name>Opensource Game Studio</name></author><id>tag:opengamestudio.org,2018-08-21:/examples-and-dependencies.html</id><summary type="html">&lt;p&gt;&lt;img alt="Screenshot" src="http://opengamestudio.org/2018-08-21-examples-and-dependencies.png"&gt;&lt;/p&gt;
 &lt;p&gt;This article describes two new OpenSceneGraph cross-platform examples and the
 change in handling dependencies.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Examples of HTTP client and node selection&lt;/strong&gt;&lt;/p&gt;
