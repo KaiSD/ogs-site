@@ -1,5 +1,125 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Opensource Game Studio</title><link href="http://opengamestudio.org/" rel="alternate"></link><link href="http://opengamestudio.org/feeds/all.atom.xml" rel="self"></link><id>http://opengamestudio.org/</id><updated>2018-10-02T00:00:00+03:00</updated><entry><title>OGS Mahjong 2: Demo 2</title><link href="http://opengamestudio.org/mahjong-demo2.html" rel="alternate"></link><published>2018-10-02T00:00:00+03:00</published><updated>2018-10-02T00:00:00+03:00</updated><author><name>Opensource Game Studio</name></author><id>tag:opengamestudio.org,2018-10-02:/mahjong-demo2.html</id><summary type="html">&lt;p&gt;&lt;img alt="Screenshot" src="http://opengamestudio.org/2018-10-02-mahjong-demo2.png"&gt;&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Opensource Game Studio</title><link href="http://opengamestudio.org/" rel="alternate"></link><link href="http://opengamestudio.org/feeds/all.atom.xml" rel="self"></link><id>http://opengamestudio.org/</id><updated>2018-11-19T00:00:00+03:00</updated><entry><title>Ideal games and game developement tools</title><link href="http://opengamestudio.org/ideal-gamedev.html" rel="alternate"></link><published>2018-11-19T00:00:00+03:00</published><updated>2018-11-19T00:00:00+03:00</updated><author><name>Opensource Game Studio</name></author><id>tag:opengamestudio.org,2018-11-19:/ideal-gamedev.html</id><summary type="html">&lt;p&gt;&lt;img alt="Screenshot" src="http://opengamestudio.org/2018-11-19-ideal-gamedev.png"&gt;&lt;/p&gt;
+&lt;p&gt;In this article, we discuss how ideal video game and video game development
+tool look like, in our opinion.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Questions&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;As you know, the &lt;a href="http://opengamestudio.org/pages/about.html"&gt;goals of Opensource Game Studio&lt;/a&gt; are:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;creation of free video game development tools&lt;/li&gt;
+&lt;li&gt;making video games with those tools&lt;/li&gt;
+&lt;li&gt;preparing video game development tutorials&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;This time …&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;img alt="Screenshot" src="http://opengamestudio.org/2018-11-19-ideal-gamedev.png"&gt;&lt;/p&gt;
+&lt;p&gt;In this article, we discuss how ideal video game and video game development
+tool look like, in our opinion.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Questions&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;As you know, the &lt;a href="http://opengamestudio.org/pages/about.html"&gt;goals of Opensource Game Studio&lt;/a&gt; are:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;creation of free video game development tools&lt;/li&gt;
+&lt;li&gt;making video games with those tools&lt;/li&gt;
+&lt;li&gt;preparing video game development tutorials&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;This time we asked ourselves two simple questions:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;What is an ideal video game?&lt;/li&gt;
+&lt;li&gt;What is an ideal video game development tool?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The best answers we could think of are below.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Answer 1: A video game is ideal if it delivers maximum pleasure possible&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;While content is probably the most important aspect to keep a player invested
+into the game, the technical side is the transport to deliver that content.
+There are quite a few technical problems that may damage otherwise excellent content of a game:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;insufficient accessibility: the game does not run on your hardware&lt;/li&gt;
+&lt;li&gt;insufficient optimization: the game is slow&lt;/li&gt;
+&lt;li&gt;critical bugs: the game crashes from time to time&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;We work hard to make sure the games we create are accessible everywhere.
+That's why we released
+&lt;a href="http://opengamestudio.org/mahjong-demo2.html"&gt;the second demonstration of OGS Mahjong 2&lt;/a&gt; only for
+the web: because you can run web version virtually anywhere.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Answer 2: A video game development tool is ideal if it lets you create a video game of your dream in the shortest time possible&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Even though we put a lot of effort into sharing our knowledge through
+&lt;a href="https://github.com/OGStudio/openscenegraph-cross-platform-guide"&gt;guides&lt;/a&gt; and &lt;a href="https://github.com/OGStudio/openscenegraph-cross-platform-examples"&gt;tutorials&lt;/a&gt;, we understand that those take a lot
+of time to study. One can't possibly make even a simple video game like
+&lt;a href="https://en.wikipedia.org/wiki/Concentration_(game)"&gt;Memory&lt;/a&gt; without performing the following steps:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;configure the development environment&lt;/li&gt;
+&lt;li&gt;write code&lt;/li&gt;
+&lt;li&gt;build an application&lt;/li&gt;
+&lt;li&gt;debug the application&lt;/li&gt;
+&lt;li&gt;repeat &lt;code&gt;write-build-debug&lt;/code&gt; steps as many times as necessary&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Writing code and debugging are probably the ultimate forms of input and output
+of any software, so we can't escape those. However, there are ways to
+completely remove (or at least significantly decrease) the need for
+&lt;code&gt;development environment setup&lt;/code&gt; and &lt;code&gt;build&lt;/code&gt; steps. And this is what we are
+going to do in the coming months.&lt;/p&gt;
+&lt;p&gt;Our goal for the coming months is to create a video game development tool that
+would allow any programmer (or sufficiently skilled person) to create the
+&lt;a href="https://en.wikipedia.org/wiki/Concentration_(game)"&gt;Memory&lt;/a&gt; video game from scratch in an hour.&lt;/p&gt;
+&lt;p&gt;That's it for discussing how ideal video game and video game development tool
+look like, in our opinion.&lt;/p&gt;</content></entry><entry><title>Идеальные игры и средства для их разработки</title><link href="http://opengamestudio.org/ideal-gamedev-ru.html" rel="alternate"></link><published>2018-11-19T00:00:00+03:00</published><updated>2018-11-19T00:00:00+03:00</updated><author><name>Opensource Game Studio</name></author><id>tag:opengamestudio.org,2018-11-19:/ideal-gamedev-ru.html</id><summary type="html">&lt;p&gt;&lt;img alt="Screenshot" src="http://opengamestudio.org/2018-11-19-ideal-gamedev.png"&gt;&lt;/p&gt;
+&lt;p&gt;В этой статье мы обсудим, как выглядят идеальные видеоигра и инструмент для
+разработки видеоигр, по нашему мнению.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Вопросы&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Как вы знаете, &lt;a href="http://opengamestudio.org/pages/about-ru.html"&gt;целями Opensource Game Studio&lt;/a&gt; являются:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;создание бесплатных инструментов для разработки видеоигр&lt;/li&gt;
+&lt;li&gt;создание видеоигр с помощью этих инструментов&lt;/li&gt;
+&lt;li&gt;создание самоучителей по разработке видеоигр&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;В этот раз мы решили задать себе …&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;img alt="Screenshot" src="http://opengamestudio.org/2018-11-19-ideal-gamedev.png"&gt;&lt;/p&gt;
+&lt;p&gt;В этой статье мы обсудим, как выглядят идеальные видеоигра и инструмент для
+разработки видеоигр, по нашему мнению.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Вопросы&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Как вы знаете, &lt;a href="http://opengamestudio.org/pages/about-ru.html"&gt;целями Opensource Game Studio&lt;/a&gt; являются:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;создание бесплатных инструментов для разработки видеоигр&lt;/li&gt;
+&lt;li&gt;создание видеоигр с помощью этих инструментов&lt;/li&gt;
+&lt;li&gt;создание самоучителей по разработке видеоигр&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;В этот раз мы решили задать себе пару простых вопросов:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Какова идеальная видеоигра?&lt;/li&gt;
+&lt;li&gt;Каков идеальный инструмент для разработки видеоигр?&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Ниже представлены наши ответы.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Ответ 1: Видеоигра идеальна, если она доставляет максимально возможное удовольствие&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Несмотря на то, что содержание является, пожалуй, самой важной частью,
+удерживающей человека в игре, техническая сторона является транспортом для
+доставки этого содержания. Существует немало технических проблем, которые
+могут полностью испортить впечатление даже от превосходного содержания:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;недостаточная доступность: игра не идёт на оборудовании человека&lt;/li&gt;
+&lt;li&gt;недостаточная оптимизация: игра тормозит&lt;/li&gt;
+&lt;li&gt;критичные ошибки: игра падает время от времени&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Мы тратим много сил, чтобы сделать наши игры доступными везде. Именно поэтому
+мы выпустили &lt;a href="http://opengamestudio.org/mahjong-demo2-ru.html"&gt;вторую демонстрацию OGS Mahjong 2&lt;/a&gt; лишь для веба:
+т.к. вы можете запустить веб-версию практически где угодно.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Ответ 2: Инструмент для разработки видеоигр идеален, если он позволяет создать игру мечты в кратчайшие возможные сроки&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Несмотря на то, что мы тратим много усилий на то, чтобы делиться своими
+знаниями с помощью &lt;a href="https://github.com/OGStudio/openscenegraph-cross-platform-guide"&gt;руководств&lt;/a&gt; и &lt;a href="https://github.com/OGStudio/openscenegraph-cross-platform-examples"&gt;самоучителей&lt;/a&gt;, мы осознаём,
+что на работу с ними уходит много времени. Сейчас нельзя создать даже
+простейшую &lt;a href="https://en.wikipedia.org/wiki/Concentration_(game)"&gt;видеоигру на память&lt;/a&gt; без выполнения следующих шагов:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;настроить окружение разработки&lt;/li&gt;
+&lt;li&gt;написать код&lt;/li&gt;
+&lt;li&gt;собрать приложение&lt;/li&gt;
+&lt;li&gt;отладить приложение&lt;/li&gt;
+&lt;li&gt;повторить шаги &lt;code&gt;написать-собрать-отладить&lt;/code&gt; столько раз, сколько нужно&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Написание кода и отладка, пожалуй, являются конечными формами входа и
+выхода любого программного обеспечения, поэтому мы их не избежим. Однако,
+мы можем полностью избавиться от шагов (или хотя бы значительно сократить их)
+&lt;code&gt;настройки окружения разработки&lt;/code&gt; и &lt;code&gt;сборки&lt;/code&gt;. Именно на это мы и потратим
+ближайшие месяцы.&lt;/p&gt;
+&lt;p&gt;Наша цель на ближайшие месяцы состоит в том, чтобы создать такой инструмент
+разработки видеоигр, чтобы любой программист (или достаточно квалифицированный
+человек) мог создать &lt;a href="https://en.wikipedia.org/wiki/Concentration_(game)"&gt;видеоигру на память&lt;/a&gt; с нуля за час.&lt;/p&gt;
+&lt;p&gt;На этом мы заканчиваем обсуждение, как выглядят идеальные видеоигра и
+инструмент для разработки видеоигр, по нашему мнению.&lt;/p&gt;</content></entry><entry><title>OGS Mahjong 2: Demo 2</title><link href="http://opengamestudio.org/mahjong-demo2.html" rel="alternate"></link><published>2018-10-02T00:00:00+03:00</published><updated>2018-10-02T00:00:00+03:00</updated><author><name>Opensource Game Studio</name></author><id>tag:opengamestudio.org,2018-10-02:/mahjong-demo2.html</id><summary type="html">&lt;p&gt;&lt;img alt="Screenshot" src="http://opengamestudio.org/2018-10-02-mahjong-demo2.png"&gt;&lt;/p&gt;
 &lt;p&gt;We are glad to announce the release of the second demonstration of OGS Mahjong 2.
 The purposes of this release were to refine our development techniques and
 build a solid cross-platform foundation.&lt;/p&gt;

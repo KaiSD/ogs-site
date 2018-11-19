@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8" />
+    <!-- Set the viewport width to device width for mobile -->
+    <meta name="viewport" content="width=device-width" />
+
+    <title>Идеальные игры и средства для их разработки</title>
+
+    <link rel="stylesheet" href="http://opengamestudio.org/theme/css/normalize.css" />
+    <link rel="stylesheet" href="http://opengamestudio.org/theme/css/foundation.min.css" />
+    <link rel="stylesheet" href="http://opengamestudio.org/theme/css/style.css" />
+    <link rel="stylesheet" href="http://opengamestudio.org/theme/css/pygments.css" />	
+    <script src="http://opengamestudio.org/theme/js/custom.modernizr.js"></script>
+
+    <!-- So Firefox can bookmark->"abo this site" -->
+        <link href="feeds/all.atom.xml" rel="alternate" title="Opensource Game Studio" type="application/atom+xml">
+
+</head>
+
+<body>
+
+<!-- Nav Bar -->
+<nav>
+
+<!-- Show menu items and pages -->
+<div class="row">
+    <div class="large-12 columns top-bar">
+	    <h1><a href="http://opengamestudio.org">Opensource Game Studio</a></h1>
+    </div>
+</div>
+<div class="row top-menu">
+<div class="large-12 columns">
+        <a href="/pages/projects.html" class="menu-button secondary">Projects</a>
+        <a href="/pages/about.html" class="menu-button secondary">About</a>
+
+</div>
+</div>
+</nav>
+<!-- End Nav -->
+
+
+<!-- Main Page Content and Sidebar -->
+<div class="row">
+
+    <!-- Main Blog Content -->
+    <div class="large-9 columns">
+<article>
+    <header>
+        <h3 class="article-title"><a href="http://opengamestudio.org/ideal-gamedev-ru.html" rel="bookmark"
+        title="Permalink to Идеальные игры и средства для их разработки">Идеальные игры и средства для их разработки</a></h3>
+    </header>
+
+<h6 class="subheader" title="2018-11-19T00:00:00+03:00">Пн 19 ноября 2018
+            <a class="button secondary small translation-button" href="http://opengamestudio.org/ideal-gamedev.html">en</a>
+
+</h6>    <p><img alt="Screenshot" src="http://opengamestudio.org/2018-11-19-ideal-gamedev.png"></p>
+<p>В этой статье мы обсудим, как выглядят идеальные видеоигра и инструмент для
+разработки видеоигр, по нашему мнению.</p>
+<p><strong>Вопросы</strong></p>
+<p>Как вы знаете, <a href="http://opengamestudio.org/pages/about-ru.html">целями Opensource Game Studio</a> являются:</p>
+<ul>
+<li>создание бесплатных инструментов для разработки видеоигр</li>
+<li>создание видеоигр с помощью этих инструментов</li>
+<li>создание самоучителей по разработке видеоигр</li>
+</ul>
+<p>В этот раз мы решили задать себе пару простых вопросов:</p>
+<ul>
+<li>Какова идеальная видеоигра?</li>
+<li>Каков идеальный инструмент для разработки видеоигр?</li>
+</ul>
+<p>Ниже представлены наши ответы.</p>
+<p><strong>Ответ 1: Видеоигра идеальна, если она доставляет максимально возможное удовольствие</strong></p>
+<p>Несмотря на то, что содержание является, пожалуй, самой важной частью,
+удерживающей человека в игре, техническая сторона является транспортом для
+доставки этого содержания. Существует немало технических проблем, которые
+могут полностью испортить впечатление даже от превосходного содержания:</p>
+<ul>
+<li>недостаточная доступность: игра не идёт на оборудовании человека</li>
+<li>недостаточная оптимизация: игра тормозит</li>
+<li>критичные ошибки: игра падает время от времени</li>
+</ul>
+<p>Мы тратим много сил, чтобы сделать наши игры доступными везде. Именно поэтому
+мы выпустили <a href="http://opengamestudio.org/mahjong-demo2-ru.html">вторую демонстрацию OGS Mahjong 2</a> лишь для веба:
+т.к. вы можете запустить веб-версию практически где угодно.</p>
+<p><strong>Ответ 2: Инструмент для разработки видеоигр идеален, если он позволяет создать игру мечты в кратчайшие возможные сроки</strong></p>
+<p>Несмотря на то, что мы тратим много усилий на то, чтобы делиться своими
+знаниями с помощью <a href="https://github.com/OGStudio/openscenegraph-cross-platform-guide">руководств</a> и <a href="https://github.com/OGStudio/openscenegraph-cross-platform-examples">самоучителей</a>, мы осознаём,
+что на работу с ними уходит много времени. Сейчас нельзя создать даже
+простейшую <a href="https://en.wikipedia.org/wiki/Concentration_(game)">видеоигру на память</a> без выполнения следующих шагов:</p>
+<ul>
+<li>настроить окружение разработки</li>
+<li>написать код</li>
+<li>собрать приложение</li>
+<li>отладить приложение</li>
+<li>повторить шаги <code>написать-собрать-отладить</code> столько раз, сколько нужно</li>
+</ul>
+<p>Написание кода и отладка, пожалуй, являются конечными формами входа и
+выхода любого программного обеспечения, поэтому мы их не избежим. Однако,
+мы можем полностью избавиться от шагов (или хотя бы значительно сократить их)
+<code>настройки окружения разработки</code> и <code>сборки</code>. Именно на это мы и потратим
+ближайшие месяцы.</p>
+<p>Наша цель на ближайшие месяцы состоит в том, чтобы создать такой инструмент
+разработки видеоигр, чтобы любой программист (или достаточно квалифицированный
+человек) мог создать <a href="https://en.wikipedia.org/wiki/Concentration_(game)">видеоигру на память</a> с нуля за час.</p>
+<p>На этом мы заканчиваем обсуждение, как выглядят идеальные видеоигра и
+инструмент для разработки видеоигр, по нашему мнению.</p>
+<p class="subheader">Category: <a href="http://opengamestudio.org/category/news.html">News</a>
+
+</p>
+
+
+
+</article>
+    </div>
+    <!-- End Main Content -->
+
+    <!-- Sidebar -->
+    <aside class="large-3 columns">
+        <!--k
+        <h5 class="sidebar-title">Site</h5>
+        <ul class="side-nav">
+            <li><a href="http://opengamestudio.org/archives.html">Archives</a>
+            <li><a href="http://opengamestudio.org/tags.html">Tags</a>
+
+
+                <li><a href="http://opengamestudio.org/feeds/all.atom.xml" rel="alternate">Atom feed</a></li>
+        </ul>
+
+		
+        <h5 class="sidebar-title">Categories</h5>
+        <ul class="side-nav">
+            <li><a href="http://opengamestudio.org/category/news.html">News</a></li>
+   
+        </ul>
+        -->
+
+
+		
+        
+        <h5 class="sidebar-title">Ads</h5>
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <!-- ogs2 -->
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-4473792248813084"
+             data-ad-slot="9024247127"
+             data-ad-format="auto"></ins>
+        <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+
+    </aside> <!-- End Sidebar -->
+
+</div> <!-- End Main Content and Sidebar -->
+
+
+<!-- Footer -->
+<footer class="row">
+    <div class="large-12 columns">
+        <hr />
+        <div class="row">
+            <div class="large-7 columns">
+                <p>Proudly powered by <a href="http://getpelican.com">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.</p>
+            </div>
+            </div>
+    </div>
+    <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-3773114-1']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+    </script>
+</footer>

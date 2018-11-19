@@ -48,6 +48,75 @@
         
 
             <article>
+                <a href="http://opengamestudio.org/ideal-gamedev.html"><h3 class="article-title">Ideal games and game developement tools</h3></a>
+<h6 class="subheader" title="2018-11-19T00:00:00+03:00">Пн 19 ноября 2018
+            <a class="button secondary small translation-button" href="http://opengamestudio.org/ideal-gamedev-ru.html">ru</a>
+
+</h6><p><img alt="Screenshot" src="http://opengamestudio.org/2018-11-19-ideal-gamedev.png"></p>
+<p>In this article, we discuss how ideal video game and video game development
+tool look like, in our opinion.</p>
+<p><strong>Questions</strong></p>
+<p>As you know, the <a href="http://opengamestudio.org/pages/about.html">goals of Opensource Game Studio</a> are:</p>
+<ul>
+<li>creation of free video game development tools</li>
+<li>making video games with those tools</li>
+<li>preparing video game development tutorials</li>
+</ul>
+<p>This time we asked ourselves two simple questions:</p>
+<ul>
+<li>What is an ideal video game?</li>
+<li>What is an ideal video game development tool?</li>
+</ul>
+<p>The best answers we could think of are below.</p>
+<p><strong>Answer 1: A video game is ideal if it delivers maximum pleasure possible</strong></p>
+<p>While content is probably the most important aspect to keep a player invested
+into the game, the technical side is the transport to deliver that content.
+There are quite a few technical problems that may damage otherwise excellent content of a game:</p>
+<ul>
+<li>insufficient accessibility: the game does not run on your hardware</li>
+<li>insufficient optimization: the game is slow</li>
+<li>critical bugs: the game crashes from time to time</li>
+</ul>
+<p>We work hard to make sure the games we create are accessible everywhere.
+That's why we released
+<a href="http://opengamestudio.org/mahjong-demo2.html">the second demonstration of OGS Mahjong 2</a> only for
+the web: because you can run web version virtually anywhere.</p>
+<p><strong>Answer 2: A video game development tool is ideal if it lets you create a video game of your dream in the shortest time possible</strong></p>
+<p>Even though we put a lot of effort into sharing our knowledge through
+<a href="https://github.com/OGStudio/openscenegraph-cross-platform-guide">guides</a> and <a href="https://github.com/OGStudio/openscenegraph-cross-platform-examples">tutorials</a>, we understand that those take a lot
+of time to study. One can't possibly make even a simple video game like
+<a href="https://en.wikipedia.org/wiki/Concentration_(game)">Memory</a> without performing the following steps:</p>
+<ul>
+<li>configure the development environment</li>
+<li>write code</li>
+<li>build an application</li>
+<li>debug the application</li>
+<li>repeat <code>write-build-debug</code> steps as many times as necessary</li>
+</ul>
+<p>Writing code and debugging are probably the ultimate forms of input and output
+of any software, so we can't escape those. However, there are ways to
+completely remove (or at least significantly decrease) the need for
+<code>development environment setup</code> and <code>build</code> steps. And this is what we are
+going to do in the coming months.</p>
+<p>Our goal for the coming months is to create a video game development tool that
+would allow any programmer (or sufficiently skilled person) to create the
+<a href="https://en.wikipedia.org/wiki/Concentration_(game)">Memory</a> video game from scratch in an hour.</p>
+<p>That's it for discussing how ideal video game and video game development tool
+look like, in our opinion.</p><p class="subheader">Category: <a href="http://opengamestudio.org/category/news.html">News</a>
+
+</p>
+
+
+            </article>
+
+
+                <hr  class="gradient"/>
+
+
+        
+
+
+            <article>
                 <a href="http://opengamestudio.org/mahjong-demo2.html"><h3 class="article-title">OGS Mahjong 2: Demo 2</h3></a>
 <h6 class="subheader" title="2018-10-02T00:00:00+03:00">Вт 02 октября 2018
             <a class="button secondary small translation-button" href="http://opengamestudio.org/mahjong-demo2-ru.html">ru</a>
@@ -58,36 +127,14 @@ The purposes of this release were to refine our development techniques and
 build a solid cross-platform foundation.</p>
 <p><strong>Release</strong></p>
 <p>Run the latest version of OGS Mahjong 2 in your web browser:
-<a href="http://ogstudio.github.io/ogs-mahjong">http://ogstudio.github.io/ogs-mahjong</a></p>
-<p>You are encouraged to run the game with <code>seed</code> parameter like this:
-<a href="http://ogstudio.github.io/ogs-mahjong?seed=0">http://ogstudio.github.io/ogs-mahjong?seed=0</a></p>
-<p>This allows you to play the same layout each time you launch the game.</p>
-<p>Each seed uniquely identifies the placement of tiles. Thus, different seeds
-give you a different experience.</p>
-<p><strong>Development techniques and foundation</strong></p>
-<p>During the second demonstration development, we switched from standard
-development to <a href="http://opengamestudio.org/example-driven-development.html">example-driven one</a>. This resulted in the
-creation of three distinct repositories to back the development of OGS Mahjong 2:</p>
-<ul>
-<li><a href="https://github.com/OGStudio/openscenegraph-cross-platform-examples">OpenSceneGraph cross-platform examples</a> repository provides cross-platform foundation like resource handling, render window setup, etc.</li>
-<li><a href="https://github.com/OGStudio/ogs-mahjong-components">OGS Mahjong components</a> repository provides Mahjong specific functionality like parsing layout, matching tiles, etc.</li>
-<li><a href="https://bitbucket.org/ogstudio-games/ogs-mahjong">OGS Mahjong</a> repository contains snapshots of <code>OGS Mahjong components</code> features that comprise specific game version. E.g., <code>Demo 2</code> version is almost identical to <a href="https://github.com/OGStudio/ogs-mahjong-components/tree/master/05.ColorfulStatus">05.ColorfulStatus</a> example of <code>OGS Mahjong components</code>.</li>
-</ul>
-<p><strong>Beyond Mahjong solitaire</strong></p>
-<p>In addition to <code>seed</code> parameter, you can let the game use remote layout hosted at GitHub:
-<a href="http://ogstudio.github.io/ogs-mahjong?seed=0&amp;layout=github://OGStudio/ogs-mahjong-components/data/cat.layout">http://ogstudio.github.io/ogs-mahjong?seed=0&amp;layout=github://OGStudio/ogs-mahjong-components/data/cat.layout</a></p>
-<p>Utilizing remote resources is an extremely powerful approach allowing anyone
-to create a layout of his/her choice and see the layout in action instantly.</p>
-<p>Our next step is to turn game logic into a resource, too.</p><p class="subheader">Category: <a href="http://opengamestudio.org/category/news.html">News</a>
+<a href="http://ogstudio.github.io/ogs-mahjong">http://ogstudio.github.io/ogs-mahjong …</a></p><p class="subheader">Category: <a href="http://opengamestudio.org/category/news.html">News</a>
 
 </p>
 
 
-            </article>
-
-
+                <a class="button radius secondary small right" href="http://opengamestudio.org/mahjong-demo2.html">Read More</a>
                 <hr  class="gradient"/>
-
+            </article>
 
         
 
@@ -273,31 +320,6 @@ It seems that this is the technology capable of …</p><p class="subheader">Cate
 
 
                 <a class="button radius secondary small right" href="http://opengamestudio.org/back-to-the-static.html">Read More</a>
-                <hr  class="gradient"/>
-            </article>
-
-        
-
-
-            <article>
-                <a href="http://opengamestudio.org/mjin-world-birth.html"><h3 class="article-title">The birth of MJIN world</h3></a>
-<h6 class="subheader" title="2017-09-10T00:00:00+03:00">Вс 10 сентября 2017
-            <a class="button secondary small translation-button" href="http://opengamestudio.org/mjin-world-birth-ru.html">ru</a>
-
-</h6><p><img alt="The birth of MJIN world" src="http://opengamestudio.org/2017-09-mjin-world-birth.png"></p>
-<p>This article describes the birth of MJIN world in August 2017.</p>
-<p><strong>mjin-player</strong></p>
-<p>As you know, <a href="http://opengamestudio.org/scripting-research.html">we spent July to research scripting</a>. We found a solution that satisfies the following criteria. Scripts should:</p>
-<ol>
-<li>run unchanged on all supported platforms</li>
-<li>allow extending C++ code</li>
-</ol>
-<p>We have verified the second criterion by writing …</p><p class="subheader">Category: <a href="http://opengamestudio.org/category/news.html">News</a>
-
-</p>
-
-
-                <a class="button radius secondary small right" href="http://opengamestudio.org/mjin-world-birth.html">Read More</a>
                 <hr  class="gradient"/>
             </article>
 

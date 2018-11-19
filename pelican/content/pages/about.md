@@ -7,8 +7,8 @@ Lang: en
 The goals of Opensource Game Studio are:
 
 * creation of free video game development tools
-* creation of video games with those tools
-* creation of video game development tutorials
+* making video games with those tools
+* preparing video game development tutorials
 
 We use opensource and freeware software as the base, that's why our tools are
 opensource, too.
