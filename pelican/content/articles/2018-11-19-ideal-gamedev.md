@@ -1,4 +1,4 @@
-Title: Ideal games and game developement tools
+Title: Ideal games and game development tools
 Date: 2018-11-19 00:00
 Category: News
 Slug: ideal-gamedev
