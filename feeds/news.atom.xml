@@ -1125,4 +1125,41 @@ The exact date and time is to be announced in the coming days. Stay tuned!&lt;/p
 &lt;li&gt;Copying and pasting of scene nodes&lt;/li&gt;
 &lt;li&gt;Scene node selection by clicking a mouse in the scene&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;We estimate to complete it in August.&lt;/p&gt;</content></entry></feed>
+&lt;p&gt;We estimate to complete it in August.&lt;/p&gt;</content></entry><entry><title>Editor 0.4.0 and plans for 0.5.0</title><link href="http://opengamestudio.org/editor-0.4.0-and-0.5.0-plans.html" rel="alternate"></link><published>2015-03-07T00:00:00+03:00</published><updated>2015-03-07T00:00:00+03:00</updated><author><name>Opensource Game Studio</name></author><id>tag:opengamestudio.org,2015-03-07:/editor-0.4.0-and-0.5.0-plans.html</id><summary type="html">&lt;p&gt;We completed Editor 0.4.0 in January. As it was planned, it only contains
+basic abilities to open and save a project. The major goal was to make MJIN,
+Python and Qt work together (we were unable to use PyQt or PySide due to
+technical difficulties).&lt;/p&gt;
+&lt;p&gt;You can &lt;a title="Editor 0.4.0" href="http://youtu.be/3cqiTIjWwA8" target="_blank"&gt;see …&lt;/a&gt;&lt;/p&gt;</summary><content type="html">&lt;p&gt;We completed Editor 0.4.0 in January. As it was planned, it only contains
+basic abilities to open and save a project. The major goal was to make MJIN,
+Python and Qt work together (we were unable to use PyQt or PySide due to
+technical difficulties).&lt;/p&gt;
+&lt;p&gt;You can &lt;a title="Editor 0.4.0" href="http://youtu.be/3cqiTIjWwA8" target="_blank"&gt;see 0.4.0 in action here&lt;/a&gt;. &lt;/p&gt;
+&lt;p&gt;We started Editor 0.5.0 development in February. It's 45% ready at the moment.&lt;/p&gt;
+&lt;p&gt;Editor 0.5.0 planned features:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Scene node tree editing&lt;/li&gt;
+&lt;li&gt;Property browser with nodes' position and model editing&lt;/li&gt;
+&lt;li&gt;Qt5 support for the sake of easy building on various Linux distributions&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;We estimate to complete it in April.&lt;/p&gt;</content></entry><entry><title>Editor roadmap for 0.4.0</title><link href="http://opengamestudio.org/editor-0.4.0-plans.html" rel="alternate"></link><published>2015-01-13T00:00:00+03:00</published><updated>2015-01-13T00:00:00+03:00</updated><author><name>Opensource Game Studio</name></author><id>tag:opengamestudio.org,2015-01-13:/editor-0.4.0-plans.html</id><summary type="html">&lt;p&gt;The development of Editor 0.3.0 showed us, that usage of custom GUI was not a perfect idea. A few months ago, custom GUI seemed as a simpler way to do things, but it turned out to lack many little features, that are crucial if you're planning to make …&lt;/p&gt;</summary><content type="html">&lt;p&gt;The development of Editor 0.3.0 showed us, that usage of custom GUI was not a perfect idea. A few months ago, custom GUI seemed as a simpler way to do things, but it turned out to lack many little features, that are crucial if you're planning to make a convenient tool.&lt;/p&gt;
+&lt;p&gt;In the end, we decided to do what we wanted to do in the first place - to use Qt library as the GUI library for our editor.&lt;/p&gt;
+&lt;p&gt;So, we'll rewrite the Editor with Qt interface and a little bit refreshed project concept in mind. We plan to release the editor with new GUI and a set of basic features like loading and saving projects in May.&lt;/p&gt;</content></entry><entry><title>And another year has passed</title><link href="http://opengamestudio.org/2014-another-year-passed.html" rel="alternate"></link><published>2014-12-31T12:00:00+03:00</published><updated>2014-12-31T12:00:00+03:00</updated><author><name>Opensource Game Studio</name></author><id>tag:opengamestudio.org,2014-12-31:/2014-another-year-passed.html</id><summary type="html">&lt;p&gt;Hello!&lt;/p&gt;
+&lt;p&gt;So, this year comes to the end. There were very little publications from us during this year. We haven't stopped working, but right now our work is in the phase, when we have nothing to show. And the spare time of the team members is rarely more then 30-40 …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Hello!&lt;/p&gt;
+&lt;p&gt;So, this year comes to the end. There were very little publications from us during this year. We haven't stopped working, but right now our work is in the phase, when we have nothing to show. And the spare time of the team members is rarely more then 30-40 hours a month.&lt;/p&gt;
+&lt;p&gt;But our work continues. And you can find out some details in the new &lt;a href="{filename}/articles/2018-12-30-exaggerated-expectations.md"&gt;article from our programmer Michael Kapelko&lt;/a&gt;.&lt;/p&gt;</content></entry><entry><title>User survey ends today</title><link href="http://opengamestudio.org/user-servey-finish-promise.html" rel="alternate"></link><published>2014-12-31T00:00:00+03:00</published><updated>2014-12-31T00:00:00+03:00</updated><author><name>Opensource Game Studio</name></author><id>tag:opengamestudio.org,2014-12-31:/user-servey-finish-promise.html</id><summary type="html">&lt;p&gt;About a year ago, we started the user survey, in order to find out what do
+you think of the Open Source in general and about our project in particular.
+Today we're closing this survey. It took time, but we've got plenty of answers.
+Thank you for that.&lt;/p&gt;
+&lt;p&gt;We'll share …&lt;/p&gt;</summary><content type="html">&lt;p&gt;About a year ago, we started the user survey, in order to find out what do
+you think of the Open Source in general and about our project in particular.
+Today we're closing this survey. It took time, but we've got plenty of answers.
+Thank you for that.&lt;/p&gt;
+&lt;p&gt;We'll share our thought about the results of the survey in one of the future
+articles.&lt;/p&gt;
+&lt;p&gt;After the survey, every one of you has got the code. With this code, you'll be
+able to access the alpha test of the OGS Mahjong 2, as soon as we'll be ready
+to start it (i can't promise anything, but we're planning to do it in 2015).
+Also, you'll be able to choose between the deluxe version of OGS Mahjong 2 and
+the deluxe version of Shuan, as soon as we'll be ready to release these games.&lt;/p&gt;
+&lt;p&gt;We wish you all a Happy New Year. Thank you for being with us. See you next year.&lt;/p&gt;
+&lt;p&gt;P.S. If you have lost your code - write us a letter, we'll figure something out.&lt;/p&gt;</content></entry></feed>
