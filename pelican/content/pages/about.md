@@ -10,30 +10,28 @@ The goals of Opensource Game Studio are:
 * making video games with those tools
 * preparing video game development tutorials
 
-We use opensource and freeware software as the base, that's why our tools are
-opensource, too.
-
 To this date, we have released OGS Mahjong 1. It's a solitaire game and the
-first step in the long path towards full-scale RPG we dream of.
+first step in the long path towards full-scale RPG.
 
 #### Team
 
-Opensource Game Studio team consists of:
-
-* Michael “kornerr” Kapelko – software engineer, co-founder.
-* Ivan “Kai SD” Korystin – game designer, QA, PM, co-founder.
+* Michael “kornerr” Kapelko – software engineer, co-founder
+* Ivan “Kai SD” Korystin – game designer, QA, PM, co-founder
 
 #### Contributors
 
-Opensource Game Studio contributors are:
+* Maxim Zaretsky – writer
+* Tatyana Artemyeva – QA
+* devALEX – software engineer
+* Timur “Sora” Malikin, Anton “Kif” Chernov- 3D modellers
+* Thierry Delaunay, Miguel de Dios, Dirk Pervolz, Jurgen Rauscher – translators
 
-* Maxim Zaretsky – Writer.
-* Tatyana Artemyeva – QA.
-* devALEX – software engineer.
-* Timur “Sora” Malikin, Anton “Kif” Chernov- 3D modellers.
-* Thierry Delaunay, Miguel de Dios, Dirk Pervolz, Jurgen Rauscher – translators.
+#### Support us
 
-#### Join us
+If you like what we do, support us by joining our group at
+[Twitter][tw], [Facebook][fb], or [VK][vk].
+One day we'll need you to help us shake the world.
 
-Join us if you feel the world needs more quality games and game development tools.
-
+[tw]: https://twitter.com/OpenGameStudio
+[fb]: https://www.facebook.com/groups/162611230470183
+[vk]: https://vk.com/opengamestudo
