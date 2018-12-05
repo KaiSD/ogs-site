@@ -23,7 +23,7 @@ Remake of OGS Mahjong 1 that runs on desktop, mobile, and web.
 * **Try** the latest version of [OGS Mahjong 2 demo][ogs-mahjong-2-web-release] in your web browser
 * **Note**: make sure you have [WebGL enabled][webgl]
 
-[ogs-mahjong-1]: {filename}/pages/ogs-mahjong-1.md
+[ogs-mahjong-1]: {filename}/pages/games-ogs-mahjong1.md
 [ogs-mahjong-2-screenshot]: {attach}/images/ogs-mahjong-2-screenshot.png
 [ogs-mahjong-2-web-release]: https://ogstudio.github.io/ogs-mahjong/
 [webgl]: https://get.webgl.org

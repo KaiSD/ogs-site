@@ -23,7 +23,7 @@ Lang: ru
 * **Попробуйте** последнюю версию [демонстрации OGS Mahjong 2][ogs-mahjong-2-web-release] в вашем веб-браузере.
 * **Внимание**: удостоверьтесь в [работоспособности WebGL][webgl]
 
-[ogs-mahjong-1]: {filename}/pages/ogs-mahjong-1-ru.md
+[ogs-mahjong-1]: {filename}/pages/games-ogs-mahjong1-ru.md
 [ogs-mahjong-2-screenshot]: {attach}/images/ogs-mahjong-2-screenshot.png
 [ogs-mahjong-2-web-release]: https://ogstudio.github.io/ogs-mahjong/
 [webgl]: https://get.webgl.org
