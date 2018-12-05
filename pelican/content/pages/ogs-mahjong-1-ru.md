@@ -1,4 +1,4 @@
-Title: OGS Mahjong 1
+Title: Игры / OGS Mahjong 1
 Slug: ogs-mahjong-1
 Lang: ru
 

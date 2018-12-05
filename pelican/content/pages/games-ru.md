@@ -1,5 +1,5 @@
-Title: Проекты
-Slug: projects
+Title: Игры
+Slug: games
 Lang: ru
 
 #### OGS Mahjong 1
@@ -10,22 +10,21 @@ Lang: ru
 
 * **Выпуск**: 2013
 * **Платформы**: Linux, Windows
-* **Скачать [OGS Mahjong 1][ogs-mahjong-1]**
+* **[Скачать OGS Mahjong 1][ogs-mahjong-1]**
 
 <hr>
 
-#### OGS Mahjong 2
+#### OGS Mahjong 2 *(в разработке)* 
 
 Переделка OGS Mahjong 1, которая работает на десктопе, мобилках и вебе.
 
 [![shot][ogs-mahjong-2-screenshot]][ogs-mahjong-2-web-release]
 
-* **В разработке**: выпущены лишь техдемки
-* **Платформы**: Linux, macOS, Windows, Android, iOS, Web
-* **Скачать [технические демки OGS Mahjong 2][ogs-mahjong-2]**
+* **Попробуйте** последнюю версию [демонстрации OGS Mahjong 2][ogs-mahjong-2-web-release] в вашем веб-браузере.
+* **Внимание**: удостоверьтесь в [работоспособности WebGL][webgl]
 
 [ogs-mahjong-1]: {filename}/pages/ogs-mahjong-1-ru.md
-[ogs-mahjong-2]: {filename}/pages/ogs-mahjong-2-ru.md
 [ogs-mahjong-2-screenshot]: {attach}/images/ogs-mahjong-2-screenshot.png
-[ogs-mahjong-2-web-release]: https://ogstudio.github.io/game-mahjong/versions/013/mjin-player.html
+[ogs-mahjong-2-web-release]: https://ogstudio.github.io/ogs-mahjong/
+[webgl]: https://get.webgl.org
 
