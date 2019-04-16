@@ -1,3 +1,8 @@
+**Notes**:
+
+* Pelican site has been replaced with custom solution by 16 April 2019
+* The old Pelican site is now kept solely for historical reasons
+
 # Overview
 
 This is an internal document describing how to update

@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8" />
+    <!-- Set the viewport width to device width for mobile -->
+    <meta name="viewport" content="width=device-width" />
+
+    <title>Opensource Game Studio</title>
+
+    <link rel="stylesheet" href="http://opengamestudio.org/theme/css/normalize.css" />
+    <link rel="stylesheet" href="http://opengamestudio.org/theme/css/foundation.min.css" />
+    <link rel="stylesheet" href="http://opengamestudio.org/theme/css/style.css" />
+    <link rel="stylesheet" href="http://opengamestudio.org/theme/css/pygments.css" />	
+    <script src="http://opengamestudio.org/theme/js/custom.modernizr.js"></script>
+
+    <!-- So Firefox can bookmark->"abo this site" -->
+        <link href="feeds/all.atom.xml" rel="alternate" title="Opensource Game Studio" type="application/atom+xml">
+
+</head>
+
+<body>
+
+<!-- Nav Bar -->
+<nav>
+
+<!-- Show menu items and pages -->
+<div class="row">
+    <div class="large-12 columns top-bar">
+	    <h1><a href="http://opengamestudio.org">Opensource Game Studio</a></h1>
+    </div>
+</div>
+<div class="row top-menu">
+<div class="large-12 columns">
+        <a href="/pages/games.html" class="menu-button secondary">Games</a>
+        <a href="/pages/education.html" class="menu-button secondary">Education</a>
+        <a href="/pages/about.html" class="menu-button secondary">About</a>
+
+</div>
+</div>
+</nav>
+<!-- End Nav -->
+
+
+<!-- Main Page Content and Sidebar -->
+<div class="row">
+
+    <!-- Main Blog Content -->
+    <div class="large-9 columns">
+        
+        
+
+            <article>
+                <a href="http://opengamestudio.org/teaching-kids-to-program.html"><h3 class="article-title">Teaching kids to program</h3></a>
+<h6 class="subheader" title="2019-02-04T00:00:00+03:00">Пн 04 февраля 2019
+            <a class="button secondary small translation-button" href="http://opengamestudio.org/teaching-kids-to-program-ru.html">ru</a>
+
+</h6><p><img alt="Screenshot" src="http://opengamestudio.org/2019-02-04_teaching-kids-to-program-team.png"></p>
+<p>In this article, Michael shares his experience of teaching kids to program.</p>
+<p>Here's what he covers:</p>
+<ul>
+<li>organization of the learning process</li>
+<li>learning plan</li>
+<li>memory game</li>
+<li>development tools</li>
+<li>lessons</li>
+<li>results and plans</li>
+</ul>
+<p><strong>Organization of the learning process</strong></p>
+<p>The learning process is conducted as part of corporate social responsibility: a company provides a room with equipment and connects employees that want to try themselves in the role of teachers with employees that want their kids educated. All this is done voluntarily.</p>
+<p>Potential teachers are divided into groups so that each group contains three teachers: experienced one and two novice ones. Such a group of three teachers leads a group of students. Students are divided into groups by age and skills.</p>
+<p>I participated in the program as a teacher for the second time in 2018. The kids were around ten years old. Our group was active from October to December of 2018 each Saturday, 10:00-12:00. Using my position as a teacher, I've also brought my wife in as a student.</p>
+<p><strong>Learning plan</strong></p>
+<p>The first time I participated in the program, our group taught kids rather mindlessly: we were coming up with simple tasks to explain different operators. By the end of the course we had nothing concrete to evaluate, analyze, and share.</p>
+<p>This second time I decided we are going to create a memory game with kids. I decided to consider the course successful if by the end of the course each kid would be able to create a simple memory game from scratch in an hour.</p>
+<p>To achieve that, we were recreating the same game from scratch each lesson. I'd like to stress that we did not use personal accounts to save progress. Our task was to save the skill of game creation in the head, not a PC.</p>
+<p><strong>Memory game</strong></p>
+<p>Let's see what the memory game is.</p>
+<p><strong>1)</strong> In the simplest case we have 16 cards, only 8 of them are unique, the rest 8 are duplicates of the unique ones.</p>
+<p><img alt="Screenshot" src="http://opengamestudio.org/2019-02-04_teaching-kids-to-program-all-cards-face-up.png"></p>
+<p>As you can see, we only have two cards with a cat, only two cards with a dog, etc..</p>
+<p><strong>2)</strong> At the start we shuffle the cards and place them with their faces down.</p>
+<p><img alt="Screenshot" src="http://opengamestudio.org/2019-02-04_teaching-kids-to-program-all-cards-face-down.png"></p>
+<p><strong>3)</strong> The first game player turns a pair of cards.</p>
+<p><img alt="Screenshot" src="http://opengamestudio.org/2019-02-04_teaching-kids-to-program-first-pair.png"></p>
+<p><strong>4)</strong> If the cards differ they are once again turned face down.</p>
+<p><img alt="Screenshot" src="http://opengamestudio.org/2019-02-04_teaching-kids-to-program-all-cards-face-down.png"></p>
+<p><strong>5)</strong> The next player turns another pair of cards.</p>
+<p><img alt="Screenshot" src="http://opengamestudio.org/2019-02-04_teaching-kids-to-program-second-pair.png"></p>
+<p><strong>6)</strong> If the cards are the same, they are removed from the field.</p>
+<p><img alt="Screenshot" src="http://opengamestudio.org/2019-02-04_teaching-kids-to-program-remove-pair.png"></p>
+<p>The goal of the game is to remove all cards from the field. There's no competition here so the game can be played alone.</p>
+<p>From one hand, the memory game is rather simple. From the other hand, the game implementation requires essential functionality each more or less complex game has:</p>
+<ul>
+<li>creation of items</li>
+<li>arrangement of items</li>
+<li>selection of items</li>
+<li>comparison of items</li>
+<li>removal of matching items</li>
+</ul>
+<p><strong>Development tools</strong></p>
+<p>We used Scratch as our development tool. <a href="https://scratch.mit.edu/">Scratch</a> is a great tool to teach kids to program because each action, each operation is represented graphically.</p>
+<p>For example, you can rotate a cat 360 degrees in 1 second using the following script:</p>
+<p><img alt="Screenshot" src="http://opengamestudio.org/2019-02-04_teaching-kids-to-program-cat-script.png"></p>
+<p>Here's how it looks like in action:</p>
+<p><img alt="Animation" src="http://opengamestudio.org/2019-02-04_teaching-kids-to-program-cat-animation.gif"></p>
+<p>I'd like to stress that Scratch is a rather successful solution to represent code graphically. For example, a paid solution by SAP uses similar concept of cubes to program logic:</p>
+<p><img alt="Screenshot" src="http://opengamestudio.org/2019-02-04_teaching-kids-to-program-sap-ui.png"></p>
+<p>Users can only input values into predefined fields. If users want more functionality they have to resort to scripts.</p>
+<p>Personally, I have never witnessed any slowdown in Scratch, and there were many in SAP's solution.</p>
+<p><strong>The first lesson</strong></p>
+<p>The first lesson was introductory, we didn't use PCs.</p>
+<p>The plan was to:</p>
+<ol>
+<li>Meet</li>
+<li>Play the memory game with cards</li>
+<li>Learn the concept of algorithm</li>
+<li>Detail the game's algorithm</li>
+<li>Analyze the lesson</li>
+</ol>
+<p><strong>1)</strong> Meeting</p>
+<p>Both teachers and students stand in a circle. This equalizes everyone and makes everyone a team member.</p>
+<p>The first team member tells his name and why he decided to take the course. The second team member and the rest first repeat the name and the story of each previous team member before telling their own names and stories.</p>
+<p>Here's how it looks like:</p>
+<ol>
+<li>John: "My name is John, I am going to study Scratch because my father forces me to"</li>
+<li>Alex: "This is John, he's doing Scratch because his father wants him to do it. My name is Alex, and this is my fourth year with Scratch"</li>
+<li>Ann: "That's John, his parents force him to do Scratch. This is Alex, he's a Scratch veteran. And I'm Ann, a novice teacher, so I'm going to learn together with you all"</li>
+</ol>
+<p>Such a format of meeting has the following objectives:</p>
+<ul>
+<li>Getting to know each other<ul>
+<li>Each team member should know other team members by name</li>
+</ul>
+</li>
+<li>Common space<ul>
+<li>Everyone is in the circle, not at a working desk, this prevents distraction of kids by PC games</li>
+</ul>
+</li>
+<li>Equality<ul>
+<li>Both teachers and students are in the same circle, this equalizes everyone as a team member without hierarchy</li>
+</ul>
+</li>
+<li>Attention<ul>
+<li>Each team member should listen carefully to be able to correctly repeat what others said</li>
+</ul>
+</li>
+<li>Feedback<ul>
+<li>Each team member should be as clear as possible when expressing thoughts, otherwise nobody would be able to repeat them</li>
+</ul>
+</li>
+<li>Fun<ul>
+<li>Memorization problems produce lots of laughter</li>
+</ul>
+</li>
+</ul>
+<p><strong>2)</strong> Memory game with cards</p>
+<ol>
+<li>Take 8 pairs of the same cards from two decks of cards</li>
+<li>Place the cards in 4 x 4 grid, faces down</li>
+<li>Students stand up around single table</li>
+<li>Each student, one by one, turns a pair of cards<ul>
+<li>If cards match, they are taken off the field</li>
+<li>If cards differ, they are once again turned face down</li>
+</ul>
+</li>
+</ol>
+<p>Students are eager to play tabletop games. During the game party teachers say out loud each step in the game's algorithm.</p>
+<p>After a couple of parties it's time to find out what algorithm is.</p>
+<p><strong>3)</strong> The concept of algorithm</p>
+<ol>
+<li>Ask students first, hear them out to find out their level</li>
+<li>Correct what students say if they were close to an expected answer</li>
+<li>Ask students to write an algorithm to move a man from "stands outside a room" state into "sits and works at a PC" one</li>
+</ol>
+<p>Students like to go to blackboard and write, so we ask each student to come and write a single step of the algorithm at a time. The most active student should execute the algorithm by following it strictly.</p>
+<p><strong>4)</strong> The algorithm of the game</p>
+<p>Ask students to compose the game's algorithm. Again, let students come to the blackboard and add one step of the algorithm at a time. Once the algorithm is ready, play the game with cards once again. Now, each student should say the algorithm's step he executes.</p>
+<p>Here's how it looks like:</p>
+<ol>
+<li>John: "Place 16 cards faces down"</li>
+<li>Alex: "Turn a pair of cards"</li>
+<li>Paul: "If the cards differ, turn them faces down again"</li>
+<li>Dan: "Turn another pair of cards"</li>
+<li>Mike: "If the cards match, take them off the field"</li>
+</ol>
+<p><strong>5)</strong> Analyze the lesson</p>
+<p>That's it for the first lesson. Teachers finally have time to discuss the lesson: discuss the kids, approaches to shy and active kids, plan next lessons.</p>
+<p>We had the following decisions:</p>
+<ol>
+<li>Arrange students so that active ones sit next to shy ones as "active-shy-active-shy-etc" so that we don't end up with two groups of shy and active students at different sides of a room, which would hamper productivity.</li>
+<li>Only accept accurate answers from students because active students like to wriggle, which hampers discipline.</li>
+</ol>
+<p><strong>The second and the third lessons</strong></p>
+<p>We were beginning each lesson with the same meeting: we would stand up in a circle, tell our names and what we did. Those who did nothing should have said why. Just as before, everyone should first repeat what previous team members said.</p>
+<p>We spent the second lesson to create requirements for an item of the playfield and then create the item in Scratch. This was moderately successful.</p>
+<p>We spent the third lesson trying to create 16 items and arrange them in 4x4 grid. We failed miserably because we could not explain coordinate system to students. It became apparent that lesson plans were only plans, reality had its own demands.</p>
+<p>We saw two ways to approach the problem:</p>
+<ol>
+<li>Keep on studying the coordinate system risking not to get the game done by the end of the course</li>
+<li>Change the game requirements so that coordinate system is not necessary</li>
+</ol>
+<p>We went the second way because, after all, we're not a school, our goal was to teach kids to create the game, i.e., use skills in practice, not theory. That's why we replaced 4x4 grid with a circle of 16 items.</p>
+<p>This solution sparkled a few thoughts in my head:</p>
+<ol>
+<li>One can often find a simpler path to solve an issue</li>
+<li>This path is simpler to understand, albeit less flexible</li>
+<li>One can go the harder path to increase flexibility much later when it becomes absolutely necessary</li>
+<li>Simplification moves one closer to the goal, complexification moves one in the opposite direction</li>
+</ol>
+<p><strong>The fourth and the rest of the lessons</strong></p>
+<p>The fourth lesson marked the end of coming up with requirements in class because doing so started to take too much time. We chose practice over theory once again to meet the deadline. This time all requirements were conducted before the lesson. Still, nobody read them.</p>
+<p>We spent the fourth and the fifth lessons to create 16 items in circle, select a pair of items and match them.</p>
+<p>We started recreating complete game from scratch on the sixth lesson. Each time students were recreating complete game faster and faster. On the eighth lesson we introduced a leaderboard to track how fast each student recreates a specific part of the game.</p>
+<p><strong>The last lesson</strong></p>
+<p>When the last lesson approached everyone was able to create the memory game from scratch more or less independently in two hours.</p>
+<p>Here's the leaderboard of the last lesson (names are hidden):</p>
+<p><img alt="Screenshot" src="http://opengamestudio.org/2019-02-04_teaching-kids-to-program-leaderboard.png"></p>
+<p>The leaderboard is in Russian, here are the captions translated:</p>
+<ul>
+<li>Name</li>
+<li>Circle of items</li>
+<li>Selection of pairs</li>
+<li>Hide all</li>
+<li>Hide a pair</li>
+</ul>
+<p>Here you can witness the creation of the memory game from scratch by the fastest student: in just half an hour.</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/WlA193S3SPY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<p><br/></p>
+<p><strong>Results and plans</strong></p>
+<p>The results surpassed my expectations:</p>
+<ul>
+<li>three students made it in an hour or faster</li>
+<li>two students made it in an hour and a half or faster</li>
+</ul>
+<p>This year I plan on doing another round of the memory game recreation. However, I'm going to replace Scratch with Opensource Game Studio tools: the students will use Lua, Git, and GitHub Pages.</p>
+<p>That's it for sharing Michael's experience of teaching kids to program.</p><p class="subheader">Category: <a href="http://opengamestudio.org/category/news.html">News</a>
+
+</p>
+
+
+            </article>
+
+
+                <hr  class="gradient"/>
+
+
+        
+
+
+            <article>
+                <a href="http://opengamestudio.org/2019-year-of-rethinking.html"><h3 class="article-title">Year of rethinking</h3></a>
+<h6 class="subheader" title="2019-01-01T00:01:00+03:00">Вт 01 января 2019
+            <a class="button secondary small translation-button" href="http://opengamestudio.org/2019-year-of-rethinking-ru.html">ru</a>
+
+</h6><p><img alt="Screenshot" src="http://opengamestudio.org/2017-12-31-celebration.jpg"></p>
+<p>It was a year of reimagining and rethinking. As some of you may remember, we started this project to make a game development tool. During the years, the idea evolved from one form to another, sometimes the changes were significant, other times we threw away all the code and started …</p><p class="subheader">Category: <a href="http://opengamestudio.org/category/news.html">News</a>
+
+</p>
+
+
+                <a class="button radius secondary small right" href="http://opengamestudio.org/2019-year-of-rethinking.html">Read More</a>
+                <hr  class="gradient"/>
+            </article>
+
+        
+
+
+            <article>
+                <a href="http://opengamestudio.org/ideal-gamedev.html"><h3 class="article-title">Ideal games and game development tools</h3></a>
+<h6 class="subheader" title="2018-11-19T00:00:00+03:00">Пн 19 ноября 2018
+            <a class="button secondary small translation-button" href="http://opengamestudio.org/ideal-gamedev-ru.html">ru</a>
+
+</h6><p><img alt="Screenshot" src="http://opengamestudio.org/2018-11-19-ideal-gamedev.png"></p>
+<p>In this article, we discuss how ideal video game and video game development
+tool look like, in our opinion.</p>
+<p><strong>Questions</strong></p>
+<p>As you know, the <a href="http://opengamestudio.org/pages/about.html">goals of Opensource Game Studio</a> are:</p>
+<ul>
+<li>creation of free video game development tools</li>
+<li>making video games with those tools</li>
+<li>preparing video game development tutorials</li>
+</ul>
+<p>This time …</p><p class="subheader">Category: <a href="http://opengamestudio.org/category/news.html">News</a>
+
+</p>
+
+
+                <a class="button radius secondary small right" href="http://opengamestudio.org/ideal-gamedev.html">Read More</a>
+                <hr  class="gradient"/>
+            </article>
+
+        
+
+
+            <article>
+                <a href="http://opengamestudio.org/mahjong-demo2.html"><h3 class="article-title">OGS Mahjong 2: Demo 2</h3></a>
+<h6 class="subheader" title="2018-10-02T00:00:00+03:00">Вт 02 октября 2018
+            <a class="button secondary small translation-button" href="http://opengamestudio.org/mahjong-demo2-ru.html">ru</a>
+
+</h6><p><img alt="Screenshot" src="http://opengamestudio.org/2018-10-02-mahjong-demo2.png"></p>
+<p>We are glad to announce the release of the second demonstration of OGS Mahjong 2.
+The purposes of this release were to refine our development techniques and
+build a solid cross-platform foundation.</p>
+<p><strong>Release</strong></p>
+<p>Run the latest version of OGS Mahjong 2 in your web browser:
+<a href="http://ogstudio.github.io/ogs-mahjong">http://ogstudio.github.io/ogs-mahjong …</a></p><p class="subheader">Category: <a href="http://opengamestudio.org/category/news.html">News</a>
+
+</p>
+
+
+                <a class="button radius secondary small right" href="http://opengamestudio.org/mahjong-demo2.html">Read More</a>
+                <hr  class="gradient"/>
+            </article>
+
+        
+
+
+            <article>
+                <a href="http://opengamestudio.org/examples-and-dependencies.html"><h3 class="article-title">Examples and dependencies</h3></a>
+<h6 class="subheader" title="2018-08-21T00:00:00+03:00">Вт 21 августа 2018
+            <a class="button secondary small translation-button" href="http://opengamestudio.org/examples-and-dependencies-ru.html">ru</a>
+
+</h6><p><img alt="Screenshot" src="http://opengamestudio.org/2018-08-21-examples-and-dependencies.png"></p>
+<p>This article describes two new OpenSceneGraph cross-platform examples and the
+change in handling dependencies.</p>
+<p><strong>Examples of HTTP client and node selection</strong></p>
+<p>Once we finished working on <a href="https://github.com/OGStudio/openscenegraph-cross-platform-examples/tree/master/04.RemoteDebugging">the remote debugging example</a> and
+<a href="http://opengamestudio.org/example-driven-development.html">reported its completion</a>, we were surprised by the fact
+that secure HTTP connection between a debugged application and debug …</p><p class="subheader">Category: <a href="http://opengamestudio.org/category/news.html">News</a>
+
+</p>
+
+
+                <a class="button radius secondary small right" href="http://opengamestudio.org/examples-and-dependencies.html">Read More</a>
+                <hr  class="gradient"/>
+            </article>
+
+        
+
+
+            <article>
+                <a href="http://opengamestudio.org/example-driven-development.html"><h3 class="article-title">Example-driven development</h3></a>
+<h6 class="subheader" title="2018-06-27T00:00:00+03:00">Ср 27 июня 2018
+            <a class="button secondary small translation-button" href="http://opengamestudio.org/example-driven-development-ru.html">ru</a>
+
+</h6><p><img alt="Screenshot" src="http://opengamestudio.org/2018-06-27-example-driven-development.png"></p>
+<p>This article explains how the third OpenSceneGraph cross-platform example
+opened our eyes to example-driven development.</p>
+<p><strong>2018-08 EDIT</strong>: the third example has been renamed to the fourth one due to
+the reasons described in the <a href="http://opengamestudio.org/examples-and-dependencies.html">next article</a>.</p>
+<p><strong>The third OpenSceneGraph cross-platform example</strong></p>
+<p>The third OpenSceneGraph cross-platform example explains how to implement …</p><p class="subheader">Category: <a href="http://opengamestudio.org/category/news.html">News</a>
+
+</p>
+
+
+                <a class="button radius secondary small right" href="http://opengamestudio.org/example-driven-development.html">Read More</a>
+                <hr  class="gradient"/>
+            </article>
+
+        
+
+
+            <article>
+                <a href="http://opengamestudio.org/openscenegraph-examples.html"><h3 class="article-title">OpenSceneGraph cross-platform examples</h3></a>
+<h6 class="subheader" title="2018-04-20T00:00:00+03:00">Пт 20 апреля 2018
+            <a class="button secondary small translation-button" href="http://opengamestudio.org/openscenegraph-examples-ru.html">ru</a>
+
+</h6><p><img alt="Screenshot" src="http://opengamestudio.org/2018-04-20-openscenegraph-examples.png"></p>
+<p>This article summarizes the work we did to produce the first two
+cross-platform OpenSceneGraph examples.</p>
+<p>By the time <a href="http://opengamestudio.org/mahjong-techdemo1-gameplay.html">the first technology demonstration of OGS Mahjong 2</a>
+has been released, we've already had <a href="https://github.com/OGStudio/openscenegraph-cross-platform-guide/issues/4">issue request</a>
+(to explain how to load images with OpenSceneGraph on Android) hanging for some
+time. We considered …</p><p class="subheader">Category: <a href="http://opengamestudio.org/category/news.html">News</a>
+
+</p>
+
+
+                <a class="button radius secondary small right" href="http://opengamestudio.org/openscenegraph-examples.html">Read More</a>
+                <hr  class="gradient"/>
+            </article>
+
+        
+
+
+            <article>
+                <a href="http://opengamestudio.org/mahjong-techdemo1-gameplay.html"><h3 class="article-title">First techdemo of OGS Mahjong 2: Gameplay</h3></a>
+<h6 class="subheader" title="2018-02-16T00:00:00+03:00">Пт 16 февраля 2018
+            <a class="button secondary small translation-button" href="http://opengamestudio.org/mahjong-techdemo1-gameplay-ru.html">ru</a>
+
+</h6><p><img alt="Screenshot" src="http://opengamestudio.org/2018-02-16-mahjong-techdemo1-gameplay.png"></p>
+<p>We are glad to announce the release of the first technical demonstration of
+OGS Mahjong 2. The purpose of this release was to verify gameplay across
+supported platforms.</p>
+<p>Get techdemo for your platform:</p>
+<ul>
+<li>Run <a href="https://ogstudio.github.io/game-mahjong/versions/013/mjin-player.html">Web version</a> in your browser</li>
+<li>Get <a href="https://drive.google.com/open?id=1KW8IEN8Dpz8ODeg8BctVSJyzj9-AL9hR">Android version</a></li>
+<li>Get <a href="https://drive.google.com/open?id=1oj0-OXSmEatttzn86u2vgP9SRAIC0ozB">Windows version</a></li>
+<li>Get <a href="https://drive.google.com/open?id=1EX7kLIThLiMz9_W7VmBPySms3mlrF-i6">Linux version</a></li>
+<li>Get <a href="https://drive.google.com/open?id=1KWnvbHzan8MpMcZPG2QC-7KWoEYbqrM2">macOS …</a></li></ul><p class="subheader">Category: <a href="http://opengamestudio.org/category/news.html">News</a>
+
+</p>
+
+
+                <a class="button radius secondary small right" href="http://opengamestudio.org/mahjong-techdemo1-gameplay.html">Read More</a>
+                <hr  class="gradient"/>
+            </article>
+
+        
+
+
+            <article>
+                <a href="http://opengamestudio.org/mahjong-recreation-start.html"><h3 class="article-title">Mahjong recreation start</h3></a>
+<h6 class="subheader" title="2018-01-26T00:00:00+03:00">Пт 26 января 2018
+            <a class="button secondary small translation-button" href="http://opengamestudio.org/mahjong-recreation-start-ru.html">ru</a>
+
+</h6><p><img alt="Screenshot" src="http://opengamestudio.org/2018-01-26-mahjong-recreation-start.png"></p>
+<p>This article describes the start of Mahjong game recreation.</p>
+<p><strong>Plan</strong></p>
+<p>We started Mahjong recreation endeavour by composing a brief plan to get gameplay with minimal graphics:</p>
+<ul>
+<li>Load single layout</li>
+<li>Place tiles in layout positions</li>
+<li>Distinguish tiles</li>
+<li>Implement selection</li>
+<li>Implement matching</li>
+</ul>
+<p>Just like any other plan, this one looked fine at …</p><p class="subheader">Category: <a href="http://opengamestudio.org/category/news.html">News</a>
+
+</p>
+
+
+                <a class="button radius secondary small right" href="http://opengamestudio.org/mahjong-recreation-start.html">Read More</a>
+                <hr  class="gradient"/>
+            </article>
+
+        
+
+
+            <article>
+                <a href="http://opengamestudio.org/the-year-of-lessons.html"><h3 class="article-title">The year of lessons</h3></a>
+<h6 class="subheader" title="2017-12-31T22:00:00+03:00">Вс 31 декабря 2017
+            <a class="button secondary small translation-button" href="http://opengamestudio.org/the-year-of-lessons-ru.html">ru</a>
+
+</h6><p><img alt="Screenshot" src="http://opengamestudio.org/2017-12-31-celebration.jpg"></p>
+<p>So, the year 2017 is approaching its finale, the year's results have already
+been summed up. We're going to take a break from igniting the fireworks or
+preparation of the champagne so that we can designate our goal for the
+following year.</p>
+<p>As it may be clear from other articles …</p><p class="subheader">Category: <a href="http://opengamestudio.org/category/news.html">News</a>
+
+</p>
+
+
+                <a class="button radius secondary small right" href="http://opengamestudio.org/the-year-of-lessons.html">Read More</a>
+                <hr  class="gradient"/>
+            </article>
+
+            <!-- /#posts-list -->
+<div class="pagination-centered">
+<h6 class="subheader">Page 1 of 6</h6>
+
+<p>
+
+        <a href="http://opengamestudio.org/index2.html">Next &raquo;</a>
+</p>
+</div>
+
+    </div>
+    <!-- End Main Content -->
+
+    <!-- Sidebar -->
+    <aside class="large-3 columns">
+        <!--k
+        <h5 class="sidebar-title">Site</h5>
+        <ul class="side-nav">
+            <li><a href="http://opengamestudio.org/archives.html">Archives</a>
+            <li><a href="http://opengamestudio.org/tags.html">Tags</a>
+
+
+                <li><a href="http://opengamestudio.org/feeds/all.atom.xml" rel="alternate">Atom feed</a></li>
+        </ul>
+
+		
+        <h5 class="sidebar-title">Categories</h5>
+        <ul class="side-nav">
+            <li><a href="http://opengamestudio.org/category/news.html">News</a></li>
+   
+        </ul>
+        -->
+
+
+		
+        
+        <h5 class="sidebar-title">Ads</h5>
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <!-- ogs2 -->
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-4473792248813084"
+             data-ad-slot="9024247127"
+             data-ad-format="auto"></ins>
+        <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+
+    </aside> <!-- End Sidebar -->
+
+</div> <!-- End Main Content and Sidebar -->
+
+
+<!-- Footer -->
+<footer class="row">
+    <div class="large-12 columns">
+        <hr />
+        <div class="row">
+            <div class="large-7 columns">
+                <p>Proudly powered by <a href="http://getpelican.com">Pelican</a>, which takes great advantage of <a href="http://python.org">Python</a>.</p>
+            </div>
+            </div>
+    </div>
+    <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-3773114-1']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+    </script>
+</footer>
