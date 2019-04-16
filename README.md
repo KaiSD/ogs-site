@@ -23,3 +23,9 @@ Complete Pelican site is kept in `obsolete-pelican/` directory for historical re
 We also keep `mjin-player.js` because it was probably referenced somewhere outside Twitter, Facebook, Vkontakte.
 
 `pages/` directory contains pages that were valid while we used Pelican. I have shared link to Mahjong 1 at least with Dieter by e-mail.
+
+`news/` directory contains symlinks to Wordpress news as back as to 2016.
+
+`lang/en/news` duplicates `news/` since those links were given by Wordpress as well.
+
+`lang/ru/news` directory contains symlinks to Wordpress RU news as back as to 2016.
