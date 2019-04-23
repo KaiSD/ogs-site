@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="utf-8">
+    <head>
+        <style>
+            table
+            {
+                border-collapse: collapse;
+            }
+            
+            table, th, td
+            {
+                border: 1px solid #aaa;
+                padding: 0.5em;
+                margin-top: 0.5em;
+                margin-bottom: 0.5em;
+            }
+            
+            .error
+            {
+                color: red;
+            }
+            
+            .section
+            {
+                text-align: center;
+                font-weight: bold;
+            }
+        </style>
+    </head>
+    <body>
+        <table>
+            <tr>
+                <td colspan="2" class="section">
+                    <a href="http://opengamestudio.org/lfsa">Local file system access</a>
+                </td>
+            </tr>
+            <tr>
+                <td>Path:</td>
+                <td id="lfsaPath">Updating...</td>
+            </tr>
+            <tr>
+                <td colspan="2" class="section">
+                    Configuration
+                    <button type="button" onclick="window.pskovTool.saveCfg()">Save</button>
+                </td>
+            </tr>
+            <tr>
+                <td>Input directory:</td>
+                <td><input id="input"></input>
+            </tr>
+            <tr>
+                <td>News item template:</td>
+                <td><input id="item"></input>
+            </tr>
+            <tr>
+                <td>News preview template:</td>
+                <td><input id="preview"></input>
+            </tr>
+            <tr>
+                <td>Index template:</td>
+                <td><input id="index"></input>
+            </tr>
+            <tr>
+                <td>Output directory:</td>
+                <td><input id="output"></input>
+            </tr>
+            <tr>
+                <td colspan="2" class="section">Log</td>
+            </tr>
+            <tr>
+                <td id="log" colspan="2"></td>
+            </tr>
+        </table>
+        <script type="text/javascript">
+            <!-- LFSA.js -->
+            // LFSA class to communicate with local-file-system-access instance.
+            function LFSA()
+            {
+                this.host = "http://127.0.0.1";
+                this.port = 8000;
+            }
+            LFSA.prototype.get = function(url, successCallback, failureCallback)
+            {
+                var req = new XMLHttpRequest();
+                req.addEventListener(
+                    "load",
+                    function()
+                    {
+                        //console.log("get.successCallback.responseText: '" + this.responseText + "'");
+                        successCallback(this.responseText);
+                    }
+                );
+                req.addEventListener(
+                    "error",
+                    function()
+                    {
+                        failureCallback();
+                    }
+                );
+                req.addEventListener(
+                    "abort",
+                    function()
+                    {
+                        failureCallback();
+                    }
+                );
+            
+                const prefix = this.host + ":" + this.port;
+                const addr = prefix + url;
+                //console.log("GET addr: '" + addr + "'");
+                req.open("GET", addr);
+                req.send();
+            }
+            LFSA.prototype.requestPath = function(successCallback, failureCallback)
+            {
+                this.get("/path", successCallback, failureCallback);
+            }
+            LFSA.prototype.post = function(url, data, successCallback, failureCallback)
+            {
+                var req = new XMLHttpRequest();
+                req.addEventListener(
+                    "load",
+                    function()
+                    {
+                        console.log("POST.successCallback.responseText: '" + this.responseText + "'");
+                        successCallback(this.responseText);
+                    }
+                );
+                req.addEventListener(
+                    "error",
+                    function()
+                    {
+                        failureCallback();
+                    }
+                );
+                req.addEventListener(
+                    "abort",
+                    function()
+                    {
+                        failureCallback();
+                    }
+                );
+            
+                const prefix = this.host + ":" + this.port;
+                const addr = prefix + url;
+                console.log("POST addr: '" + addr + "'");
+                req.open("POST", addr);
+                req.send(data);
+            }
+            LFSA.prototype.requestFileList = function(dir, successCallback, failureCallback)
+            {
+                this.post(
+                    "/list",
+                    dir,
+                    function(response)
+                    {
+                        var json = JSON.parse(response);
+                        successCallback(json);
+                    },
+                    failureCallback
+                );
+            }
+            LFSA.prototype.requestFile = function(path, successCallback, failureCallback)
+            {
+                this.post(
+                    "/read",
+                    path,
+                    successCallback,
+                    failureCallback
+                );
+            }
+            LFSA.prototype.saveFile = function(path, contents, successCallback, failureCallback)
+            {
+                var data = {};
+                data["path"] = path;
+                data["contents"] = btoa(contents);
+                var datastr = JSON.stringify(data);
+            
+                this.post(
+                    "/write",
+                    datastr,
+                    successCallback,
+                    failureCallback
+                );
+            }
+
+            <!-- Reusable -->
+            function fileExists(fileName, fileList)
+            {
+                for (var id in fileList)
+                {
+                    var file = fileList[id];
+                    if (file.path === fileName)
+                    {
+                        return true;
+                    }
+                }
+                return false;
+            }
+            // Topic: Create GUID / UUID in JavaScript?
+            // Source: https://stackoverflow.com/a/2117523
+            function generateUUID()
+            {
+                return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(
+                    /[xy]/g,
+                    function(c)
+                    {
+                        var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
+                        return v.toString(16);
+                    }
+                );
+            }
+            function LOG(message)
+            {
+                var log = document.getElementById("log");
+                var now = new Date();
+                log.innerHTML += now.toISOString() + " " + message + "<br>";
+            }
+            function parseINI(contents)
+            {
+                var cfg = { };
+                var lines = contents.split(/\r\n|\r|\n/);
+                for (var id in lines)
+                {
+                    var line = lines[id];
+                    var keyAndValue = line.split(/=/);
+                    if (keyAndValue.length == 2)
+                    {
+                        var key = keyAndValue[0].trim();
+                        var value = keyAndValue[1].trim();
+                        cfg[key] = value;
+                    }
+                }
+            
+                return cfg;
+            }
+            // ReporterSubscription class.
+            
+            function ReporterSubscription(id, callback, reporter)
+            {
+                this.id = id;
+                this.callback = callback;
+                this.reporter = reporter;
+            }
+            
+            // Reporter class.
+            
+            function Reporter(name)
+            {
+                this.name =
+                    (typeof name !== "undefined") ? 
+                    name :
+                    "";
+                this.subscriptions = [];
+            }
+            
+            Reporter.prototype.report = function()
+            {
+                for (var id in this.subscriptions)
+                {
+                    var subscription = this.subscriptions[id];
+                    subscription.callback();
+                }
+            }
+            
+            Reporter.prototype.subscribe = function(callback)
+            {
+                var id = generateUUID();
+                var subscription = new ReporterSubscription(id, callback, this);
+                this.subscriptions.push(subscription);
+                return subscription;
+            }
+
+            <!-- Tool.js -->
+            // Tool class.
+            function Tool()
+            {
+                this.lfsa = new LFSA();
+                this.cfgExists = false;
+                this.cfgExistsChanged = new Reporter();
+                this.cfg = {};
+                this.cfgChanged = new Reporter();
+                this.cfgSaved = new Reporter();
+            }
+            // Tool's startup sequence.
+            Tool.prototype.run = function()
+            {
+                var self = this;
+                this.refreshLFSAPath();
+                this.checkCfgExistence();
+                this.cfgExistsChanged.subscribe(function(){
+                    LOG("cfgExistsChanged. cfgExists: '" + self.cfgExists + "'");
+                });
+                this.cfgExistsChanged.subscribe(function(){
+                    self.readCfg();
+                });
+                this.cfgChanged.subscribe(function(){
+                    LOG("cfgChanged. cfg: '" + self.cfg + "'");
+                });
+                this.cfgChanged.subscribe(function(){
+                    self.displayCfg();
+                });
+                this.cfgSaved.subscribe(function(){
+                    self.readCfg();
+                });
+            }
+            Tool.prototype.refreshLFSAPath = function()
+            {
+                var lfsaPath = document.getElementById("lfsaPath");
+            
+                var success = function(response)
+                {
+                    lfsaPath.innerHTML = response;
+                }
+                var failure = function()
+                {
+                    lfsaPath.innerHTML = "<span class='error'>Error</span>";
+                }
+            
+                this.lfsa.requestPath(success, failure);
+            }
+            Tool.prototype.checkCfgExistence = function()
+            {
+                var self = this;
+            
+                var success = function(fileList)
+                {
+                    var cfgExists = fileExists("cfg", fileList);
+                    if (!cfgExists)
+                    {
+                        LOG("ERROR `cfg` file does not exist");
+                        return;
+                    }
+            
+                    // Report.
+                    self.cfgExists = true;
+                    self.cfgExistsChanged.report();
+                }
+                var failure = function()
+                {
+                    LOG("ERROR Could not check if `cfg` exists");
+                }
+            
+                this.lfsa.requestFileList("", success, failure);
+            }
+            Tool.prototype.readCfg = function()
+            {
+                var self = this;
+            
+                var success = function(contents)
+                {
+                    self.cfg = parseINI(contents);
+                    self.cfgChanged.report();
+                }
+                var failure = function()
+                {
+                    LOG("ERROR Could not read `cfg` file");
+                }
+            
+                this.lfsa.requestFile("cfg", success, failure);
+            }
+            Tool.prototype.displayCfg = function()
+            {
+                var input = document.getElementById("input");
+                input.value = this.cfg["input"];
+                var item = document.getElementById("item");
+                item.value = this.cfg["item"];
+                var preview = document.getElementById("preview");
+                preview.value = this.cfg["preview"];
+                var index = document.getElementById("index");
+                index.value = this.cfg["index"];
+                var output = document.getElementById("output");
+                output.value = this.cfg["output"];
+            }
+            Tool.prototype.saveCfg = function()
+            {
+                // Compose cfg file to save.
+                var cfgFile = "";
+                var input = document.getElementById("input");
+                cfgFile += "input = " + input.value + "\n";
+                var item = document.getElementById("item");
+                cfgFile += "item = " + item.value + "\n";
+                var preview = document.getElementById("preview");
+                cfgFile += "preview = " + preview.value + "\n";
+                var index = document.getElementById("index");
+                cfgFile += "index = " + index.value + "\n";
+                var output = document.getElementById("output");
+                cfgFile += "output = " + output.value + "\n";
+            
+                // Save file.
+                var self = this;
+            
+                var success = function()
+                {
+                    self.cfgSaved.report();
+                }
+                var failure = function()
+                {
+                    LOG("ERROR Could not save `cfg` file");
+                }
+            
+                this.lfsa.saveFile("cfg", cfgFile, success, failure);
+            }
+
+            <!-- Startup -->
+            window.pskovTool = new Tool();
+            window.pskovTool.run()
+        </script>
+    </body>
+</html>
