@@ -1,2 +1,5 @@
 *.pyc
 pelican/output/
+
+# Ignore VIM temporary files.
+*.swp
