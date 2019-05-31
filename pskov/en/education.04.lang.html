@@ -20,11 +20,6 @@
             {
                 color: #433729;
             }
-            iframe
-            {
-                width: 720px;
-                height: 720px;
-            }
             html
             {
                 font-family: sans-serif;
@@ -71,13 +66,13 @@
             }
         </style>
         <title>
-            PSKOV - Opensource Game Studio static site generator
+            PSKOV-201905
         </title>
     </head>
     <body>
         <div id="header">
             <strong id="title">PSKOV</strong>
-            <a href="index.html">Tool</a>
+            <a href="tool.pskov.html">Tool</a>
             <a href="education.html">Education</a>
         </div>
         <center><h1>
@@ -102,7 +97,7 @@ Education: 04. Language
 </table>
 <p></div><div class="contents"></p>
 <p>In this document we add language selection.</p>
-<p>Estimated completion time: ? minutes.</p>
+<p>Estimated completion time: 10 minutes.</p>
 <p><strong>Table of contents</strong></p>
 <ul>
 <li><a href="#localization">01. Localization</a></li>
@@ -110,6 +105,7 @@ Education: 04. Language
 <li><a href="#item">03. Investigate template files</a></li>
 <li><a href="#md">04. Investigate Markdown files</a></li>
 <li><a href="#gen">05. Launch LFSA and generate the site</a></li>
+<li><a href="#summary">06. Summary</a></li>
 </ul>
 <p><a name="localization"/></p>
 <h2 id="01localization">01. Localization</h2>
@@ -118,10 +114,10 @@ Education: 04. Language
 <ul>
 <li><code>cfg</code></li>
 <li><code>en/item.template</code></li>
-<li><code>en/index.md</code></li>
+<li><code>en/about.md</code></li>
 <li><code>en/cv.md</code></li>
 <li><code>ru/item.template</code></li>
-<li><code>ru/index.md</code></li>
+<li><code>ru/about.md</code></li>
 <li><code>ru/cv.md</code></li>
 </ul>
 <p>Let's look at the contents of these files closer.</p>
@@ -143,7 +139,7 @@ item = item.template
     &lt;body&gt;
         &lt;div id="header"&gt;
             &lt;strong&gt;Serov&lt;/strong&gt;
-            &lt;a href="index.html"&gt;About me&lt;/a&gt;
+            &lt;a href="about.html"&gt;About me&lt;/a&gt;
             &lt;a href="cv.html"&gt;CV&lt;/a&gt;
             &lt;div id="lang"&gt;
                 &lt;a href="../en/PSKOV_ITEM_URL"&gt;EN&lt;/a&gt;
@@ -160,7 +156,7 @@ item = item.template
     &lt;body&gt;
         &lt;div id="header"&gt;
             &lt;strong&gt;Серов&lt;/strong&gt;
-            &lt;a href="index.html"&gt;Обо мне&lt;/a&gt;
+            &lt;a href="about.html"&gt;Обо мне&lt;/a&gt;
             &lt;a href="cv.html"&gt;Резюме&lt;/a&gt;
             &lt;div id="lang"&gt;
                 &lt;a href="../en/PSKOV_ITEM_URL"&gt;EN&lt;/a&gt;
@@ -189,14 +185,14 @@ item = item.template
 <tbody>
 <tr>
 <td><code>PSKOV_ITEM_URL</code></td>
-<td>Provides <code>&lt;slug&gt;.html</code> value for the page</td>
+<td>Provides generated page's file name: <code>&lt;slug&gt;.html</code></td>
 </tr>
 </tbody>
 </table>
 <p>As you see, <code>PSKOV_ITEM_URL</code> is all you need to have your page in as many languages as you please.</p>
 <p><a name="md"/></p>
 <h2 id="04investigatemarkdownfiles">04. Investigate Markdown files</h2>
-<p><code>en/index.md</code> and <code>en/cv.md</code> files look exactly as <a href="education.03.site.html">before</a>. <code>ru/index.md</code> and <code>ru/cv.md</code> are simply Russian variants of the same pages.</p>
+<p><code>en/about.md</code> and <code>en/cv.md</code> files look almost exactly as <a href="education.03.site.html">before</a>. <code>ru/about.md</code> and <code>ru/cv.md</code> are simply Russian variants of the same pages.</p>
 <p>For example, <code>ru/cv.md</code> has the following contents:</p>
 <pre><code> Title: Резюме
  Slug: cv
@@ -215,17 +211,34 @@ item = item.template
 <p><strong>Note</strong>: Russian page has exactly the same <code>Slug:</code> value as English one.</p>
 <p><a name="gen"/></p>
 <h2 id="05launchlfsaandgeneratethesite">05. Launch LFSA and generate the site</h2>
-<p>Launch LFSA so that it points to directory with the files we just observed:</p>
-<pre><code>$ /path/to/local-file-system-access.py /path/to/dir/02.Language
+<p>Launch <a href="http://opengamestudio.org/lfsa">LFSA</a> so that it points to directory with the files we just observed:</p>
+<pre><code>$ /path/to/lfsa-201905.py /path/to/dir/02.Language
 </code></pre>
 <p>Generate the site:</p>
 <ul>
 <li>Go to <a href="http://opengamestudio.org/pskov">Tool</a> page</li>
 <li>Press <code>Generate</code> button</li>
-<li>Open generated <code>en/index.html</code> or <code>ru/index.html</code> from the site's directory locally</li>
+<li>Open generated <code>en/about.html</code> or <code>ru/about.html</code> from the site's directory locally</li>
 <li>Switch language to verify language selection works fine</li>
 </ul>
-<p>Take time to observe just how little effort you spent to have your web site localized.</p>
+<p><a name="summary"/></p>
+<h2 id="06summary">06. Summary</h2>
+<p>You have successfully added language selection. <a href="http://opengamestudio.org/pskov/sample/02.Language/en/about.html">Check out the result</a>.</p>
+<p>Introduced PSKOV constants include:</p>
+<table>
+<thead>
+<tr>
+<th>PSKOV constant</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>PSKOV_ITEM_URL</code></td>
+<td>Provides generated page's file name: <code>&lt;slug&gt;.html</code></td>
+</tr>
+</tbody>
+</table>
 <p></div><div class="contents"></p>
 <table>
 <thead>
