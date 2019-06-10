@@ -94,8 +94,9 @@
 PSKOV_ITEM_CONTENTS
         </div></center>
         <div id="footer">
-            Этот сайт сгенерирован <a href="http://opengamestudio.org/pskov">ПСКОВОМ</a>.
-            Исходный код <a href="http://github.com/ogstudio/site-lfsa">здесь</a>.
+            Сайт сгенерирован <a href="http://opengamestudio.org/pskov">ПСКОВОМ</a>
+            из <a href="http://github.com/ogstudio/site-lfsa">этого исходного кода</a>.
+            Сайт расположен на <a href="https://pages.github.com">GitHub Pages</a>.
         </div>
         <script type="text/javascript">
         </script>
