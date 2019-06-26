@@ -23,6 +23,10 @@
             {
                 width: 100%;
             }
+            video
+            {
+                width: 100%;
+            }
             html
             {
                 font-family: sans-serif;
@@ -82,7 +86,7 @@
     </head>
     <body>
         <div id="header">
-            <strong id="title">LFSA</strong>
+            <strong id="title">ЛФСД</strong>
             <div id="lang">
                 <a href="../en/PSKOV_ITEM_URL">EN</a>
                 <a href="../ru/PSKOV_ITEM_URL">RU</a>

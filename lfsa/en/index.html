@@ -23,6 +23,10 @@
             {
                 width: 100%;
             }
+            video
+            {
+                width: 100%;
+            }
             html
             {
                 font-family: sans-serif;
@@ -91,6 +95,7 @@
         <center><h1>
         </h1></center>
         <center><div class="contents">
+<h2 id="overview">Overview</h2>
 <p><strong>L</strong>ocal <strong>F</strong>ile <strong>S</strong>ystem <strong>A</strong>ccess (<strong>LFSA</strong>) is:</p>
 <ul>
 <li>a tiny web server to allow client side JS access to local file system</li>
@@ -98,28 +103,39 @@
 <li>a single Python file</li>
 <li>released under <a href="https://creativecommons.org/share-your-work/public-domain/cc0/">CC0</a> license (public domain)</li>
 </ul>
-<h2 id="cswa">CSWA</h2>
 <p>Client Side Web Apps run solely on your device, they are not related to cloud solutions in any way: nobody can pull the plug on you.
 CSWAs may use LFSA to keep data locally so that you could have complete control of your data.</p>
 <p><a href="http://opengamestudio.org/pskov">PSKOV</a> static site generator is the first CSWA to use LFSA.</p>
-<h2 id="install">Install</h2>
-<p>If you use Linux or macOS released after 2005 (yes, 2005), you only need to <a href="../lfsa_1.0.0.py">download lfsa_1.0.0.py</a>.</p>
-<p>If you use Windows 2000 or newer (excluding Windows ME), you need to:</p>
-<ul>
-<li><a href="https://www.python.org/downloads/windows/">download</a> and install Python 2.3 or newer</li>
-<li><a href="../lfsa_1.0.0.py">download lfsa_1.0.0.py</a></li>
-</ul>
-<h2 id="run">Run</h2>
-<p>If you use Linux or macOS, run LFSA in terminal this way:</p>
+<h2 id="downloadlfsa">Download LFSA</h2>
+<p>Download <a href="../lfsa_1.0.0.py">lfsa_1.0.0.py</a>.</p>
+<p>If you use Linux or macOS, you're all set.</p>
+<h2 id="installpythonwindowsonly">Install Python (Windows only)</h2>
+<video controls poster="../vid/download-install-python.poster.png">
+    <source src="../vid/download-install-python.mp4" type ="video/mp4">
+    <source src="../vid/download-install-python.webm" type ="video/webm">
+    ERROR Your browser does not support HTML5 video
+</video>
+<p>Windows doesn't have Python installed by default, you have to <a href="https://www.python.org/downloads/windows/">install Python yourself</a> to be able to run LFSA.</p>
+<p><strong>Note</strong>: the video depicts Python 2.3.4 installation under Windows 2000, use the latest Python available for your version of Windows.</p>
+<h2 id="runlfsa">Run LFSA</h2>
+<h3 id="linuxandmacos">Linux and macOS</h3>
+<video controls poster="../vid/run-lfsa.macos.poster.png">
+    <source src="../vid/run-lfsa.macos.mp4" type ="video/mp4">
+    <source src="../vid/run-lfsa.macos.webm" type ="video/webm">
+    ERROR Your browser does not support HTML5 video
+</video>
+<p>If you use Linux or macOS, run LFSA in terminal:</p>
 <pre><code>/path/to/lfsa_1.0.0.py /path/to/dir
 </code></pre>
-<p>Here's how it looks like on macOS Mojave:</p>
-<p><img src="../img/lfsa-on-macos.png" alt="LFSA on macOS Mojave" /></p>
-<p>If you use Windows, run LFSA in <a href="https://en.wikipedia.org/wiki/Cmd.exe">CMD</a> this way:</p>
+<h3 id="windows">Windows</h3>
+<video controls poster="../vid/run-lfsa.w2k.poster.png">
+    <source src="../vid/run-lfsa.w2k.mp4" type ="video/mp4">
+    <source src="../vid/run-lfsa.w2k.webm" type ="video/webm">
+    ERROR Your browser does not support HTML5 video
+</video>
+<p>If you use Windows, run LFSA in <a href="https://en.wikipedia.org/wiki/Cmd.exe">CMD</a>:</p>
 <pre><code>C:/path/to/Python/installation/python.exe C:/path/to/lfsa_1.0.0.py C:/path/to/dir
 </code></pre>
-<p>Here's how it looks like on Windows 2000:</p>
-<p><img src="../img/lfsa-on-windows.png" alt="LFSA on Windows 2000" /></p>
 <h2 id="durability">Durability</h2>
 <p>As you noticed, LFSA can run on really old operating systems dating back to 2000. That's intentional: we care about users, so we want to cover as many users as possible.</p>
         </div></center>

@@ -1,8 +1,10 @@
 Title: Начальная
-Date: 2019-05-30 00:00
+Date: 2019-06-26 00:00
 Category: Page
 Slug: index
 Lang: ru
+
+## Обзор
 
 К **Л**окальной **Ф**айловой **С**истеме **Д**оступ (**ЛФСД**):
 
@@ -11,52 +13,65 @@ Lang: ru
 * умещается в одном файле Python
 * выпущен под лицензией [CC0][cc0] (общественное достояние)
 
-## СПСК 
-
 Сетевые Приложения на Стороне Клиента выполняются исключительно на вашем устройстве, они никак не связаны с облачными решениями: никто не сможет их отключить.
 СПСК могут использовать ЛФСД для хранения данных локально, чтобы вы полность их контролировали.
 
 [ПСКОВ][pskov] (генератор статических сайтов) является первым СПСК, использующим ЛФСД.
 
-## Установка
+## Загрузите ЛФСД
 
-Если вы используете Linux или macOS, выпущенные после 2005-го (да, 2005-го), вам необходимо просто [загрузить lfsa_1.0.0.py][lfsa-local].
+Загрузите [lfsa_1.0.0.py][lfsa-local].
 
-Если вы используете Windows 2000 или новее (за исключением Windows ME), вам необходимо:
+Если вы используете Linux или macOS, то всё готово к запуску.
 
-* [загрузить][python] и установить Python 2.3 либо новее
-* [загрузить lfsa_1.0.0.py][lfsa-local]
+## Установите Python (лишь для Windows)
 
-## Запуск
+<video controls poster="../vid/download-install-python.poster.png">
+    <source src="../vid/download-install-python.mp4" type ="video/mp4">
+    <source src="../vid/download-install-python.webm" type ="video/webm">
+    ОШИБКА Ваш браузер не поддерживает видео HTML5
+</video>
 
-Если вы используете Linux или macOS, запускайте ЛФСД в терминале следующим образом:
+Windows не содержит Python по умолчанию, вам необходимо [установить Python самостоятельно][python] для запуска ЛФСД.
+
+**Внимание**: видео показывает установку Python 2.3.4 на Windows 2000, используйте последнюю версию Python для вашей версии Windows.
+
+## Запустите ЛФСД
+
+### Linux и macOS
+
+<video controls poster="../vid/run-lfsa.macos.poster.png">
+    <source src="../vid/run-lfsa.macos.mp4" type ="video/mp4">
+    <source src="../vid/run-lfsa.macos.webm" type ="video/webm">
+    ОШИБКА Ваш браузер не поддерживает видео HTML5
+</video>
+
+Если вы используете Linux или macOS, запускайте ЛФСД в терминале:
 
 ```
 /путь/до/lfsa_1.0.0.py /путь/до/директории
 ```
 
-Вот как это выглядит на macOS Mojave:
+### Windows
 
-![ЛФСД на macOS Mojave][lfsa-on-macos]
+<video controls poster="../vid/run-lfsa.w2k.poster.png">
+    <source src="../vid/run-lfsa.w2k.mp4" type ="video/mp4">
+    <source src="../vid/run-lfsa.w2k.webm" type ="video/webm">
+    ОШИБКА Ваш браузер не поддерживает видео HTML5
+</video>
 
-Если вы используете Windows, запускайте ЛФСД в [CMD][cmd] следующим образом:
+Если вы используете Windows, запускайте ЛФСД в [CMD][cmd]:
 
 ```
 C:/путь/до/установки/Python/python.exe C:/путь/до/lfsa_1.0.0.py C:/путь/до/директории
 ```
 
-Вот как это выглядит на Windows 2000:
-
-![ЛФСД на Windows 2000][lfsa-on-windows]
-
 ## Долговечность
 
-Как вы заметили, ЛФСД может работать на действительно старых операционных системах, родом из 2000-х. Это осознанный выбор: мы заботимся о пользователях, поэтому хотим предоставить наш инструмент как можно большему числу пользователей.
+Как вы заметили, ЛФСД может работать на действительно старых операционных системах родом из 2000-х. Это осознанный выбор: мы заботимся о пользователях, поэтому хотим предоставить наш инструмент как можно большему числу пользователей.
 
-[pskov]: http://opengamestudio.org/pskov
+[pskov]: http://opengamestudio.org/pskov/ru/pskov_1.0.0+ru.html
 [lfsa-local]: ../lfsa_1.0.0.py
 [python]: https://www.python.org/downloads/windows/
 [cmd]: https://ru.wikipedia.org/wiki/Cmd.exe
-[lfsa-on-macos]: ../img/lfsa-on-macos.png
-[lfsa-on-windows]: ../img/lfsa-on-windows.png
 [cc0]: https://creativecommons.org/share-your-work/public-domain/cc0/
