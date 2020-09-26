@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+	    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    </head>
+    <body>
+        <noscript>
+            Включите JavaScript | Turn JavaScript on
+        </noscript>
+        <script>
+            var адрес = localStorage.getItem("пуск");
+            if (!адрес)
+            {
+                адрес = "https://bitbucket.org/gitjs/0000/raw/master/0000.js";
+            }
+
+            var gitjs = {};
+
+            gitjs.uuid = function()
+            {
+                // https://stackoverflow.com/a/2117523
+                return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(
+                    /[xy]/g,
+                    function(c)
+                    {
+                        var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
+                        return v.toString(16);
+                    }
+                );
+            };
+
+            function запуститьGitJSЛокально(пуск)
+            {
+                eval(пуск);
+                запуститьGitJS();
+            }
+
+            function запуститьGitJSПоСети(адрес)
+            {
+                function загрузилиПуск(пуск)
+                {
+                    localStorage.setItem("0000", пуск);
+                    eval(пуск);
+                    запуститьGitJS();
+                }
+                function неУдалосьЗагрузитьПуск(ошибка)
+                {
+                    var сообщение = `ОШИБКА | ERROR: '${ошибка}'`
+                    console.error(сообщение);
+                    document.body.append(сообщение);
+                }
+
+                var запрос = new XMLHttpRequest();
+                запрос.onreadystatechange = function()
+                {
+                    if (this.readyState == 4)
+                    {
+                        if (this.status == 200)
+                        {
+                            загрузилиПуск(this.responseText);
+                        }
+                        else
+                        {
+                            неУдалосьЗагрузитьПуск(this.status);
+                        }
+                    }
+                }
+                запрос.open("GET", адрес + "?" + gitjs.uuid());
+                запрос.send();
+            }
+
+            var пуск = localStorage.getItem("0000");
+            var сообщение =
+                пуск ?
+                "Загрузка пускового скрипта из кэша | Loading startup script from the cache" :
+                `Загрузка пускового скрипта по сети | Loading startup script over network '${адрес}'`;
+            document.body.innerHTML += `<p>${сообщение}</p>`;
+            console.debug(сообщение);
+
+            setTimeout(
+                function()
+                {
+                    if (пуск)
+                    {
+                        запуститьGitJSЛокально(пуск);
+                    }
+                    else
+                    {
+                        запуститьGitJSПоСети(адрес);
+                    }
+                },
+                300
+            );
+        </script>
+    </body>
+</html>
