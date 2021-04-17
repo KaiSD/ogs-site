@@ -17,9 +17,6 @@
 
 СоздатьИзбу = мир =>
 {
-    const камера = мир.сцена.cameras.main;
-    камера.backgroundColor = Phaser.Display.Color.HexStringToColor("#fbfbfb");
-
     мир.сцена.add.image(0, 0, "изба").setOrigin(0, 0);
 
     var полСлева = мир.каркас.create(0, 585, "основа").setOrigin(0, 0);

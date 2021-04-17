@@ -6,36 +6,20 @@
  */
 
 
-ПодготовитьОбластьОтрисовки = мир =>
-{
-    var родитель = document.createElement("div");
-    родитель.style = `
-position: absolute;
-left: 0;
-right: 0;
-bottom: 0;
-top: 0;
-display: flex;
-align-items: center;
-    `;
-    var ребёнок = document.createElement("div");
-    ребёнок.style = `margin: auto;`;
-    родитель.appendChild(ребёнок);
-    document.body.appendChild(родитель);
-
-    мир.областьОтрисовки = ребёнок;
-};
-
-
-// // // //
-
 НастроитьИгру = мир =>
 {
     мир.настройки = {
         type: Phaser.AUTO,
         width: 800,
         height: 600,
-        parent: мир.областьОтрисовки,
+        backgroundColor: 0xfbfbfb,
+        scale: {
+            width: 800,
+            height: 600,
+            expandParent: true,
+            mode: Phaser.Scale.ENVELOP,
+            autoCenter: Phaser.Scale.CENTER_BOTH,
+        },
         physics: {
             default: "arcade",
             arcade: {
@@ -81,7 +65,6 @@ align-items: center;
 
 мир.разобрать(`
 пуск
-    подготовить область отрисовки
     настроить игру
     запустить игру
 `);
