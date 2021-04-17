@@ -5,15 +5,20 @@
         <title>КОЛОБОК 0.1.0</title>
         <script src="https://cdn.jsdelivr.net/npm/phaser@3.54.0/dist/phaser.min.js"></script> 
 		<style>
-			html, body
+            #родитель
             {
-                margin: 0;
+                position: absolute;
+                width: 100%;
                 height: 100%;
-                overflow: hidden
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
             }
 		</style>
     </head>
     <body>
+        <div id="родитель"></div>
         <script src="игра/001.мир.js"></script>
         <script src="игра/011.phaser.js"></script>
         <script src="игра/109.управление.js"></script>

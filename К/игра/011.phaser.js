@@ -16,8 +16,9 @@
         scale: {
             width: 800,
             height: 600,
-            expandParent: true,
-            mode: Phaser.Scale.ENVELOP,
+            parent: document.getElementById("родитель"),
+            //mode: Phaser.Scale.ENVELOP,
+            mode: Phaser.Scale.RESIZE,
             autoCenter: Phaser.Scale.CENTER_BOTH,
         },
         physics: {
