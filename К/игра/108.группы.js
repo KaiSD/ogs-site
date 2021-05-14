@@ -13,7 +13,9 @@
     мир.каркас = мир.сцена.physics.add.staticGroup();
     мир.платформы = мир.сцена.physics.add.staticGroup();
     мир.вещи = мир.сцена.add.group();
+    мир.вещиНедвижимые = мир.сцена.add.group();
     мир.враги = мир.сцена.physics.add.group({ allowGravity: false });
+    мир.стрелы = мир.сцена.physics.add.staticGroup();
 };
 
 
@@ -24,6 +26,8 @@
 {
     мир.сцена.physics.add.collider(мир.вещи, мир.каркас);
     мир.сцена.physics.add.collider(мир.вещи, мир.платформы);
+    мир.сцена.physics.add.collider(мир.вещиНедвижимые, мир.каркас);
+    мир.сцена.physics.add.collider(мир.вещиНедвижимые, мир.платформы);
 };
 
 

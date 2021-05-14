@@ -6,3 +6,5 @@
     * https://freesound.org/people/Czarcazas/sounds/330800/
 * https://freesound.org/people/Kneeling/sounds/448004/
 * https://freesound.org/people/EminYILDIRIM/sounds/543927/
+* https://freesound.org/people/tcrocker68/sounds/235596/
+* https://freesound.org/people/cabled_mess/sounds/352065/
