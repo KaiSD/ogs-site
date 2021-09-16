@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <title>M-3.1</title>
+
+        <script src="../общее/base64-js/base64js.min.js"></script>
+        <script src="../общее/pako/pako.min.js"></script>
+        <script src="ace/ace.js"></script>
+        <script src="ace/mode-javascript.js"></script>
+        <script src="ace/worker-javascript.js"></script>
+        <link rel="stylesheet" type="text/css" href="uikit/uikit.min.css" />
+        <script src="uikit/uikit.min.js"></script>
+        <script src="uikit/uikit-icons.min.js"></script>
+
+        <style>
+            #редактор
+            {
+                position: absolute;
+                left: 0;
+                top: 0;
+                bottom: 0;
+                width: calc(50% - 2em);
+            }
+            #пульт
+            {
+                position: absolute;
+                left: calc(50% - 2em);
+                top: 0;
+                bottom: 0;
+                width: 4em;
+                display: flex;
+                flex-direction: column;
+                border: 1px dashed gainsboro;
+            }
+            #проигрыватель
+            {
+                position: absolute;
+                right: 0;
+                top: 0;
+                bottom: 0;
+                width: calc(50% - 2em);
+                border: 0px none;
+            }
+
+            .впульте
+            {
+                margin: 0 auto;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="редактор"></div>
+        <div id="пульт">
+            <span id="ошибка" class="впульте">&nbsp;</span>
+            <a id="перезапустить" class="впульте uk-icon-button uk-margin-top" uk-icon="refresh" uk-tooltip="Перезапустить"></a>
+            <a id="отдельно" class="впульте uk-icon-button uk-margin-top" uk-icon="desktop" uk-tooltip="Запустить в отдельной вкладке"></a>
+            <a id="ссылка" class="впульте uk-icon-button uk-margin-top" uk-icon="link" uk-tooltip="Скопировать ссылку"></a>
+            <a id="версия" class="впульте uk-icon-button uk-margin-top" uk-icon="git-branch" uk-tooltip="Версия"></a>
+            <div uk-dropdown="mode: click">
+                <table class="uk-table">
+                    <tbody>
+                        <tr>
+                            <td>3.1</td>
+                            <td>Кнопки перезапуска, копирования ссылки, запуска в отдельной вкладке</td>
+                        </tr>
+                        <tr>
+                            <td><a href="../../3.0/редактор/index.html">3.0</a></td>
+                            <td>Проверка введённого кода на отсутствие синтаксических ошибок</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+		</div>
+
+        <iframe id="проигрыватель" name="проигрыватель"></iframe>
+        
+        <script src="../общее/100.События.js"></script>
+        <script src="../общее/200.функции.js"></script>
+        <script src="../общее/300.ПараметрыЗапуска.js"></script>
+        <script src="100.Редактор.js"></script>
+        <script src="200.Пульт.js"></script>
+        <script src="700.Муром.js"></script>
+        <script>
+            var муром = new Муром();
+        </script>
+    </body>
+</html>

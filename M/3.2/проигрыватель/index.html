@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <script src="../общее/base64-js/base64js.min.js"></script>
+        <script src="../общее/pako/pako.min.js"></script>
+        <script src="matter-js/matter.min.js"></script>
+        <style>
+            /*
+            html, body {
+                margin: 0;
+                padding: 0;
+                overflow: hidden;
+            }
+
+            body {
+                height: 100vh;
+                width: 100vw;
+            }
+            */
+            #корень
+            {
+                position: relative;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="заставка"></div>
+        <div id="корень"></div>
+        <div id="отладка"></div>
+        
+        <script src="../общее/100.События.js"></script>
+        <script src="../общее/150.Состояние.js"></script>
+        <script src="../общее/200.функции.js"></script>
+        <script src="050.Заголовок.js"></script>
+        <script src="100.Изображения.js"></script>
+        <script src="700.Игра.js"></script>
+        <script>
+            var игра = new Игра();
+        </script>
+    </body>
+</html>
