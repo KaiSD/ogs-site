@@ -9,10 +9,12 @@ Lang: ru
 
 1. [заголовок][title]
 1. [изображения][images]
+1. [объекты][objects]
 1. [слежение][tracking]
 1. [тела][bodies]
 
 [bodies]: bodies.html
 [images]: images.html
+[objects]: objects.html
 [title]: title.html
 [tracking]: tracking.html
