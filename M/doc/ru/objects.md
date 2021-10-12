@@ -10,7 +10,7 @@ Lang: ru
 
 Пример № 1. Отображение двух падающих на платформу пауков.
 
-<iframe style="width: 100%; height: 50em" src="../../3.5/редактор.html?z64=eJzNkl9OwkAQxt97io3RBBLoFsTElHgSY0IpTflT2mZbooY0KeCDsSZepRKqBAWuMHsjZysiFPDBB+Om3W1ndr7vN9tahk94CAkf8BEPcY7IBTlq+r7rqZSaLV92XMM2ta7h+b1Gy5EdZtKOw2yDMdpte5Rp17TONFtv0q7m+QajPDyqShbqwhLeIOZDfgcL9HiHGLVrPWbljvvbngHFHUOxGyYwg1i8DmAOCxhDLLddM19bS8Z8BLMfhF5gilVCbs4jSOhXiezaZp7YTpEZrqH5xNOZY1lEOREXJbpj+1rLRh8JSac8lFE5hldkeBZP2MZjri8RHGiwDqNdgqBT/qSSz2y6Y6fzzawYNypRCluRW5VUlEwMxjzCgxDNoEIpk+X3ghNp5iK7pxhTk6yxGHVN75jM6dkNdQ/qtkrw/RpIGwFESkTlv2p7xbZa0m/0gJgzRIoyoOk/UcrywZKHKrksoyj64lTB+1S5+uXJpiaHz7OwA1Q+AFQ6PyuQ4l8R4RLkqx8h+Yt9"></iframe>
+<iframe style="width: 100%; height: 45em" src="../../4.0/редактор.html?z64=eJylUd1ugjAUvucpGrIlmiBFtyULZk+xy2WJFQmiSEkp2YUxwZ+ruYdxRqdhU1/h9I1WUDeJwYvtBNpyevi+75zPszkSMSzFUIxFLNcpekBqm/MgNDF2XK7TwPYd0rNDHrVcqlPm4C5lvs0Y7nVCzMgLbjLiW23cIyG3GRaxWlcU+IK1iHWJPYMVbOE9PYmReCv1FSQD5rCGhZiaaP+d5bZiCBtZPIfZaT6NJrG6DqOR3zJRI2Je6aqf1z3A8vcRfEq+BSQww6doeidwyg3tB3Hwe4Sd1DWG5C+EH7KHeUa7EVNY4iOWHvhOGfm0wuzAJhyFFqOeh4zr9MHIoj4nrn+u57CJicRdyTfJz0GyjtIhnt+k4YaPnHDXMhFnkV2EnVnxCktIpBn56e/S4cnsRHYUS//OGGAnYhM9VQ0N3RrHpWo8a/mqzFkTqacGqPmafIdqvjH1ok/VAlW1vZhMloZuilUdcC6z1Ip6v7/TUOVfNHIblOvKN4ErWYQ="></iframe>
 
 </div>
 

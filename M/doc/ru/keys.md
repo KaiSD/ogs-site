@@ -7,14 +7,18 @@ Lang: ru
 Ниже представлены страницы с описанием каждого отдельного поддерживаемого ключа
 и примерами их использования:
 
+1. [виды][styles]
 1. [заголовок][title]
 1. [изображения][images]
 1. [объекты][objects]
 1. [слежение][tracking]
 1. [тела][bodies]
+1. [физика][physics]
 
 [bodies]: bodies.html
 [images]: images.html
 [objects]: objects.html
+[physics]: physics.html
+[styles]: styles.html
 [title]: title.html
 [tracking]: tracking.html
