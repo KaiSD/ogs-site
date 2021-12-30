@@ -7,6 +7,7 @@ Lang: ru
 Ниже представлены страницы с описанием каждого отдельного поддерживаемого ключа
 и примерами их использования:
 
+1. [анимации][animations]
 1. [виды][styles]
 1. [заголовок][title]
 1. [изображения][images]
@@ -15,6 +16,7 @@ Lang: ru
 1. [тела][bodies]
 1. [физика][physics]
 
+[animations]: animations.html
 [bodies]: bodies.html
 [images]: images.html
 [objects]: objects.html
