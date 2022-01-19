@@ -16,8 +16,8 @@ Lang: ru
 });
 ```
 
-[Посмотреть результат][result].
+<a href="../../MYPOM/5.0/игра.html?z64=eJy7sOfCjosNehcbLmy4sP3CvgsbQayLTRd7NKq5FIAAKLjhwmagxG4g3gTEu6wUlC7MggpsBAko6XDValoDAL+VLNM=" target="_blank">Посмотреть результат</a>
 
 </div>
 
-[result]: ../../3.4/игра.html?z64=eJy7sOfCjosNehcbLmy4sP3CvgsbQayLTRd7NKq5FIAAKLjhwmagxG4g3gTEu6wUlC7MggpsBAko6XDValoDAL+VLNM=
+[result]: 

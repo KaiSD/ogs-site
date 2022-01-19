@@ -13,6 +13,7 @@ Lang: ru
 1. [изображения][images]
 1. [объекты][objects]
 1. [слежение][tracking]
+1. [состояния][states]
 1. [столкновения][collisions]
 1. [тела][bodies]
 1. [физика][physics]
@@ -23,6 +24,7 @@ Lang: ru
 [images]: images.html
 [objects]: objects.html
 [physics]: physics.html
+[states]: states.html
 [styles]: styles.html
 [title]: title.html
 [tracking]: tracking.html
