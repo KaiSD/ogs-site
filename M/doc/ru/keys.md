@@ -4,8 +4,9 @@ Category: Страница
 Slug: keys
 Lang: ru
 
-Ниже представлены страницы с описанием каждого отдельного поддерживаемого ключа
-и примерами их использования:
+На этой странице представлены все ключи, поддерживаемые инструментом для создания игр «МУРОМ».
+
+## Стандартные ключи
 
 1. [анимации][animations]
 1. [виды][styles]
@@ -18,6 +19,10 @@ Lang: ru
 1. [тела][bodies]
 1. [физика][physics]
 
+## Функциональность Gemini Rue
+
+1. [gr.подсказки][gr.hints]
+
 [animations]: animations.html
 [bodies]: bodies.html
 [collisions]: collisions.html
@@ -28,3 +33,5 @@ Lang: ru
 [styles]: styles.html
 [title]: title.html
 [tracking]: tracking.html
+
+[gr.hints]: gr.hints.html
