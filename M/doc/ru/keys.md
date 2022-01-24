@@ -22,6 +22,7 @@ Lang: ru
 ## Функциональность Gemini Rue
 
 1. [gr.подсказки][gr.hints]
+1. [gr.реплики][gr.speech]
 
 [animations]: animations.html
 [bodies]: bodies.html
@@ -35,3 +36,4 @@ Lang: ru
 [tracking]: tracking.html
 
 [gr.hints]: gr.hints.html
+[gr.speech]: gr.speech.html
