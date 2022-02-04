@@ -23,6 +23,7 @@ Lang: ru
 
 1. [gr.подсказки][gr.hints]
 1. [gr.реплики][gr.speech]
+1. [gr.сцена][gr.scene]
 
 [animations]: animations.html
 [bodies]: bodies.html
@@ -37,3 +38,4 @@ Lang: ru
 
 [gr.hints]: gr.hints.html
 [gr.speech]: gr.speech.html
+[gr.scene]: gr.scene.html

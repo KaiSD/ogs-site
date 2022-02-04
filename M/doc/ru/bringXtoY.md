@@ -1,0 +1,15 @@
+Title: Приведи X к Y
+Date: 2022-01-28 00:00
+Category: Страница
+Slug: bringXtoY
+Lang: ru
+
+Надо бы как-то назвать это дело...
+
+</div><div class="contents">
+
+Пример № 1. Движение объекта к цели.
+
+<iframe style="width: 100%; height: 40em" src="../../MYPOM/5.0/редактор.html?z64=eJzFVs1q20AQvvsplqUHmzqSnTY9OPjUXkMKPZVQiOIotvIjmZVMKMFgJyWBOhDIpVDooU/QxI5rYzvOK8y+UWdXsiWtpdQt/RHoZ1ermW++b2a0h6ZHeAv6vM3PeAuvHVImtOZ5dbek61XL05y6aVeNI9P1GruWozmsqh84zDYZ0zfevt7cWHm1+VJnxrG+wwy7UtOPDNczmc5Ml65nMjCBIW9p6OIGBjCFW/HET/ll9iRD8IAuDOGOd0rEH8u5KW/DPS7uwk10Xhw7RuWgypyGvVsi2w12mH1yEoff1KOfa/v1am47PzfRDB/5OfRhzC//sAdxOHWjYnnvS6SgFRd8Bzf+AQMf4DmKB4keTgVDi2/EYblvPMOzKiXisYaZHFcb47rH65S3lv08eGfarsNSTAc3KeFH9DBCEeOqDXB2goxeqV7hQSDZKuTJ8wJeigX/+i7u38+EEqFRdml8TZw0GueKJtIBD2hpLN4XU3CtIZrVANj/wLX6CK5n/xxXWlkEoCQWn7E8eVFQQS04DHORpsCfOUyhaST6B5I15BfpebU2P3+RJKUmBVDB0ZRf4eJhPJXlzAWC7cF0AUpqWSwTyLJoE/hRhinMwTV8QeEvsAmP/xr4n6uxFPa5FkIHWSE+Ef0ERaIhYoDwyW9B0FdBoi1MMpGTWzQe7krYt2ieLLyMeKBqrrfl4o6sp75QLbo4La4qU7r9uYxsodNLqw+iPs5EMSFK+dskMBSJeAPf/bFaVUPoIYQpjBJljASXjjeCTVaCcCN5i+S/pCo6TlBa/tgxit/5Frkdiabh16P0X0zogUoyhb1L1TGhyQSE9ERaYHqN/QQTQir7oaeE6jOdeEfbdxO1beZwt7PXsCue5dgEC66PZu7RCKKHzyHR2VzGF8arWa422xHBLUZ66ksKX6N5hduxmdVsPONy0kyosrVHlBWkXFZUzs1XKy0g2KYpDRC+aaKs8WES1J/YudH01kKRhTk3PjXrmWa4DYzA41ea/AfeSTvtYFdom8ePkidypwsj9PMDA91sVQ=="></iframe>
+
+</div>
