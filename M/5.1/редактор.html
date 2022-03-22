@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <title>M-5.1</title>
+
+        <script src="общее/base64-js/base64js.min.js"></script>
+        <script src="общее/pako/pako.min.js"></script>
+        <script src="редактор/ace/ace.js"></script>
+        <script src="редактор/ace/mode-javascript.js"></script>
+        <script src="редактор/ace/worker-javascript.js"></script>
+        <link rel="stylesheet" type="text/css" href="редактор/uikit/uikit.min.css" />
+        <script src="редактор/uikit/uikit.min.js"></script>
+        <script src="редактор/uikit/uikit-icons.min.js"></script>
+
+        <style>
+            #редактор
+            {
+                position: absolute;
+                left: 0;
+                top: 0;
+                bottom: 0;
+                width: calc(50% - 2em);
+            }
+            #пульт
+            {
+                position: absolute;
+                left: calc(50% - 2em);
+                top: 0;
+                bottom: 0;
+                width: 4em;
+                display: flex;
+                flex-direction: column;
+                border: 1px dashed gainsboro;
+            }
+            #проигрыватель
+            {
+                position: absolute;
+                right: 0;
+                top: 0;
+                bottom: 0;
+                width: calc(50% - 2em);
+                height: 100%;
+                border: 0px none;
+            }
+
+            .впульте
+            {
+                margin: 0 auto;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="редактор"></div>
+        <div id="пульт">
+            <span id="ошибка" class="впульте">&nbsp;</span>
+            <a id="перезапустить" class="впульте uk-icon-button uk-margin-top" uk-icon="refresh" uk-tooltip="Перезапустить"></a>
+            <a id="отдельно" class="впульте uk-icon-button uk-margin-top" uk-icon="desktop" uk-tooltip="Запустить в отдельной вкладке"></a>
+            <a id="ссылка" class="впульте uk-icon-button uk-margin-top" uk-icon="link" uk-tooltip="Скопировать ссылку"></a>
+            <a id="документация" class="впульте uk-icon-button uk-margin-top" uk-icon="question" uk-tooltip="Документация"></a>
+            <a id="версия" class="впульте uk-icon-button uk-margin-top" uk-icon="git-branch" uk-tooltip="Версия"></a>
+            <div uk-dropdown="mode: click">
+                <table class="uk-table">
+                    <tbody>
+                        <tr>
+                            <td>5.1</td>
+                            <td>html, body height = 100%</td>
+                        </tr>
+                        <tr>
+                            <td><a href="../5.0/редактор.html">5.0</a></td>
+                            <td>мир.разобрать, мир.события.подписать, gr.подсказки, gr.реплики, gr.сцена</td>
+                        </tr>
+                        <tr>
+                            <td><a href="../4.1/редактор.html">4.1</a></td>
+                            <td>анимации, подсказки, реплики, состояния, столкновения, сцена</td>
+                        </tr>
+                        <tr>
+                            <td><a href="../4.0/редактор.html">4.0</a></td>
+                            <td>виды, физика; переработанные объекты, изображения, тела</td>
+                        </tr>
+                        <tr>
+                            <td><a href="../3.5/редактор.html">3.5</a></td>
+                            <td>объекты</td>
+                        </tr>
+                        <tr>
+                            <td><a href="../3.4/редактор.html">3.4</a></td>
+                            <td>Документация</td>
+                        </tr>
+                        <tr>
+                            <td><a href="../3.3/редактор/index.html">3.3</a></td>
+                            <td>тела, слежение</td>
+                        </tr>
+                        <tr>
+                            <td><a href="../3.2/редактор/index.html">3.2</a></td>
+                            <td>мир.параметрыЗапуска, мир.разобрать, заголовок, изображения, состояние, физика</td>
+                        </tr>
+                        <tr>
+                            <td><a href="../3.1/редактор/index.html">3.1</a></td>
+                            <td>Кнопки перезапуска, копирования ссылки, запуска в отдельной вкладке</td>
+                        </tr>
+                        <tr>
+                            <td><a href="../3.0/редактор/index.html">3.0</a></td>
+                            <td>Проверка введённого кода на отсутствие синтаксических ошибок</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+		</div>
+
+        <iframe id="проигрыватель" name="проигрыватель"></iframe>
+        
+        <script src="общее/050.функции.js"></script>
+        <script src="общее/100.События.js"></script>
+        <script src="общее/150.Состояние.js"></script>
+        <script src="общее/200.обёртки.js"></script>
+        <script src="редактор/100.Редактор.js"></script>
+        <script src="редактор/200.Пульт.js"></script>
+        <script src="редактор/700.Муром.js"></script>
+        <script>
+            var муром = new Муром();
+        </script>
+    </body>
+</html>

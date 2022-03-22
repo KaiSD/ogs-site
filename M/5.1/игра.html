@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <script src="общее/base64-js/base64js.min.js"></script>
+        <script src="общее/pako/pako.min.js"></script>
+        <script src="игра/matter-js/matter.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="игра/uikit/uikit.min.css" />
+        <script src="игра/uikit/uikit.min.js"></script>
+        <script src="игра/uikit/uikit-icons.min.js"></script>
+        <style>
+            html, body {
+                height: 100%;
+            }
+            #корень
+            {
+                position: relative;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="заставка"></div>
+        <div id="корень"></div>
+        <div id="отладка"></div>
+
+        <script src="общее/050.функции.js"></script>
+        <script src="общее/100.События.js"></script>
+        <script src="общее/150.Состояние.js"></script>
+        <script src="общее/200.обёртки.js"></script>
+
+        <script src="игра/050.Заголовок.js"></script>
+        <script src="игра/070.Виды.js"></script>
+        <script src="игра/075.Анимация.js"></script>
+        <script src="игра/080.Анимации.js"></script>
+        <script src="игра/100.Изображения.js"></script>
+        <script src="игра/120.Физика.js"></script>
+        <script src="игра/140.Тела.js"></script>
+        <script src="игра/160.Слежение.js"></script>
+        <script src="игра/180.Объекты.js"></script>
+        <script src="игра/190.Состояния.js"></script>
+        <script src="игра/220.Мышь.js"></script>
+        <script src="игра/240.Столкновения.js"></script>
+
+        <script src="игра/gr/100.grПодсказки.js"></script>
+        <script src="игра/gr/200.grМеню.js"></script>
+        <script src="игра/gr/300.grРеплики.js"></script>
+        <script src="игра/gr/400.grСцена.js"></script>
+
+        <script src="игра/700.Игра.js"></script>
+        <script>
+            var игра = new Игра();
+        </script>
+    </body>
+</html>
